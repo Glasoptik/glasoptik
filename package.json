@@ -1,0 +1,32 @@
+{
+  "name": "glasoptik",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Glasoptik/glasoptik.git",
+  "author": "Usama Tahir <usamatahir8330@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "develop": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "framer-motion": "^6.3.5",
+    "gatsby": "^4.15.1",
+    "gatsby-plugin-image": "^2.15.0",
+    "gatsby-source-prismic": "^5.2.7",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-slick": "^0.29.0",
+    "slick-carousel": "^1.8.1",
+    "slugify": "^1.6.5"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.7",
+    "gatsby-plugin-postcss": "^5.15.0",
+    "postcss": "^8.4.14",
+    "tailwindcss": "^3.0.24"
+  }
+}
