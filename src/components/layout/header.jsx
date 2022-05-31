@@ -2,14 +2,11 @@ import React, { useEffect, useRef, useState } from "react";
 import { GatsbyImage } from "gatsby-plugin-image";
 import Link from "../common/link";
 import { Nav, NavItem } from "./nav";
-import useHeader from "../../queries/useHeader";
 
-const Header = ({ stickToTop }) => {
+const Header = ({ stickToTop, data }) => {
   const [mobileNav, setMobileNav] = useState(false);
   const [hideUp, setHideUp] = useState(false);
   const yRef = useRef(0);
-
-  const data = useHeader();
 
   useEffect(() => {
     const offsetTop = 80;
