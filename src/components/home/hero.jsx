@@ -23,7 +23,7 @@ const Hero = ({ sliders }) => {
             <GatsbyImage
               key={idx}
               image={image.gatsbyImageData}
-              alt={image_title}
+              alt={image_title.text}
               objectFit="cover"
               className="w-full h-[545px]"
             />

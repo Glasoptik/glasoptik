@@ -32,7 +32,7 @@ const Header = ({ stickToTop, data }) => {
         !stickToTop && "fixed"
       } top-0 left-0 z-50 w-full bg-white duration-300 text-[15px]`}
     >
-      <div className="container flex justify-between h-[45px] px-5 sm:px-[74px] mx-auto mt-16 mb-[61px]">
+      <div className="w-full flex justify-between h-[45px] px-5 sm:px-[74px] mx-auto mt-16 mb-[61px]">
         <NavButton onClick={() => setMobileNav(!mobileNav)} />
         <Link className="relative z-50 inline-flex my-auto" to="/">
           <GatsbyImage

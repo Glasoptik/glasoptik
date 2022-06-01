@@ -6,9 +6,11 @@ const Layout = ({ children }) => {
   const data = useHeader();
 
   return (
-    <div className="container mx-auto w-full h-full">
-      <Header stickToTop={true} data={data} />
-      {children}
+    <div className="w-full overflow-x-hidden">
+      <div className="max-w-[1440px] mx-auto w-full h-full overflow-x-visible">
+        <Header stickToTop={true} data={data} />
+        {children}
+      </div>
     </div>
   );
 };
