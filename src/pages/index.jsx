@@ -3,6 +3,7 @@ import Brands from "../components/home/brands";
 import Hero from "../components/home/hero";
 import SectionB from "../components/home/SectionB";
 import SectionD from "../components/home/SectionD";
+import SectionE from "../components/home/SectionE";
 import SectionF from "../components/home/SectionF";
 import SectionG from "../components/home/SectionG";
 import SectionH from "../components/home/SectionH";
@@ -18,6 +19,7 @@ const Home = () => {
       <SectionB sectionb={data.section_b} />
       <Brands />
       <SectionD sectiond={data.section_d} />
+      <SectionE sectione={data.section_e} />
       <SectionF sectionf={data.section_f} />
       <SectionG />
       <Brands />

@@ -45,6 +45,22 @@ export default function useHome() {
                 }
               }
             }
+            section_e {
+              document {
+                ... on PrismicSectione {
+                  data {
+                    title {
+                      text
+                    }
+                    sub_title {
+                      text
+                    }
+                    button_text
+                    button_link
+                  }
+                }
+              }
+            }
             section_f {
               document {
                 ... on PrismicSectionf {
