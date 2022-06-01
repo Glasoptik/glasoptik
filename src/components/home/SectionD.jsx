@@ -19,7 +19,7 @@ const SectionD = ({ sectiond }) => {
             {data.name.text}
           </h6>
           <div className="w-full mt-[90px] space-x-[124px] flex items-center justify-center text-[15px]">
-            <div />
+            <div className="invisible w-20" />
             <Link to="/web-shop">{data.button_text}</Link>
             <Link to="/web-shop">
               <svg
