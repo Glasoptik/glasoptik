@@ -75,7 +75,7 @@ const ProductsSelection = ({ title, buttonText }) => {
             </g>
           </svg>
         </Link>
-        <Link to="/web-shop" className="text-3xl text-[#414141]">
+        <Link to="/web-shop" className="text-3xl text-[#414141] uppercase">
           {buttonText}
         </Link>
         <div className="invisible w-20" />

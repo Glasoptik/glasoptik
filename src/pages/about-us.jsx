@@ -6,11 +6,9 @@ import SectionI from "../components/home/SectionI";
 import ProductsSelection from "../components/common/productsSelection";
 
 const About = ({ data }) => {
-  console.log(data);
   const about = data.prismicAboutUs.data;
   const sectionI = data.prismicSectioni.data;
 
-  console.log(sectionI);
   return (
     <div className="w-full h-full ">
       <div className="w-full flex flex-col items-center text-center">

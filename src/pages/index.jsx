@@ -27,7 +27,6 @@ const Home = ({ data }) => {
       }
     }
   }, [showIntro]);
-  console.log(home.section_i.document.data);
   return (
     <div className="w-full overflow-x-visible">
       <Intro
