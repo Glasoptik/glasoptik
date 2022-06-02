@@ -23,11 +23,11 @@ const Home = ({ data }) => {
       if (showIntro) {
         document.body.style.overflow = "hidden";
       } else {
-        document.body.style.overflow = "unset";
+        document.body.style.overflow = "visible";
       }
     }
   }, [showIntro]);
-  console.log(showIntro);
+  console.log(home.section_i.document.data);
   return (
     <div className="w-full overflow-x-visible">
       <Intro
@@ -44,7 +44,7 @@ const Home = ({ data }) => {
       <SectionG />
       <Brands />
       <SectionH sectionh={home.section_h} />
-      <SectionI sectioni={home.section_i} />
+      <SectionI data={home.section_i.document.data} />
     </div>
   );
 };

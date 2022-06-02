@@ -6,7 +6,7 @@ const SectionF = ({ sectionf }) => {
   const data = sectionf.document.data;
 
   return (
-    <div className="w-full px-5 sm:px-[74px]">
+    <div className="w-full">
       <div className="mt-[270px]  flex items-center justify-center space-x-5">
         {data.image_section.map((item, index) => (
           <div

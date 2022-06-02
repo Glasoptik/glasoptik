@@ -1,11 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import { GatsbyImage } from "gatsby-plugin-image";
 import Link from "../common/link";
+import isBrowser from "../helper/isBrowser";
 import { Nav, NavItem } from "./nav";
 
 const Header = ({ stickToTop, data }) => {
   const [mobileNav, setMobileNav] = useState(false);
   const [hideUp, setHideUp] = useState(false);
+  const [pathname, setPathname] = useState("LOADING");
   const yRef = useRef(0);
 
   useEffect(() => {
@@ -32,7 +34,9 @@ const Header = ({ stickToTop, data }) => {
         !stickToTop && "fixed"
       } top-0 left-0 z-50 w-full bg-white duration-300 text-[15px]`}
     >
-      <div className="w-full flex justify-between h-[45px] px-5 sm:px-[74px] mx-auto mt-16 mb-[61px]">
+      <div
+        className={`w-full flex justify-between h-[45px] mx-auto my-[52px]`}
+      >
         <NavButton onClick={() => setMobileNav(!mobileNav)} />
         <Link className="relative z-50 inline-flex my-auto" to="/">
           <GatsbyImage

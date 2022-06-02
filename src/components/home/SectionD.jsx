@@ -4,7 +4,6 @@ import Link from "../common/link";
 
 const SectionD = ({ sectiond }) => {
   const data = sectiond.document.data;
-  console.log(data);
   return (
     <div className=" w-full flex flex-col items-center">
       <div className="max-w-[1052px] w-full mt-[120px] mb-[275px]">

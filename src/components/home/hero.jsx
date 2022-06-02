@@ -16,7 +16,7 @@ const Hero = ({ sliders }) => {
     beforeChange: (current, next) => setActiveSlide(next),
   };
   return (
-    <div className="px-5 sm:px-[74px]">
+    <div className="w-full">
       <Slider ref={(c) => (slider = c)} {...settings}>
         {sliders.map(({ image, image_title }, idx) => (
           <div className="w-full" key={idx}>

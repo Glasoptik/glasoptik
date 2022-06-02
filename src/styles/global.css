@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@layer utilities {
+
+    .prose p,
+    .prose li {
+        @apply my-4;
+    }
+}
+
 .animate-fade-up {
     opacity: 0;
     animation: fade-up 750ms 100ms forwards;
