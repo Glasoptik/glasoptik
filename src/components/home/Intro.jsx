@@ -4,7 +4,7 @@ import React from "react";
 const Intro = ({ intro, onClick, open }) => {
   return (
     <div
-      className={`fixed w-screen h-screen top-0 left-0 z-50 overflow-hidden transform transition-all duration-200 ${
+      className={`fixed w-screen h-screen top-0 left-0 z-50 overflow-hidden transform transition-all duration-200 bg-white ${
         !open ? "hidden" : "block"
       } cursor-pointer`}
       onClick={onClick}

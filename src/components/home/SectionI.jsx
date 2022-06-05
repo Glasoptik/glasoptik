@@ -3,7 +3,7 @@ import React from "react";
 
 const SectionI = ({ data }) => {
   return (
-    <div className="w-full  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 place-items-center items-center justify-center sm:px-[54px]">
+    <div className="max-w-[1440px] w-full mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 place-items-center items-center justify-center sm:px-[54px]">
       {data.images.map((item, index) => (
         <div
           key={index}

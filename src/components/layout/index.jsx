@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
 
   return (
     <div className="w-full overflow-x-hidden">
-      <div className="max-w-[1440px] mx-auto w-full h-full overflow-x-visible px-5 sm:px-[74px]">
+      <div className="max-w-full w-full h-full overflow-x-visible">
         <Header stickToTop={true} data={data} />
         {children}
         <Footer footer={footer_data.footer} />

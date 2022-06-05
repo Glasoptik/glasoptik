@@ -32,11 +32,9 @@ const Header = ({ stickToTop, data }) => {
     <header
       className={`${hideUp ? "-translate-y-full" : ""} ${
         !stickToTop && "fixed"
-      } top-0 left-0 z-50 w-full bg-white duration-300 text-[15px]`}
+      } top-0 left-0 z-50 max-w-[1440px] mx-auto w-full bg-white duration-300 text-[15px] px-5 sm:px-[74px]`}
     >
-      <div
-        className={`w-full flex justify-between h-[45px] mx-auto my-[52px]`}
-      >
+      <div className={`w-full flex justify-between h-[45px] mx-auto my-[52px]`}>
         <NavButton onClick={() => setMobileNav(!mobileNav)} />
         <Link className="relative z-50 inline-flex my-auto" to="/">
           <GatsbyImage
