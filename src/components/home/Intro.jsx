@@ -9,7 +9,7 @@ const Intro = ({ intro, onClick, open }) => {
       } cursor-pointer`}
       onClick={onClick}
     >
-      <div className="max-w-[1440px] w-screen h-screen mx-auto flex items-center flex-1">
+      <div className="max-w-full w-screen h-screen mx-auto flex items-center flex-1">
         <div className="flex-[0.5] w-full h-full">
           <GatsbyImage
             image={intro.image.gatsbyImageData}

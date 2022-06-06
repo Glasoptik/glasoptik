@@ -5,7 +5,7 @@ import Gallery from "./gallery";
 
 const ProductPage = () => {
   return (
-    <div className="w-full flex flex-col">
+    <div className="max-w-[1440px] mx-auto w-full flex flex-col">
       <div className="flex flex-col md:flex-row space-x-14 mb-8">
         <Gallery />
         <Details />
