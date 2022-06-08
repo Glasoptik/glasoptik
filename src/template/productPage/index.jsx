@@ -5,7 +5,9 @@ import Details from "./Details";
 import Gallery from "./gallery";
 
 const ProductPage = ({ data }) => {
-  const product = data.shopifyProduct;
+  console.log(data);
+  const product = data?.shopifyProduct;
+  if (!product) return null;
   return (
     <div className="max-w-[1440px] mx-auto w-full flex flex-col">
       <div className="flex flex-col md:flex-row space-x-14 mb-8">
