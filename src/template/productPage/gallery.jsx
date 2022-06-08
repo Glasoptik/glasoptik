@@ -24,7 +24,7 @@ const Gallery = ({ media }) => {
   }, [activeImage]);
 
   return (
-    <div className="flex-[0.58] max-w-[712px] w-full">
+    <div className="flex-[0.54] max-w-[712px] w-full">
       <div className="relative">
         <Slider ref={(c) => (slider = c)} {...settings}>
           {media.map((image, index) => (

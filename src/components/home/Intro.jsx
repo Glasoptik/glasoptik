@@ -12,6 +12,7 @@ const Intro = ({ intro, onClick, open }) => {
     speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
+    pauseOnHover: false,
   };
   return (
     <div

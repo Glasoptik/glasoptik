@@ -9,7 +9,7 @@ const ProductPage = ({ data }) => {
   const product = data?.shopifyProduct;
   if (!product) return null;
   return (
-    <div className="max-w-[1440px] mx-auto w-full flex flex-col">
+    <div className="max-w-[1440px] mx-auto w-full flex flex-col px-5 sm:px-[74px]">
       <div className="flex flex-col md:flex-row space-x-14 mb-8">
         <Gallery media={product.media} />
         <Details product={product} />

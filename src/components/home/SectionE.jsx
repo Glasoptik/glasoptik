@@ -24,7 +24,7 @@ const SectionE = ({ sectione, products }) => {
     <div
       className={`w-full ${
         inView ? "bg-[#F5F1EE]" : "bg-white"
-      } pt-[114px] pb-[238px] transform transition-colors duration-200 ease-linear `}
+      } pt-[114px] pb-[238px] transform transition-colors duration-500 ease-in `}
     >
       <div className="w-full flex flex-col items-center text-center" ref={ref}>
         <h5 className="text-3xl font-medium mb-7">{data.title.text}</h5>

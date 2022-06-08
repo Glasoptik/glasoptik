@@ -13,6 +13,7 @@ const Hero = ({ sliders }) => {
     cssEase: "linear",
     slidesToShow: 1,
     slidesToScroll: 1,
+    pauseOnHover: false,
     beforeChange: (current, next) => setActiveSlide(next),
   };
   return (
