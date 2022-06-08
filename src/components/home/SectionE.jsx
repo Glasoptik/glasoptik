@@ -1,6 +1,8 @@
 import React from "react";
+import { GatsbyImage } from "gatsby-plugin-image";
 import Link from "../common/link";
 import { useInView } from "react-intersection-observer";
+import { getPrice } from "../helper/getPrice";
 
 const images = [
   "https://img.freepik.com/free-vector/realistic-fashion-sun-glasses-men-with-transparent-background_6431-92.jpg?w=2000",
@@ -14,7 +16,7 @@ const images = [
   "https://img.freepik.com/free-vector/realistic-fashion-sun-glasses-men-with-transparent-background_6431-92.jpg?w=2000",
 ];
 
-const SectionE = ({ sectione }) => {
+const SectionE = ({ sectione, products }) => {
   const [ref, inView] = useInView();
   const data = sectione.document.data;
 
@@ -30,19 +32,23 @@ const SectionE = ({ sectione }) => {
           {data.sub_title.text}
         </h6>
         <div className="max-w-[1440px] w-full mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-[10px]">
-          {images.map((image, index) => (
-            <Link key={index} className="w-full relative group" to="/web-shop">
-              <img
+          {products.map((product, index) => (
+            <Link
+              key={index}
+              className="w-full relative group"
+              to={`/product/${product.handle}`}
+            >
+              <GatsbyImage
+                image={product.featuredImage.gatsbyImageData}
                 className="w-full h-full object-cover"
-                src={image}
-                alt={`sunglasses_${index}`}
+                alt={product.title}
               />
               <div
                 className="opacity-0 group-hover:opacity-100 flex items-center absolute bottom-0 left-0 px-5 py-3 bg-white space-x-5
                bg-transparent transform transition-opacity duration-200 ease-linear text-[10px]"
               >
-                <h6 className="uppercase">Prada Runway</h6>
-                <span>2755 - DKK</span>
+                <h6 className="uppercase">{product.title}</h6>
+                <span>{getPrice(product.priceRangeV2)}</span>
               </div>
             </Link>
           ))}

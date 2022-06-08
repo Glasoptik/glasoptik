@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { recommendedProducts } from "../../lib/product";
 import Link from "./link";
 
-const ProductsSelection = ({ title, buttonText }) => {
+const ProductsSelection = ({ title, buttonText, productId }) => {
+  async function getRecommendedProducts(id) {
+    const data = await recommendedProducts(id);
+    console.log(data);
+  }
+
+  useEffect(() => {
+    getRecommendedProducts(productId);
+  }, [productId]);
+
   return (
     <div className="w-full mt-[303px]">
       <div className="w-full flex items-center justify-between mb-[54px]">

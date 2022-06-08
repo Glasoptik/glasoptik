@@ -15,6 +15,8 @@ import useHome from "../queries/useHome";
 
 const Home = ({ data }) => {
   const intro = data.prismicIntro.data;
+  const products = data.allShopifyProduct.nodes;
+
   const home = useHome();
   const [showIntro, setShowIntro] = useState(true);
 
@@ -38,7 +40,7 @@ const Home = ({ data }) => {
       <SectionB sectionb={home.section_b} />
       <Brands />
       <SectionD sectiond={home.section_d} />
-      <SectionE sectione={home.section_e} />
+      <SectionE sectione={home.section_e} products={products} />
       <SectionF sectionf={home.section_f} />
       <SectionG />
       <Brands />
@@ -64,6 +66,25 @@ export const query = graphql`
         }
         title {
           text
+        }
+      }
+    }
+    allShopifyProduct(limit: 9) {
+      nodes {
+        title
+        handle
+        priceRangeV2 {
+          minVariantPrice {
+            amount
+            currencyCode
+          }
+          maxVariantPrice {
+            amount
+            currencyCode
+          }
+        }
+        featuredImage {
+          gatsbyImageData(layout: FULL_WIDTH, formats: WEBP)
         }
       }
     }

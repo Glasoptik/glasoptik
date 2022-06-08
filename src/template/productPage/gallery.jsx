@@ -1,15 +1,8 @@
-import React, { Component, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { GatsbyImage } from "gatsby-plugin-image";
 import Slider from "react-slick";
 
-const images = [
-  "https://img.freepik.com/free-vector/realistic-fashion-sun-glasses-men-with-transparent-background_6431-92.jpg?w=2000",
-  "https://p7.hiclipart.com/preview/409/887/626/aviator-sunglasses-computer-icons-sunglasses.jpg",
-  "https://p7.hiclipart.com/preview/601/953/79/sunglasses-white-goggles-black-sunglasses.jpg",
-  "https://i.pinimg.com/originals/47/d1/98/47d198868577a721b6b60cdca7c75067.jpg",
-  "https://img.freepik.com/free-vector/realistic-fashion-sun-glasses-men-with-transparent-background_6431-92.jpg?w=2000",
-];
-
-const Gallery = () => {
+const Gallery = ({ media }) => {
   const [activeImage, setActiveImage] = useState(0);
   const [galleryImages, setGalleryImages] = useState([]);
 
@@ -27,19 +20,20 @@ const Gallery = () => {
   };
 
   useEffect(() => {
-    setGalleryImages(images.filter((image, index) => activeImage !== index));
+    setGalleryImages(media.filter((image, index) => activeImage !== index));
   }, [activeImage]);
 
   return (
     <div className="flex-[0.58] max-w-[712px] w-full">
       <div className="relative">
         <Slider ref={(c) => (slider = c)} {...settings}>
-          {images.map((image, index) => (
+          {media.map((image, index) => (
             <div className="space-x-2 z-40" key={index}>
-              <img
-                src={image}
-                alt="slider"
-                className="w-full h-[712px] object-contain"
+              <GatsbyImage
+                image={image.image.gatsbyImageData}
+                alt={`${image.altText} || Image ${index + 1}`}
+                objectFit="contain"
+                className="w-full h-full"
               />
             </div>
           ))}
@@ -90,41 +84,15 @@ const Gallery = () => {
       <div className="w-full grid grid-cols-2">
         {galleryImages.map((image, index) => (
           <div className="w-full" key={index}>
-            <img
-              src={image}
-              alt={`Image ${index + 1}`}
-              className="w-full h-full object-cover"
+            <GatsbyImage
+              image={image.image.gatsbyImageData}
+              alt={`${image.altText} || Image ${index + 1}`}
+              objectFit="cover"
+              className="w-full h-full"
             />
           </div>
         ))}
       </div>
-      {/* <Slider
-        asNavFor={nav1}
-        ref={(slider) => (slider2 = slider)}
-        slidesToShow={3}
-        swipeToSlide={true}
-        focusOnSelect={true}
-        className="w-full grid grid-cols-2"
-      >
-      <div>
-      <h3>1</h3>
-        </div>
-        <div>
-          <h3>2</h3>
-        </div>
-        <div>
-          <h3>3</h3>
-        </div>
-        <div>
-          <h3>4</h3>
-        </div>
-        <div>
-          <h3>5</h3>
-        </div>
-        <div>
-          <h3>6</h3>
-        </div>
-      </Slider> */}
     </div>
   );
 };
