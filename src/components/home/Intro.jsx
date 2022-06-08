@@ -1,33 +1,45 @@
-import { GatsbyImage } from "gatsby-plugin-image";
 import React from "react";
+import { GatsbyImage } from "gatsby-plugin-image";
+import Slider from "react-slick";
 
 const Intro = ({ intro, onClick, open }) => {
+  const settings = {
+    dots: false,
+    fade: true,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    infinite: true,
+    speed: 1000,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
   return (
     <div
       className={`fixed w-screen h-screen top-0 left-0 z-50 overflow-hidden transform transition-all duration-200 bg-white ${
         !open ? "hidden" : "block"
       } cursor-pointer`}
-      onClick={onClick}
     >
-      <div className="max-w-full w-screen h-screen mx-auto flex items-center flex-1">
-        <div className="flex-[0.5] w-full h-full">
-          <GatsbyImage
-            image={intro.image.gatsbyImageData}
-            alt={intro.image.alt}
-            objectFit="cover"
-            className="w-full h-full"
-          />
-        </div>
-        <div className="flex-[0.5] w-full h-full flex flex-col items-center justify-center bg-white space-y-[74px]">
-          <GatsbyImage
-            image={intro.logo.gatsbyImageData}
-            alt={intro.logo.alt}
-            objectFit="contain"
-            className="w-64 h-auto"
-          />
-          <h6 className="text-[15px] text-[#414141] leading-[17px]">
-            {intro.title.text}
-          </h6>
+      <div className="max-w-full w-screen h-screen relative">
+        <Slider {...settings}>
+          {intro.images.map(({ image }, idx) => (
+            <GatsbyImage
+              key={idx}
+              image={image.gatsbyImageData}
+              alt={image.alt}
+              objectFit="cover"
+              className="w-full h-full"
+            />
+          ))}
+        </Slider>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          <button
+            type="button"
+            onClick={onClick}
+            className="text-[17px] uppercase border-[0.75px] border-solid border-black bg-transparent hover:bg-white 
+          hover:border-white py-[18px] px-[21px] transition-colors duration-200 ease-linear"
+          >
+            {intro.button_text}
+          </button>
         </div>
       </div>
     </div>

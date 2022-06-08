@@ -56,17 +56,13 @@ export const query = graphql`
   {
     prismicIntro {
       data {
-        image {
-          gatsbyImageData(srcSetMaxWidth: 800, layout: FULL_WIDTH)
-          alt
+        images {
+          image {
+            gatsbyImageData(layout: FULL_WIDTH)
+            alt
+          }
         }
-        logo {
-          gatsbyImageData(srcSetMaxWidth: 250, layout: FULL_WIDTH)
-          alt
-        }
-        title {
-          text
-        }
+        button_text
       }
     }
     allShopifyProduct(limit: 9) {

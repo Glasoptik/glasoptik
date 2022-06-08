@@ -24,14 +24,14 @@ const SectionE = ({ sectione, products }) => {
     <div
       className={`w-full ${
         inView ? "bg-[#F5F1EE]" : "bg-white"
-      } pt-[114px] pb-[238px] transform transition-colors duration-200 ease-linear px-5 sm:px-[74px]`}
+      } pt-[114px] pb-[238px] transform transition-colors duration-200 ease-linear `}
     >
       <div className="w-full flex flex-col items-center text-center" ref={ref}>
         <h5 className="text-3xl font-medium mb-7">{data.title.text}</h5>
         <h6 className="text-xl leading-6 mb-[91px] text-[#414141]">
           {data.sub_title.text}
         </h6>
-        <div className="max-w-[1440px] w-full mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-[10px]">
+        <div className="max-w-[1440px] w-full mx-auto px-5 sm:px-[74px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-[10px]">
           {products.map((product, index) => (
             <Link
               key={index}

@@ -25,8 +25,8 @@ const SectionF = ({ sectionf }) => {
       </div>
       <div className="w-full mt-[113px] space-x-[124px] flex items-center justify-center text-[15px] mb-[308px]">
         <div className="invisible w-20" />
-        <Link to="/web-shop">{data.button_text}</Link>
-        <Link to="/web-shop">
+        <Link to={data.button_link}>{data.button_text}</Link>
+        <Link to={data.button_link}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="76"
