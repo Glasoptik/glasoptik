@@ -68,7 +68,7 @@ function NavButton({ onClick }) {
       type="button"
       aria-label="Open navigation"
       onClick={onClick}
-      className="relative z-50 py-1 focus:outline-none]"
+      className="relative z-50 py-1 focus:outline-none uppercase font-normal text-black"
     >
       Menu
     </button>

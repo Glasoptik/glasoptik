@@ -27,8 +27,10 @@ const SectionE = ({ sectione, products }) => {
       } pt-[114px] pb-[238px] transform transition-colors duration-500 ease-in `}
     >
       <div className="w-full flex flex-col items-center text-center" ref={ref}>
-        <h5 className="text-3xl font-medium mb-7">{data.title.text}</h5>
-        <h6 className="text-xl leading-6 mb-[91px] text-[#414141]">
+        <h5 className="text-3xl font-medium mb-7 uppercase">
+          {data.title.text}
+        </h5>
+        <h6 className="text-xl leading-6 mb-[91px] text-[#414141] uppercase">
           {data.sub_title.text}
         </h6>
         <div className="max-w-[1440px] w-full mx-auto px-5 sm:px-[74px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-[10px]">
@@ -53,9 +55,11 @@ const SectionE = ({ sectione, products }) => {
             </Link>
           ))}
         </div>
-        <div className="w-full mt-[136px] space-x-[124px] flex items-center justify-center text-[15px]">
+        <div className="w-full mt-[136px] space-x-[124px] flex items-center justify-center">
           <div className="invisible w-20" />
-          <Link to="/web-shop">{data.button_text}</Link>
+          <Link to="/web-shop" className="uppercase text-[15px]">
+            {data.button_text}
+          </Link>
           <Link to="/web-shop">
             <svg
               xmlns="http://www.w3.org/2000/svg"

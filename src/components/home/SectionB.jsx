@@ -15,10 +15,10 @@ const SectionB = ({ sectionb }) => {
             className="min-w-[452px] w-full h-full"
           />
           <div className="w-full text-center ml-[74px]">
-            <p className="text-2xl lg:text-4xl font-light">
+            <p className="text-2xl lg:text-[35px] font-light leading-[50px]">
               {data.description}
             </p>
-            <h6 className="mt-[51px] text-[15px] font-semibold">
+            <h6 className="mt-[51px] text-[15px] uppercase leading-[17px]">
               {data.message_by.text}
             </h6>
           </div>

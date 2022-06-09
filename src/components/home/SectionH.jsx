@@ -16,11 +16,13 @@ const SectionH = ({ sectionh }) => {
         </div>
         <div className="w-full">
           <div className="mx-auto max-w-xs w-full text-center">
-            <h5 className="text-3xl font-thin">{data.title.text}</h5>
+            <h5 className="text-3xl font-thin uppercase">{data.title.text}</h5>
             <p className="text-[15px] leading-[25px] mt-[34px] mb-[83px]">
               {data.description}
             </p>
-            <h6 className="text-[15px]">{data.subtitle}</h6>
+            <h6 className="text-[15px] leading-[17px] uppercase">
+              {data.subtitle}
+            </h6>
           </div>
         </div>
       </div>

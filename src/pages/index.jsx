@@ -7,7 +7,6 @@ import Intro from "../components/home/Intro";
 import SectionB from "../components/home/SectionB";
 import SectionD from "../components/home/SectionD";
 import SectionE from "../components/home/SectionE";
-import SectionF from "../components/home/SectionF";
 import SectionG from "../components/home/SectionG";
 import SectionH from "../components/home/SectionH";
 import SectionI from "../components/home/SectionI";

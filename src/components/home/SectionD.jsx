@@ -14,12 +14,14 @@ const SectionD = ({ sectiond }) => {
           className="w-full h-full"
         />
         <div className="w-full">
-          <h6 className="text-[10px] leading-3 mt-[10px] font-medium">
+          <h6 className="text-[10px] leading-3 mt-[10px] uppercase">
             {data.name.text}
           </h6>
-          <div className="w-full mt-[90px] space-x-[124px] flex items-center justify-center text-[15px]">
+          <div className="w-full mt-[90px] space-x-[124px] flex items-center justify-center text-[15px] uppercase">
             <div className="invisible w-20" />
-            <Link to="/web-shop">{data.button_text}</Link>
+            <Link to="/web-shop" className="leading-[50px]">
+              {data.button_text}
+            </Link>
             <Link to="/web-shop">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

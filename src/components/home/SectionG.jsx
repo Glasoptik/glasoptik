@@ -19,7 +19,7 @@ const SectionG = ({ sectiong }) => {
   };
   return (
     <div className="w-full relative mb-[150px]">
-      <h2 className="ml-16 text-[190px] leading-5 font-light italic mt-[30px] uppercase">
+      <h2 className="ml-16 text-[190px] leading-5 font-thin italic mt-[30px] uppercase">
         {data.title.text}
       </h2>
       <div className="mt-[20px] w-screen bg-[#57C65F] h-[1052px] flex flex-col justify-center">
@@ -81,7 +81,7 @@ const SectionG = ({ sectiong }) => {
           </button>
         </div>
         <span className="mx-auto text-[15px] leading-[17px] mt-4">
-          {activeSlide + 1}/{data.images.length}
+          {activeSlide + 1} / {data.images.length}
         </span>
       </div>
     </div>
