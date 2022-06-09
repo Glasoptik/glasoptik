@@ -46,7 +46,7 @@ const Header = ({ stickToTop, data }) => {
             aria-placeholder="Logo"
           />
         </Link>
-        <div className="w-20" />
+        <button className="relative z-50">BAG (0)</button>
         <Nav show={mobileNav}>
           {data.menu_items.map(({ title, link }, idx) => (
             <NavItem
@@ -70,7 +70,7 @@ function NavButton({ onClick }) {
       onClick={onClick}
       className="relative z-50 py-1 focus:outline-none uppercase font-normal text-black"
     >
-      Menu
+      Luk Menu
     </button>
   );
 }

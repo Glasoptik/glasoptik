@@ -29,9 +29,9 @@ export function Nav({ show, children }) {
           transition="transition"
           className="fixed top-0 left-0 z-20 w-full h-full bg-gray-100 overflow-auto"
         >
-          <div className="h-full pt-16">
+          <div className="max-w-[1440px] w-full h-full mx-auto pt-16 px-5 sm:px-[74px]">
             <div className="flex flex-col justify-center h-full">
-              <ul className="container flex flex-col justify-center flex-grow px-6 mx-auto">
+              <ul className="container flex flex-col justify-center flex-grow mx-auto">
                 {children}
               </ul>
             </div>
@@ -52,8 +52,7 @@ export function NavItem({ title, to, onClick }) {
     >
       <Link
         to={to}
-        activeClassName="after:content-['—']"
-        className="flex items-center w-full my-2 text-4xl font-bold uppercase"
+        className="flex items-center w-full my-4 text-3xl font-medium uppercase"
       >
         {title}
       </Link>
