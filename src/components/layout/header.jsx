@@ -1,13 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import { GatsbyImage } from "gatsby-plugin-image";
 import Link from "../common/link";
-import isBrowser from "../helper/isBrowser";
 import { Nav, NavItem } from "./nav";
 
 const Header = ({ stickToTop, data }) => {
   const [mobileNav, setMobileNav] = useState(false);
   const [hideUp, setHideUp] = useState(false);
-  const [pathname, setPathname] = useState("LOADING");
   const yRef = useRef(0);
 
   useEffect(() => {
@@ -35,7 +33,10 @@ const Header = ({ stickToTop, data }) => {
       } top-0 left-0 z-50 max-w-[1440px] mx-auto w-full bg-white duration-300 text-[15px] px-5 sm:px-[74px]`}
     >
       <div className={`w-full flex justify-between h-[45px] mx-auto my-[52px]`}>
-        <NavButton onClick={() => setMobileNav(!mobileNav)} />
+        <NavButton
+          onClick={() => setMobileNav(!mobileNav)}
+          mobileNav={mobileNav}
+        />
         <Link className="relative z-50 inline-flex my-auto" to="/">
           <GatsbyImage
             image={data.logo.gatsbyImageData}
@@ -62,7 +63,7 @@ const Header = ({ stickToTop, data }) => {
   );
 };
 
-function NavButton({ onClick }) {
+function NavButton({ onClick, mobileNav }) {
   return (
     <button
       type="button"
@@ -70,7 +71,7 @@ function NavButton({ onClick }) {
       onClick={onClick}
       className="relative z-50 py-1 focus:outline-none uppercase font-normal text-black"
     >
-      Luk Menu
+      {mobileNav && "Luk"} Menu
     </button>
   );
 }

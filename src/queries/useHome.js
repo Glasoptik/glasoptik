@@ -68,7 +68,6 @@ export default function useHome() {
                     name {
                       text
                     }
-                    button_text
                     image {
                       gatsbyImageData(srcSetMaxWidth: 1052, layout: FULL_WIDTH)
                     }
