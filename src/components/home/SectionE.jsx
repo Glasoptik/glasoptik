@@ -4,18 +4,6 @@ import Link from "../common/link";
 import { useInView } from "react-intersection-observer";
 import { getPrice } from "../helper/getPrice";
 
-const images = [
-  "https://img.freepik.com/free-vector/realistic-fashion-sun-glasses-men-with-transparent-background_6431-92.jpg?w=2000",
-  "https://p7.hiclipart.com/preview/409/887/626/aviator-sunglasses-computer-icons-sunglasses.jpg",
-  "https://p7.hiclipart.com/preview/601/953/79/sunglasses-white-goggles-black-sunglasses.jpg",
-  "https://i.pinimg.com/originals/47/d1/98/47d198868577a721b6b60cdca7c75067.jpg",
-  "https://img.freepik.com/free-vector/realistic-fashion-sun-glasses-men-with-transparent-background_6431-92.jpg?w=2000",
-  "https://p7.hiclipart.com/preview/409/887/626/aviator-sunglasses-computer-icons-sunglasses.jpg",
-  "https://p7.hiclipart.com/preview/601/953/79/sunglasses-white-goggles-black-sunglasses.jpg",
-  "https://i.pinimg.com/originals/47/d1/98/47d198868577a721b6b60cdca7c75067.jpg",
-  "https://img.freepik.com/free-vector/realistic-fashion-sun-glasses-men-with-transparent-background_6431-92.jpg?w=2000",
-];
-
 const SectionE = ({ sectione, products }) => {
   const [ref, inView] = useInView();
   const data = sectione.document.data;

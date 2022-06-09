@@ -19,10 +19,12 @@ const SectionG = ({ sectiong }) => {
   };
   return (
     <div className="w-full relative mb-[150px]">
-      <h2 className="ml-16 text-[190px] leading-5 font-thin italic mt-[30px] uppercase">
-        {data.title.text}
-      </h2>
-      <div className="mt-[20px] w-screen bg-[#57C65F] h-[1052px] flex flex-col justify-center">
+      <div className="max-w-[1440px] w-full mx-auto">
+        <h2 className="ml-16 text-[190px] leading-5 font-thin italic mt-[30px] uppercase">
+          {data.title.text}
+        </h2>
+      </div>
+      <div className="mt-[40px] w-screen bg-[#57C65F] h-[1052px] flex flex-col justify-center">
         <div className="max-w-5xl w-full flex items-center justify-between mx-auto">
           <button onClick={() => gallery.slickPrev()}>
             <svg
