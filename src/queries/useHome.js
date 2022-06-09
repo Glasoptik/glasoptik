@@ -79,6 +79,23 @@ export default function useHome() {
                 }
               }
             }
+            section_g {
+              document {
+                ... on PrismicSectionG {
+                  data {
+                    title {
+                      text
+                    }
+                    images {
+                      image {
+                        alt
+                        gatsbyImageData(layout: FULL_WIDTH)
+                      }
+                    }
+                  }
+                }
+              }
+            }
             section_h {
               document {
                 ... on PrismicSectionh {

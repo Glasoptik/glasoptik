@@ -5,7 +5,6 @@ import Details from "./Details";
 import Gallery from "./gallery";
 
 const ProductPage = ({ data }) => {
-  console.log(data);
   const product = data?.shopifyProduct;
   if (!product) return null;
   return (

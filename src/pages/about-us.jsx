@@ -10,7 +10,7 @@ const About = ({ data }) => {
   const sectionI = data.prismicSectioni.data;
 
   return (
-    <div className="w-full h-full ">
+    <div className="max-w-[1440px] w-full h-full mx-auto px-5 sm:px-[74px]">
       <div className="w-full flex flex-col items-center text-center">
         <div className="w-full py-[58px] px-[190px] bg-[#F5F1EE]">
           <GatsbyImage

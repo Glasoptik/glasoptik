@@ -20,6 +20,10 @@
     overflow-x: visible !important;
 }
 
+.slick-arrow {
+    display: none !important;
+}
+
 @keyframes fade-up {
     from {
         opacity: 0;

@@ -42,7 +42,7 @@ const Home = ({ data }) => {
       <SectionD sectiond={home.section_d} />
       <SectionE sectione={home.section_e} products={products} />
       <SectionF sectionf={home.section_f} />
-      <SectionG />
+      <SectionG sectiong={home.section_g} />
       <Brands />
       <SectionH sectionh={home.section_h} />
       <SectionI data={home.section_i.document.data} />
