@@ -20,7 +20,7 @@ export default Footer;
 function FooterItem({ Item }) {
   return (
     <div className="flex flex-col items-start text-[15px] leading-[17px] text-center lg:text-left">
-      <h6 className="text-[#947070] mb-[25px] text-center lg:text-left w-full">
+      <h6 className="text-[#999999] mb-[25px] text-center lg:text-left w-full">
         {Item.menu_title.text}
       </h6>
       <ul className="w-full">
