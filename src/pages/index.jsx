@@ -1,5 +1,5 @@
 import { graphql } from "gatsby";
-import React, { useEffect, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import isBrowser from "../components/helper/isBrowser";
 import Brands from "../components/home/brands";
 import Hero from "../components/home/hero";
@@ -31,21 +31,26 @@ const Home = ({ data }) => {
   }, [showIntro]);
   return (
     <div className="w-full overflow-x-visible">
-      <Intro
-        intro={intro}
-        onClick={() => setShowIntro(false)}
-        open={showIntro}
-      />
-      <Hero sliders={home.slider_images} />
-      <SectionB sectionb={home.section_b} />
-      <Brands />
-      <SectionD sectiond={home.section_d} />
-      <SectionE sectione={home.section_e} products={products} />
-      <SectionF sectionf={home.section_f} />
-      <SectionG sectiong={home.section_g} />
-      <Brands />
-      <SectionH sectionh={home.section_h} />
-      <SectionI data={home.section_i.document.data} />
+      {showIntro ? (
+        <Intro
+          intro={intro}
+          onClick={() => setShowIntro(false)}
+          open={showIntro}
+        />
+      ) : (
+        <Fragment>
+          <Hero sliders={home.slider_images} />
+          <SectionB sectionb={home.section_b} />
+          <Brands />
+          <SectionD sectiond={home.section_d} />
+          <SectionE sectione={home.section_e} products={products} />
+          <SectionD sectiond={home.section_f} />
+          <SectionG sectiong={home.section_g} />
+          <Brands />
+          <SectionH sectionh={home.section_h} />
+          <SectionI data={home.section_i.document.data} />
+        </Fragment>
+      )}
     </div>
   );
 };

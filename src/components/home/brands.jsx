@@ -7,7 +7,7 @@ const Brands = () => {
       <Marquee
         speed={100}
         gradient={false}
-        className="w-full overflow-x-visible text-2xl"
+        className="w-min overflow-x-visible text-2xl"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

@@ -46,12 +46,7 @@ const Header = ({ stickToTop, data }) => {
             aria-placeholder="Logo"
           />
         </Link>
-        <Link
-          className="relative z-50 inline-flex my-auto"
-          to={data.nav_link_url}
-        >
-          {data.nav_link_text}
-        </Link>
+        <div className="w-20" />
         <Nav show={mobileNav}>
           {data.menu_items.map(({ title, link }, idx) => (
             <NavItem

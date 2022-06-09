@@ -15,8 +15,6 @@ export default function useHeader() {
               }
               link
             }
-            nav_link_text
-            nav_link_url
           }
         }
       }

@@ -65,16 +65,13 @@ export default function useHome() {
               document {
                 ... on PrismicSectionf {
                   data {
-                    image_section {
-                      title {
-                        text
-                      }
-                      image {
-                        gatsbyImageData(srcSetMaxWidth: 515, layout: FULL_WIDTH)
-                      }
+                    name {
+                      text
                     }
                     button_text
-                    button_link
+                    image {
+                      gatsbyImageData(srcSetMaxWidth: 1052, layout: FULL_WIDTH)
+                    }
                   }
                 }
               }
