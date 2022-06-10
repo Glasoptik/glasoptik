@@ -9,7 +9,7 @@ const SectionI = ({ data }) => {
           key={index}
           className="max-w-[424px] w-full hover:bg-[#57C65F] text-center cursor-pointer px-5 md:px-10 xl:px-[54px] flex-[0.5] md:flex-[0.33]"
         >
-          <h5 className="text-3xl pt-10 pb-8 lg:pt-[60px] lg:pb-9 text-[#414141] font-thin uppercase">
+          <h5 className="text-3xl pt-10 pb-8 lg:pt-[60px] lg:pb-9 font-thin uppercase">
             {item.title.text}
           </h5>
           <GatsbyImage
