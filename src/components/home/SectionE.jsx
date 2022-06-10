@@ -14,14 +14,17 @@ const SectionE = ({ sectione, products }) => {
         inView ? "bg-[#57C65F]" : "bg-white"
       } pt-[114px] pb-[238px] transform delay-50 transition-colors duration-500 ease-in `}
     >
-      <div className="w-full flex flex-col items-center text-center" ref={ref}>
+      <div className="w-full flex flex-col items-center text-center">
         <h5 className="text-3xl font-medium mb-7 uppercase">
           {data.title.text}
         </h5>
-        <h6 className="text-xl leading-6 mb-[91px] text-[#414141] uppercase">
+        <h6 className="text-xl leading-6 mb-[91px] uppercase">
           {data.sub_title.text}
         </h6>
-        <div className="max-w-[1440px] w-full mx-auto px-5 sm:px-[74px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-[10px]">
+        <div
+          className="max-w-[1440px] w-full mx-auto px-5 sm:px-[74px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-[10px]"
+          ref={ref}
+        >
           {products.map((product, index) => (
             <Link
               key={index}
