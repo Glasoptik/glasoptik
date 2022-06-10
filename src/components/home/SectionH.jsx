@@ -1,5 +1,6 @@
 import { GatsbyImage } from "gatsby-plugin-image";
 import React from "react";
+import Link from "../common/link";
 
 const SectionH = ({ sectionh }) => {
   const data = sectionh.document.data;
@@ -20,9 +21,12 @@ const SectionH = ({ sectionh }) => {
             <p className="text-[15px] leading-[25px] mt-[34px] mb-[83px]">
               {data.description}
             </p>
-            <h6 className="text-[15px] leading-[17px] uppercase">
-              {data.subtitle}
-            </h6>
+            <Link
+              to={data.button_link}
+              className="text-[15px] leading-[17px] uppercase"
+            >
+              {data.button_text}
+            </Link>
           </div>
         </div>
       </div>

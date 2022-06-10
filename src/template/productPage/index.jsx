@@ -6,6 +6,8 @@ import Gallery from "./gallery";
 
 const ProductPage = ({ data }) => {
   const product = data?.shopifyProduct;
+  const relatedProducts = data?.allShopifyProduct?.nodes;
+  console.log(relatedProducts);
   if (!product) return null;
   return (
     <div className="max-w-[1440px] mx-auto w-full flex flex-col px-5 sm:px-[74px]">
@@ -16,7 +18,7 @@ const ProductPage = ({ data }) => {
       <ProductsSelection
         title="GLAS ONLINE SELEKTION"
         buttonText="Gå til webbutik"
-        productId={product.shopifyId}
+        relatedProducts={relatedProducts}
       />
     </div>
   );
@@ -59,6 +61,26 @@ export const query = graphql`
       variants {
         shopifyId
         title
+      }
+    }
+    allShopifyProduct(limit: 5, filter: { handle: { ne: $handle } }) {
+      nodes {
+        title
+        handle
+        priceRangeV2 {
+          minVariantPrice {
+            amount
+            currencyCode
+          }
+          maxVariantPrice {
+            amount
+            currencyCode
+          }
+        }
+        featuredImage {
+          altText
+          gatsbyImageData(layout: FULL_WIDTH)
+        }
       }
     }
   }

@@ -37,7 +37,7 @@ const Header = ({ stickToTop, data }) => {
           onClick={() => setMobileNav(!mobileNav)}
           mobileNav={mobileNav}
         />
-        <Link className="relative z-50 inline-flex my-auto" to="/">
+        <Link className="relative z-50 inline-flex my-auto" to="/glas">
           <GatsbyImage
             image={data.logo.gatsbyImageData}
             alt="Logo"

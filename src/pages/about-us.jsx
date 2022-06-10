@@ -8,6 +8,7 @@ import ProductsSelection from "../components/common/productsSelection";
 const About = ({ data }) => {
   const about = data.prismicAboutUs.data;
   const sectionI = data.prismicSectioni.data;
+  const relatedProducts = data.allShopifyProduct.nodes;
 
   return (
     <div className="max-w-[1440px] w-full h-full mx-auto px-5 sm:px-[74px]">
@@ -35,6 +36,7 @@ const About = ({ data }) => {
       <ProductsSelection
         title={about.products_section_title}
         buttonText={about.go_to_online_store}
+        relatedProducts={relatedProducts}
       />
     </div>
   );
@@ -69,6 +71,26 @@ export const query = graphql`
           image {
             gatsbyImageData(srcSetMaxWidth: 350, layout: FULL_WIDTH)
           }
+        }
+      }
+    }
+    allShopifyProduct(limit: 5) {
+      nodes {
+        title
+        handle
+        priceRangeV2 {
+          minVariantPrice {
+            amount
+            currencyCode
+          }
+          maxVariantPrice {
+            amount
+            currencyCode
+          }
+        }
+        featuredImage {
+          altText
+          gatsbyImageData(layout: FULL_WIDTH)
         }
       }
     }

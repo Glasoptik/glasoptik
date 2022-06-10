@@ -100,7 +100,8 @@ export default function useHome() {
                       text
                     }
                     description
-                    subtitle
+                    button_link
+                    button_text
                     image {
                       gatsbyImageData(srcSetMaxWidth: 594, layout: FULL_WIDTH)
                     }

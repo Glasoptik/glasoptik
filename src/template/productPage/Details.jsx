@@ -13,9 +13,12 @@ const Details = ({ product }) => {
         <h5 className="text-[15px] font-bold mb-[35px]">
           FARVE:<span className="font-normal"> Slate Gray Lenses</span>
         </h5>
-        <button className="w-full h-[53px] text-center border-[0.75px] border-solid border-black box-border mb-[72px]">
+        <button
+          className="w-full h-[53px] text-center border-[0.75px] border-solid border-black box-border mb-[72px] transition-colors duration-200 ease-linear
+        hover:bg-black hover:text-white"
+        >
           <span className="text-[15px] font-bold leading-5 uppercase">
-            Tilføj til kurven
+            Tilføj til bag
           </span>
         </button>
         <div className="text-[15px] leading-5">

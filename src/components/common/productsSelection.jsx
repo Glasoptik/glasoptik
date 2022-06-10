@@ -6,36 +6,18 @@ import Link from "./link";
 import { getPrice } from "../helper/getPrice";
 import { GatsbyImage } from "gatsby-plugin-image";
 
-const ProductsSelection = ({ title, buttonText, productId }) => {
+const ProductsSelection = ({ title, buttonText, relatedProducts }) => {
   let slider = useRef(null);
-  const [products, setProducts] = useState([]);
-  const response = useProductsSelection();
-  async function getRecommendedProducts(id) {
-    const data = await recommendedProducts(id);
-    setProducts(data);
-  }
-  function getProducts() {
-    setProducts(response);
-  }
 
   const settings = {
     dots: false,
-    infinite: false,
+    infinite: true,
     autoplay: false,
     slidesToShow: 3.6,
     slidesToScroll: 1,
     pauseOnHover: false,
     marginRight: "10px",
   };
-
-  useEffect(() => {
-    if (typeof productId !== "undefined") {
-      getRecommendedProducts(productId);
-    } else {
-      getProducts();
-    }
-  }, [productId]);
-
 
   return (
     <div className="w-full mt-[303px]">
@@ -86,7 +68,7 @@ const ProductsSelection = ({ title, buttonText, productId }) => {
       </div>
       {/* Products Section */}
       <Slider ref={(c) => (slider = c)} {...settings}>
-        {products.map((product, index) => (
+        {relatedProducts.map((product, index) => (
           <Link
             key={index}
             className="max-w-[350px] w-full h-full relative group"
@@ -128,7 +110,7 @@ const ProductsSelection = ({ title, buttonText, productId }) => {
             </g>
           </svg>
         </Link>
-        <Link to="/web-shop" className="text-3xl text-[#414141] uppercase">
+        <Link to="/web-shop" className="text-3xl uppercase">
           {buttonText}
         </Link>
         <div className="invisible w-20" />
