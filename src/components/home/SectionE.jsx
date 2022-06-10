@@ -11,8 +11,8 @@ const SectionE = ({ sectione, products }) => {
   return (
     <div
       className={`w-full ${
-        inView ? "bg-[#F5F1EE]" : "bg-white"
-      } pt-[114px] pb-[238px] transform transition-colors duration-500 ease-in `}
+        inView ? "bg-[#57C65F]" : "bg-white"
+      } pt-[114px] pb-[238px] transform delay-50 transition-colors duration-500 ease-in `}
     >
       <div className="w-full flex flex-col items-center text-center" ref={ref}>
         <h5 className="text-3xl font-medium mb-7 uppercase">
