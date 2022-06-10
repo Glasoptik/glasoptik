@@ -69,7 +69,7 @@ function NavButton({ onClick, mobileNav }) {
       type="button"
       aria-label="Open navigation"
       onClick={onClick}
-      className="relative z-50 py-1 focus:outline-none uppercase font-normal text-black"
+      className="relative z-50 focus:outline-none uppercase font-normal text-black"
     >
       {mobileNav && "Luk"} Menu
     </button>
