@@ -25,7 +25,7 @@ const Home = ({ data }) => {
       <SectionD sectiond={home.section_f} />
       <SectionG sectiong={home.section_g} />
       <Brands />
-      <SectionH sectionh={home.section_h} />
+      <SectionH sectionh={home.section_h} spacing={true} />
       <SectionI data={home.section_i.document.data} />
     </div>
   );

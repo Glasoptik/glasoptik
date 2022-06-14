@@ -2,11 +2,15 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import React from "react";
 import Link from "../common/link";
 
-const SectionH = ({ sectionh }) => {
+const SectionH = ({ sectionh, spacing }) => {
   const data = sectionh.document.data;
   return (
     <div className="w-full flex items-center justify-center">
-      <div className="max-w-[1066px] w-full flex flex-col md:flex-row space-y-5 md:space-y-0 items-center mt-[134px] mb-[259px]">
+      <div
+        className={`max-w-[1066px] w-full flex flex-col md:flex-row space-y-5 md:space-y-0 items-center mt-[134px] ${
+          spacing && "mb-[259px]"
+        }`}
+      >
         <div className="max-w-lg lg:max-w-[594px] w-full">
           <GatsbyImage
             image={data.image.gatsbyImageData}

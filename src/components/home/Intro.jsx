@@ -27,6 +27,7 @@ const Intro = ({ intro, open }) => {
               image={image.gatsbyImageData}
               alt={image.alt}
               objectFit="cover"
+              loading="eager"
               className="w-full h-full"
             />
           ))}
