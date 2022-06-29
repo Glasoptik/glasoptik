@@ -7,14 +7,14 @@ import Reveal from "../components/common/reveal";
 const Services = ({ data }) => {
   const servicesData = data.prismicServices.data;
   return (
-    <div className="max-w-[1440px] w-full overflow-x-visible flex box-border mx-auto px-5 sm:px-[74px] space-x-[66px] pt-[10px]">
+    <div className="max-w-[1440px] w-full overflow-x-visible flex flex-col sm:flex-row box-border mx-auto px-5 sm:px-[74px] sm:space-x-10 md:space-x-[66px] pt-[10px]">
       <div className="max-w-[452px] w-full">
         <GatsbyImage
           image={servicesData.hero_image.gatsbyImageData}
           alt={servicesData.hero_image.alt || "Services Hero Image"}
         />
       </div>
-      <div className="max-w-[584px] w-full">
+      <div className="max-w-[584px] w-full mt-5 sm:mt-0">
         {servicesData.services.map((service, index) => (
           <div className="w-full mb-28" key={index}>
             <h2 className="text-[15px] font-medium leading-[18px] tracking-[0.4px] mb-8">

@@ -5,7 +5,7 @@ import Link from "../common/link";
 const SectionD = ({ sectiond }) => {
   const data = sectiond.document.data;
   return (
-    <div className=" w-full flex flex-col items-center">
+    <div className=" w-full flex flex-col items-center px-5">
       <div className="max-w-[1052px] w-full mt-[120px] mb-[275px]">
         <GatsbyImage
           image={data.image.gatsbyImageData}
@@ -18,12 +18,12 @@ const SectionD = ({ sectiond }) => {
             {data.name.text}
           </h6>
           {data.button_text && (
-            <div className="w-full mt-[90px] space-x-[124px] flex items-center justify-center text-[15px] uppercase">
-              <div className="invisible w-20" />
-              <Link to="/web-shop" className="leading-[50px]">
+            <div className="w-full mt-10 sm:mt-[90px] space-x-14 sm:space-x-[124px] flex items-center justify-center text-[15px] uppercase">
+              <div className="invisible hidden md:block w-20" />
+              <Link to="/webbutik" className="leading-8 sm:leading-[50px]">
                 {data.button_text}
               </Link>
-              <Link to="/web-shop">
+              <Link to="/webbutik">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="76"

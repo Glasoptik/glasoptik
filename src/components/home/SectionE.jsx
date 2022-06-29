@@ -46,12 +46,12 @@ const SectionE = ({ sectione, products }) => {
             </Link>
           ))}
         </div>
-        <div className="w-full mt-[136px] space-x-[124px] flex items-center justify-center">
-          <div className="invisible w-20" />
-          <Link to="/web-shop" className="uppercase text-[15px]">
+        <div className="w-full mt-20 sm:mt-[136px] space-x-14 sm:space-x-[124px] flex items-center justify-center">
+          <div className="invisible hidden md:block w-20" />
+          <Link to="/webbutik" className="uppercase text-[15px]">
             {data.button_text}
           </Link>
-          <Link to="/web-shop">
+          <Link to="/webbutik">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="76"

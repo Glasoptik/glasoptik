@@ -16,6 +16,8 @@ const Header = ({ stickToTop, data }) => {
       if (window.scrollY > offsetTop && yRef.current < window.scrollY) {
         setHideUp(true);
       } else {
+        console.log("ScrollY ==> ", window.scrollY);
+        console.log("YRef ==> ", yRef.current);
         setHideUp(false);
       }
       yRef.current = window.scrollY;
@@ -28,11 +30,13 @@ const Header = ({ stickToTop, data }) => {
 
   return (
     <header
-      className={`${hideUp ? "-translate-y-full" : ""} ${
-        !stickToTop && "fixed"
-      } top-0 left-0 z-50 max-w-[1440px] mx-auto w-full bg-white duration-300 text-[15px] px-5 sm:px-[74px]`}
+      className={` ${
+        hideUp ? "-translate-y-full" : ""
+      } fixed top-0 left-0 z-50 w-full bg-white duration-300 `}
     >
-      <div className={`w-full flex justify-between h-[45px] mx-auto my-[52px]`}>
+      <div
+        className={`max-w-[1440px] mx-auto w-full flex justify-between h-[45px] my-[52px] text-[15px] px-5 sm:px-[74px]`}
+      >
         <NavButton
           onClick={() => setMobileNav(!mobileNav)}
           mobileNav={mobileNav}

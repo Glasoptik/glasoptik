@@ -23,6 +23,10 @@ export const query = graphql`
             gatsbyImageData(layout: FULL_WIDTH)
             alt
           }
+          mobile_image {
+            gatsbyImageData(layout: FULL_WIDTH)
+            alt
+          }
         }
         button_text
       }

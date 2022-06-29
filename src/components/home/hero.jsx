@@ -17,30 +17,37 @@ const Hero = ({ sliders }) => {
     beforeChange: (current, next) => setActiveSlide(next),
   };
   return (
-    <div className="w-full border-b border-solid border-b-[#57C65F]">
+    <div className="w-full border-b border-solid border-b-[#57C65F] mt-40">
       <div className="max-w-[1440px] w-full mx-auto px-5 sm:px-[74px]">
         <Slider ref={(c) => (slider = c)} {...settings}>
-          {sliders.map(({ image, image_title }, idx) => (
+          {sliders.map(({ image, mobile_image, image_title }, idx) => (
             <div className="w-full" key={idx}>
               <GatsbyImage
                 key={idx}
                 image={image.gatsbyImageData}
                 alt={image_title.text}
                 objectFit="cover"
-                className="w-full h-[545px]"
+                className="hidden sm:block w-full h-[545px]"
+              />
+              <GatsbyImage
+                key={idx + 1}
+                image={mobile_image.gatsbyImageData}
+                alt={image_title.text}
+                objectFit="cover"
+                className="block sm:hidden w-full h-[545px]"
               />
             </div>
           ))}
         </Slider>
 
-        <div className="w-full flex flex-1 items-center justify-between text-[10px] leading-3 mt-1 mb-[120px]">
-          <h6 className="flex-[0.33]">
+        <div className="w-full flex flex-wrap flex-1 items-center justify-between text-[10px] leading-3 mt-1 mb-[120px]">
+          <h6 className="flex-[0.5] sm:flex-[0.33]">
             {sliders[activeSlide].image_title.text}
           </h6>
-          <h6 className="flex-[0.33] text-center">
+          <h6 className="flex-[0.5] sm:flex-[0.33] text-right sm:text-center">
             {activeSlide + 1}/{sliders.length}
           </h6>
-          <div className="space-x-[60px] flex items-center flex-[0.33] justify-end">
+          <div className="hidden sm:flex space-x-[60px] items-center sm:flex-[0.33] justify-end">
             <button onClick={() => slider.slickPrev()}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"

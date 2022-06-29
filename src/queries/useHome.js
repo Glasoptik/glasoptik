@@ -13,6 +13,9 @@ export default function useHome() {
               image {
                 gatsbyImageData(srcSetMaxWidth: 1440, layout: FULL_WIDTH)
               }
+              mobile_image {
+                gatsbyImageData(srcSetMaxWidth: 600, layout: FULL_WIDTH)
+              }
             }
             section_b {
               document {

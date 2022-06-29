@@ -16,14 +16,38 @@ const ProductsSelection = ({ title, buttonText, relatedProducts }) => {
     slidesToShow: 3.6,
     slidesToScroll: 1,
     pauseOnHover: false,
+
     marginRight: "10px",
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 750,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   return (
     <div className="w-full mt-[303px]">
       <div className="w-full flex items-center justify-between mb-[54px]">
-        <h1 className="text-3xl leading-5">{title}</h1>
-        <div className="space-x-[50px]">
+        <h1 className="text-2xl sm:text-3xl leading-5">{title}</h1>
+        <div className="hidden md:block space-x-[50px]">
           <button onClick={() => slider.slickPrev()}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -89,8 +113,8 @@ const ProductsSelection = ({ title, buttonText, relatedProducts }) => {
           </Link>
         ))}
       </Slider>
-      <div className="w-full space-x-[60px] flex items-center justify-center text-[15px] mt-[314px]">
-        <Link to="/web-shop">
+      <div className="w-full space-x-[60px] flex items-center justify-center text-[15px] mt-40 md:mt-60 lg:mt-[314px]">
+        <Link to="/webbutik">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="76"
@@ -110,10 +134,10 @@ const ProductsSelection = ({ title, buttonText, relatedProducts }) => {
             </g>
           </svg>
         </Link>
-        <Link to="/web-shop" className="text-3xl uppercase">
+        <Link to="/webbutik" className="text-xl md:text-3xl uppercase">
           {buttonText}
         </Link>
-        <div className="invisible w-20" />
+        <div className="invisible hidden sm:block w-20" />
       </div>
     </div>
   );

@@ -13,7 +13,7 @@ const About = ({ data }) => {
   return (
     <div className="max-w-[1440px] w-full h-full mx-auto px-5 sm:px-[74px]">
       <div className="w-full flex flex-col items-center text-center">
-        <div className="w-full py-[58px] px-[190px] bg-[#F5F1EE]">
+        <div className="w-full py-5 sm:py-10 lg:py-[58px] px-5 sm:px-10 md:px-24 lg:px-[190px] bg-[#F5F1EE]">
           <GatsbyImage
             image={about.hero_image.gatsbyImageData}
             alt="Hero"
