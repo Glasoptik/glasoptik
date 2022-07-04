@@ -4,7 +4,7 @@ import parse from "html-react-parser";
 
 const Details = ({ product }) => {
   return (
-    <div className="flex-[0.42] max-w-[498px] w-full h-full">
+    <div className="lg:flex-[0.45] xl:flex-[0.42] max-w-[498px] w-full h-full">
       <div className="mt-[58px]">
         <h1 className="text-[25px] leading-5 font-bold">{product.title}</h1>
         <h3 className="text-xl leading-5 font-bold mt-[17px] mb-[50px]">

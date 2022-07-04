@@ -24,7 +24,7 @@ const SectionG = ({ sectiong }) => {
           {data.title.text}
         </h2>
       </div>
-      <div className="md:mt-[23px] w-screen bg-[#57C65F] h-[1052px] flex flex-col justify-center px-5">
+      <div className="mt-2 sm:-mt-10 md:-mt-14 w-screen bg-[#57C65F] h-[1052px] flex flex-col justify-center px-5">
         <div className="max-w-5xl w-full flex items-center justify-center sm:justify-between mx-auto">
           <button
             onClick={() => gallery.slickPrev()}

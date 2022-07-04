@@ -10,8 +10,8 @@ const ProductPage = ({ data }) => {
   console.log(relatedProducts);
   if (!product) return null;
   return (
-    <div className="max-w-[1440px] mx-auto w-full flex flex-col px-5 sm:px-[74px]">
-      <div className="flex flex-col md:flex-row space-x-14 mb-8">
+    <div className="max-w-[1440px] mx-auto w-full flex flex-col px-5 sm:px-[74px] mt-40">
+      <div className="flex items-center flex-col lg:items-start lg:flex-row lg:space-x-14 mb-8">
         <Gallery media={product.media} />
         <Details product={product} />
       </div>
