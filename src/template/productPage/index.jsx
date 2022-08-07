@@ -7,7 +7,7 @@ import Gallery from "./gallery";
 const ProductPage = ({ data }) => {
   const product = data?.shopifyProduct;
   const relatedProducts = data?.allShopifyProduct?.nodes;
-  console.log(relatedProducts);
+
   if (!product) return null;
   return (
     <div className="max-w-[1440px] mx-auto w-full flex flex-col px-5 sm:px-[74px] mt-40">
@@ -33,6 +33,11 @@ export const query = graphql`
       title
       handle
       descriptionHtml
+      featuredImage {
+        src
+        gatsbyImageData(layout: FULL_WIDTH)
+        altText
+      }
       metafields {
         namespace
         key
@@ -61,6 +66,8 @@ export const query = graphql`
       variants {
         shopifyId
         title
+        price
+        availableForSale
       }
     }
     allShopifyProduct(limit: 5, filter: { handle: { ne: $handle } }) {
@@ -80,6 +87,7 @@ export const query = graphql`
         featuredImage {
           altText
           gatsbyImageData(layout: FULL_WIDTH)
+          src
         }
       }
     }

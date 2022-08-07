@@ -1,8 +1,45 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { getPrice } from "../../components/helper/getPrice";
 import parse from "html-react-parser";
+import { CartContext } from "../../context/ShopContext.jsx";
 
 const Details = ({ product }) => {
+  const { addToCart, disabled } = useContext(CartContext);
+  const [quantity, setQuantity] = useState(1);
+  const [productVariant, setProductVariant] = useState({});
+  console.log(product);
+  const [variant, setVariant] = useState(product.variants[0]);
+
+  // function decreaseItems(e) {
+  //   e.preventDefault();
+  //   if (quantity > 1) {
+  //     setQuantity(quantity - 1);
+  //   }
+  // }
+
+  // function increaseItems(e) {
+  //   e.preventDefault();
+  //   setQuantity(quantity + 1);
+  // }
+
+  useEffect(() => {
+    setProductVariant({
+      productId: product.shopifyId,
+      shopifyId: variant.shopifyId,
+      title: product.title,
+      handle: product.handle,
+      availableForSale: variant.availableForSale,
+      price: variant.price,
+      image: product.featuredImage.gatsbyImageData,
+      quantity: quantity,
+    });
+  }, [quantity, variant]);
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    addToCart(productVariant);
+  }
+
   return (
     <div className="lg:flex-[0.45] xl:flex-[0.42] max-w-[498px] w-full h-full">
       <div className="mt-[58px]">
@@ -16,6 +53,8 @@ const Details = ({ product }) => {
         <button
           className="w-full h-[53px] text-center border-[0.75px] border-solid border-black box-border mb-[72px] transition-colors duration-200 ease-linear
         hover:bg-black hover:text-white"
+          onClick={handleSubmit}
+          disabled={disabled}
         >
           <span className="text-[15px] font-bold leading-5 uppercase">
             Tilføj til bag

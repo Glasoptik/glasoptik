@@ -20,11 +20,11 @@ export const query = graphql`
       data {
         images {
           image {
-            gatsbyImageData(layout: FULL_WIDTH)
+            gatsbyImageData(layout: FULL_WIDTH, placeholder: DOMINANT_COLOR)
             alt
           }
           mobile_image {
-            gatsbyImageData(layout: FULL_WIDTH)
+            gatsbyImageData(layout: FULL_WIDTH, placeholder: DOMINANT_COLOR)
             alt
           }
         }

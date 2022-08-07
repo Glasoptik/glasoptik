@@ -1,9 +1,11 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { GatsbyImage } from "gatsby-plugin-image";
 import Link from "../common/link";
 import { Nav, NavItem } from "./nav";
+import { CartContext } from "../../context/ShopContext";
 
 const Header = ({ stickToTop, data }) => {
+  const { cart } = useContext(CartContext);
   const [mobileNav, setMobileNav] = useState(false);
   const [hideUp, setHideUp] = useState(false);
   const yRef = useRef(0);
@@ -16,8 +18,6 @@ const Header = ({ stickToTop, data }) => {
       if (window.scrollY > offsetTop && yRef.current < window.scrollY) {
         setHideUp(true);
       } else {
-        console.log("ScrollY ==> ", window.scrollY);
-        console.log("YRef ==> ", yRef.current);
         setHideUp(false);
       }
       yRef.current = window.scrollY;
@@ -51,7 +51,9 @@ const Header = ({ stickToTop, data }) => {
             aria-placeholder="Logo"
           />
         </Link>
-        <button className="relative z-50">BAG (0)</button>
+        <Link to="/cart" className="relative z-50">
+          BAG ({cart.length})
+        </Link>
         <Nav show={mobileNav}>
           {data.menu_items.map(({ title, link }, idx) => (
             <NavItem
