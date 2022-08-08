@@ -2,8 +2,8 @@
 // ===================================== API CONFIGURATION ====================================== //
 // ============================================================================================== //
 
-const domain = process.env.SHOPIFY_STORE_URL;
-const accessToken = process.env.STOREFRONT_API_ACCESS_TOKEN;
+const domain = process.env.GATSBY_SHOPIFY_STORE_URL;
+const accessToken = process.env.GATSBY_STOREFRONT_API_ACCESS_TOKEN;
 export async function ShopifyData(query) {
   const URL = `https://${domain}/api/2022-04/graphql.json`;
 
