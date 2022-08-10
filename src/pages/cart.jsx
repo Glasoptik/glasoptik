@@ -7,8 +7,12 @@ import { GatsbyImage } from "gatsby-plugin-image";
 
 const Cart = ({ data }) => {
   const cartContent = data.prismicCart.data;
-  const { cart, estimatedCost, checkoutUrl } = useContext(CartContext);
-  console.log(estimatedCost);
+  const { cart, estimatedCost, checkoutUrl, updateQuantityCart, disabled } =
+    useContext(CartContext);
+
+  function handleUpdateCart(product) {
+    updateQuantityCart(product);
+  }
 
   function handleCheckout(e) {
     e.preventDefault();
@@ -17,6 +21,7 @@ const Cart = ({ data }) => {
     }
   }
 
+  console.log(cart);
   return (
     <div className="overflow-x-hidden mt-40 max-w-[1440px] w-full mx-auto px-5 sm:px-[74px]">
       <h1 className="text-[32px] md:text-[45px] font-bold uppercase">
@@ -27,8 +32,8 @@ const Cart = ({ data }) => {
         <div className="w-full flex flex-col space-y-3">
           {cart.map((item, key) => (
             <div key={key} className="flex flex-col xl:flex-row items-start">
-              <GatsbyImage
-                image={item.image}
+              <img
+                src={item.image}
                 alt={item.title}
                 className="w-full xl:w-72 xl:h-72 object-cover"
               />
@@ -36,27 +41,42 @@ const Cart = ({ data }) => {
                 <h3 className="text-[15px] md:text-[25px] font-bold">
                   {item.title}
                 </h3>
-                <h3 className="text-[11px] md:text-[15px] mt-7 mb-4">
-                  SPR24Y_E1AB_F05S0_C_055
-                </h3>
-                <h3 className="text-[13px] md:text-[15px] mb-7">
+                <h3 className="text-[13px] md:text-[15px] mt-7 mb-7">
                   Slate Gray Lenses
                 </h3>
                 <div className="flex items-center space-x-2">
                   <div className=" flex items-center border border-solid border-gray-300 box-border rounded-sm">
-                    <div className="w-10 h-10 text-center flex items-center justify-center">
-                      Qty:
-                    </div>
-                    <select
-                      className="w-10 h-10 text-center pr-2 "
-                      placeholder="Qty"
-                      defaultValue={item.quantity}
+                    <button
+                      disabled={disabled}
+                      className="border-none h-full px-3 py-2 hover:bg-gray-100 transform transition-colors duration-150"
+                      onClick={() =>
+                        handleUpdateCart({
+                          ...item,
+                          quantity: item.quantity - 1,
+                        })
+                      }
                     >
-                      <option value="1">1</option>
-                    </select>
+                      -
+                    </button>
+                    <div className="">{`Qty : ${item.quantity}`}</div>
+                    <button
+                      disabled={disabled}
+                      className="border-none h-full px-3 py-2 hover:bg-gray-100 transform transition-colors duration-150"
+                      onClick={() =>
+                        handleUpdateCart({
+                          ...item,
+                          quantity: item.quantity + 1,
+                        })
+                      }
+                    >
+                      +
+                    </button>
                   </div>
                   <h5 className="text-[15px]">{item.price} DKK</h5>
                 </div>
+                <h3 className="text-[10px] leading-5 mt-8 mb-7 text-[#999990]">
+                  fjern produkt fra bag
+                </h3>
               </div>
             </div>
           ))}
@@ -101,8 +121,8 @@ const Cart = ({ data }) => {
             className="w-full h-[53px] text-center border-[0.75px] border-solid border-black box-border transition-colors duration-200 ease-linear
         hover:bg-black hover:text-white mb-4"
           >
-            <span className="text-[15px] font-bold leading-5 uppercase">
-              Tilføj til bag
+            <span className="text-[15px] font-bold leading-5">
+              Gå til betaling
             </span>
           </button>
           <div className="w-full flex-col items-center hidden md:flex">

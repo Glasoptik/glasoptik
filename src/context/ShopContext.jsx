@@ -87,7 +87,7 @@ const ShopProvider = ({ children }) => {
             price: item.sellingPlanAllocation
               ? item.sellingPlanAllocation?.priceAdjustments[0].price.amount
               : item.merchandise.priceV2.amount,
-            quantity: item.merchandise.quantity,
+            quantity: item.quantity,
             title:
               item.merchandise.title !== "Default Title"
                 ? item.merchandise.title === "billboard" &&
@@ -187,23 +187,22 @@ const ShopProvider = ({ children }) => {
       const cartResponse = await updateCart(glasHeadlessCart.cardId, product);
       setCheckoutUrl(cartResponse.checkoutUrl);
       setEstimatedCost(cartResponse.estimatedCost);
-
       cartResponse.lines?.nodes.map((item) => {
         let added = false;
         cart.map((cartItem) => {
           if (cartItem.shopifyId === item.merchandise.id) {
             added = true;
 
-            if (cartResponse.lines?.nodes.length !== 1) {
-              return newCart.push({
-                ...cartItem,
-                quantity: item.quantity,
-                lineId: item.id,
-                price: cartItem.sellingPlanId
-                  ? item.sellingPlanAllocation?.priceAdjustments[0].price.amount
-                  : cartItem.price,
-              });
-            }
+            // if (cartResponse.lines?.nodes.length !== 1) {
+            return newCart.push({
+              ...cartItem,
+              quantity: item.quantity,
+              lineId: item.id,
+              price: cartItem.sellingPlanId
+                ? item.sellingPlanAllocation?.priceAdjustments[0].price.amount
+                : cartItem.price,
+            });
+            // }
           }
         });
       });
