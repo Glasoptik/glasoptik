@@ -30,7 +30,7 @@ const Details = ({ product }) => {
       handle: product.handle,
       availableForSale: variant.availableForSale,
       price: variant.price,
-      image: product.featuredImage.gatsbyImageData,
+      image: product.featuredImage.src,
       quantity: quantity,
     });
   }, [quantity, variant]);
