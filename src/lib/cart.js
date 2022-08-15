@@ -235,7 +235,6 @@ export const addItemToCart = async (cartId, product) => {
     `;
 
     const response = await ShopifyData(query);
-    console.log(response.data.cartLinesAdd);
     return response.data.cartLinesAdd.cart;
   } catch (error) {
     console.log(error);

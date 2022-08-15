@@ -224,7 +224,51 @@ const ShopProvider = ({ children }) => {
     setDisabled(false);
   }
 
-  async function removeFromCart() {}
+  async function removeFromCart(product) {
+    const glasHeadlessCart = JSON.parse(localStorage.getItem(cartKey));
+
+    setDisabled(true);
+    let newCart = [];
+    try {
+      const cartResponse = await removeItemFromCart(
+        glasHeadlessCart.cardId,
+        product
+      );
+      setCheckoutUrl(cartResponse.checkoutUrl);
+      setEstimatedCost(cartResponse.estimatedCost);
+      cartResponse.lines?.nodes.map((item) => {
+        let added = false;
+        cart.map((cartItem) => {
+          if (cartItem.shopifyId === item.merchandise.id) {
+            added = true;
+            return newCart.push({
+              ...cartItem,
+              quantity: item.quantity,
+              lineId: item.id,
+              price: cartItem.sellingPlanId
+                ? item.sellingPlanAllocation?.priceAdjustments[0].price.amount
+                : cartItem.price,
+            });
+          }
+        });
+      });
+
+      setCart(newCart);
+
+      localStorage.setItem(
+        cartKey,
+        JSON.stringify({
+          products: newCart,
+          checkout: cartResponse.checkoutUrl,
+          estimatedCost: cartResponse.estimatedCost,
+          cardId: cartResponse.id,
+        })
+      );
+    } catch (error) {
+      console.error(error);
+    }
+    setDisabled(false);
+  }
 
   return (
     <CartContext.Provider
@@ -245,20 +289,6 @@ const ShopProvider = ({ children }) => {
         removeFromCart,
         setCart,
       }}
-      // value={
-      //   {
-      //     // cart,
-      //     // cartOpen,
-      //     // setCartOpen,
-      //     // addToCart,
-      //     // checkoutUrl,
-      //     // removeFromCart,
-      //     // updateQuantityCart,
-      //     // estimatedCost,
-      //     // cartId,
-      //     // disabled,
-      //   }
-      // }
     >
       {children}
     </CartContext.Provider>

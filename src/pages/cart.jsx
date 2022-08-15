@@ -7,8 +7,14 @@ import { GatsbyImage } from "gatsby-plugin-image";
 
 const Cart = ({ data }) => {
   const cartContent = data.prismicCart.data;
-  const { cart, estimatedCost, checkoutUrl, updateQuantityCart, disabled } =
-    useContext(CartContext);
+  const {
+    cart,
+    estimatedCost,
+    checkoutUrl,
+    updateQuantityCart,
+    disabled,
+    removeFromCart,
+  } = useContext(CartContext);
 
   function handleUpdateCart(product) {
     updateQuantityCart(product);
@@ -46,7 +52,7 @@ const Cart = ({ data }) => {
                     Slate Gray Lenses
                   </h3>
                   <div className="flex items-center space-x-2">
-                    <div className=" flex items-center border border-solid border-gray-300 box-border rounded-sm">
+                    <div className=" flex items-center box-border rounded-sm">
                       <button
                         disabled={disabled}
                         className="border-none h-full px-3 py-2 hover:bg-gray-100 transform transition-colors duration-150"
@@ -59,7 +65,7 @@ const Cart = ({ data }) => {
                       >
                         -
                       </button>
-                      <div className="">{`Qty : ${item.quantity}`}</div>
+                      <div className="">{`${item.quantity}`}</div>
                       <button
                         disabled={disabled}
                         className="border-none h-full px-3 py-2 hover:bg-gray-100 transform transition-colors duration-150"
@@ -75,9 +81,12 @@ const Cart = ({ data }) => {
                     </div>
                     <h5 className="text-[15px]">{item.price} DKK</h5>
                   </div>
-                  <h3 className="text-[10px] leading-5 mt-8 mb-7 text-[#999990]">
+                  <button
+                    className="w-max text-[10px] leading-5 mt-8 mb-7 text-[#999990] uppercase"
+                    onClick={() => removeFromCart(item)}
+                  >
                     fjern produkt fra bag
-                  </h3>
+                  </button>
                 </div>
               </div>
             ))
