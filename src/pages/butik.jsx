@@ -8,7 +8,7 @@ const Policies = ({ data }) => {
     ...policies.policy[0],
   });
   return (
-    <div className="max-w-[1440px] w-full overflow-x-visible flex justify-between box-border mx-auto px-5 sm:px-[74px] space-x-[66px] pt-4 mt-40">
+    <div className="max-w-[1440px] w-full overflow-x-visible flex justify-between box-border mx-auto px-5 sm:px-[74px] space-x-[66px] pt-4 mt-[105px] md:mt-40">
       <div className="flex flex-col items-start max-w-xs w-full space-y-2">
         {policies.policy.map((policy, index) => (
           <button

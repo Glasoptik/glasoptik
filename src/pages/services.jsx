@@ -7,7 +7,7 @@ import Reveal from "../components/common/reveal";
 const Services = ({ data }) => {
   const servicesData = data.prismicServices.data;
   return (
-    <div className="max-w-[1440px] w-full overflow-x-visible flex flex-col sm:flex-row box-border mx-auto px-5 sm:px-[74px] sm:space-x-10 md:space-x-[66px] pt-[10px] mt-40">
+    <div className="max-w-[1440px] w-full overflow-x-visible flex flex-col sm:flex-row box-border mx-auto px-5 sm:px-[74px] sm:space-x-10 md:space-x-[66px] pt-[10px] mt-[105px] md:mt-40">
       <div className="max-w-[452px] w-full">
         <GatsbyImage
           image={servicesData.hero_image.gatsbyImageData}

@@ -35,23 +35,29 @@ const Header = ({ stickToTop, data }) => {
       } fixed top-0 left-0 z-50 w-full bg-white duration-300 `}
     >
       <div
-        className={`max-w-[1440px] mx-auto w-full flex justify-between h-[45px] my-[52px] text-[15px] px-5 sm:px-[74px]`}
+        className={`max-w-[1440px] mx-auto w-full flex items-center justify-between h-[45px] my-5 md:my-[52px] text-[15px] px-5 sm:px-[74px]`}
       >
         <NavButton
           onClick={() => setMobileNav(!mobileNav)}
           mobileNav={mobileNav}
         />
-        <Link className="relative z-50 inline-flex my-auto" to="/glas">
+        <Link
+          className="max-w-[120px] w-full relative z-50 inline-flex my-auto text-center"
+          to="/glas"
+        >
           <GatsbyImage
             image={data.logo.gatsbyImageData}
             alt="Logo"
-            className="w-full h-full object-cover"
-            objectFit="cover"
+            className="max-w-[80px] max-h-[40px] sm:max-w-[100px]  w-full sm:max-h-full h-full object-contain"
+            objectFit="contain"
             loading="lazy"
             aria-placeholder="Logo"
           />
         </Link>
-        <Link to="/cart" className="relative z-50">
+        <Link
+          to="/cart"
+          className="relative z-50 max-w-[120px] w-full text-right"
+        >
           BAG ({cart.length})
         </Link>
         <Nav show={mobileNav}>
@@ -75,7 +81,7 @@ function NavButton({ onClick, mobileNav }) {
       type="button"
       aria-label="Open navigation"
       onClick={onClick}
-      className="relative z-50 focus:outline-none uppercase font-normal text-black"
+      className="max-w-[120px] w-full relative z-50 focus:outline-none uppercase font-normal text-black text-left"
     >
       {mobileNav && "Luk"} Menu
     </button>

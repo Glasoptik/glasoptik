@@ -25,7 +25,7 @@ const Gallery = ({ media }) => {
 
   return (
     <div className="flex-[0.50] xl:flex-[0.54] max-w-[712px] w-full">
-      <div className="relative">
+      <div className="relative mb-1">
         <Slider ref={(c) => (slider = c)} {...settings}>
           {media.map((image, index) => (
             <div className="space-x-2 z-40" key={index}>
@@ -81,7 +81,7 @@ const Gallery = ({ media }) => {
           </button>
         </div>
       </div>
-      <div className="hidden lg:grid w-full grid-cols-2">
+      <div className="hidden lg:grid w-full grid-cols-2 gap-2">
         {galleryImages.map((image, index) => (
           <div className="w-full" key={index}>
             <GatsbyImage

@@ -95,7 +95,7 @@ const ProductsSelection = ({ title, buttonText, relatedProducts }) => {
         {relatedProducts.map((product, index) => (
           <Link
             key={index}
-            className="max-w-[350px] w-full h-full relative group"
+            className="max-w-[350px] w-full h-full relative group aspect-square"
             to={`/product/${product.handle}`}
           >
             <GatsbyImage

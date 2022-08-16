@@ -12,17 +12,17 @@ const SectionE = ({ sectione, products }) => {
     <div
       className={`w-full ${
         inView ? "bg-[#57C65F]" : "bg-white"
-      } pt-[114px] pb-[238px] transform delay-50 transition-colors duration-500 ease-in `}
+      } pt-[61px] sm:pt-[114px] pb-[107px] sm:pb-[238px] transform delay-50 transition-colors duration-500 ease-in `}
     >
       <div className="w-full flex flex-col items-center text-center">
-        <h5 className="text-3xl font-medium mb-7 uppercase">
+        <h5 className="text-3xl font-medium mb-4 sm:mb-7 uppercase">
           {data.title.text}
         </h5>
-        <h6 className="text-xl leading-6 mb-[91px] uppercase">
+        <h6 className="text-[15px] sm:text-xl leading-5 sm:leading-6 mb-10 sm:mb-[91px] uppercase">
           {data.sub_title.text}
         </h6>
         <div
-          className="max-w-[1440px] w-full mx-auto px-5 sm:px-[74px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-[10px]"
+          className="max-w-[1440px] w-full mx-auto px-[13px] sm:px-[74px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-[10px]"
           ref={ref}
         >
           {products.map((product, index) => (
@@ -33,11 +33,12 @@ const SectionE = ({ sectione, products }) => {
             >
               <GatsbyImage
                 image={product.featuredImage.gatsbyImageData}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover aspect-square"
+                objectFit="cover"
                 alt={product.title}
               />
               <div
-                className="opacity-0 group-hover:opacity-100 flex items-center absolute bottom-0 left-0 px-5 py-3 bg-white space-x-5
+                className="sm:opacity-0 sm:group-hover:opacity-100 flex items-center absolute bottom-0 left-0 px-5 py-3 bg-white space-x-5
                bg-transparent transform transition-opacity duration-200 ease-linear text-[10px]"
               >
                 <h6 className="uppercase">{product.title}</h6>
@@ -46,12 +47,12 @@ const SectionE = ({ sectione, products }) => {
             </Link>
           ))}
         </div>
-        <div className="w-full mt-20 sm:mt-[136px] space-x-14 sm:space-x-[124px] flex items-center justify-center">
+        <div className="w-full mt-20 sm:mt-[136px] sm:space-x-[124px] flex items-center justify-center">
           <div className="invisible hidden md:block w-20" />
           <Link to="/webbutik" className="uppercase text-[15px]">
             {data.button_text}
           </Link>
-          <Link to="/webbutik">
+          <Link className="hidden sm:block" to="/webbutik">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="76"

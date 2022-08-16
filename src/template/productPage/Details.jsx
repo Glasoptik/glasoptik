@@ -3,24 +3,12 @@ import { getPrice } from "../../components/helper/getPrice";
 import parse from "html-react-parser";
 import { CartContext } from "../../context/ShopContext.jsx";
 
-const Details = ({ product }) => {
+const Details = ({ product, changeState }) => {
   const { addToCart, disabled } = useContext(CartContext);
   const [quantity, setQuantity] = useState(1);
   const [productVariant, setProductVariant] = useState({});
   console.log(product);
   const [variant, setVariant] = useState(product.variants[0]);
-
-  // function decreaseItems(e) {
-  //   e.preventDefault();
-  //   if (quantity > 1) {
-  //     setQuantity(quantity - 1);
-  //   }
-  // }
-
-  // function increaseItems(e) {
-  //   e.preventDefault();
-  //   setQuantity(quantity + 1);
-  // }
 
   useEffect(() => {
     setProductVariant({
@@ -37,11 +25,15 @@ const Details = ({ product }) => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    addToCart(productVariant);
+    if (productVariant.availableForSale) {
+      addToCart(productVariant);
+    } else {
+      changeState();
+    }
   }
 
   return (
-    <div className="lg:flex-[0.45] xl:flex-[0.42] max-w-[498px] w-full h-full">
+    <div className="lg:flex-[0.45] xl:flex-[0.42] max-w-[498px] w-full h-full relative">
       <div className="mt-[58px]">
         <h1 className="text-[25px] leading-5 font-bold">{product.title}</h1>
         <h3 className="text-xl leading-5 font-bold mt-[17px] mb-[50px]">

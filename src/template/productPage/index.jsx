@@ -1,25 +1,36 @@
 import { graphql } from "gatsby";
-import React from "react";
+import React, { useState } from "react";
 import ProductsSelection from "../../components/common/productsSelection";
 import Details from "./Details";
 import Gallery from "./gallery";
+import LightBox from "./LightBox";
 
 const ProductPage = ({ data }) => {
   const product = data?.shopifyProduct;
   const relatedProducts = data?.allShopifyProduct?.nodes;
+  const [openLightbox, setOpenLightbox] = useState(false);
 
   if (!product) return null;
   return (
     <div className="max-w-[1440px] mx-auto w-full flex flex-col px-5 sm:px-[74px] mt-40">
-      <div className="flex items-center flex-col lg:items-start lg:flex-row lg:space-x-14 mb-8">
-        <Gallery media={product.media} />
-        <Details product={product} />
-      </div>
-      <ProductsSelection
-        title="GLAS ONLINE SELEKTION"
-        buttonText="Gå til webbutik"
-        relatedProducts={relatedProducts}
-      />
+      {!!openLightbox ? (
+        <LightBox />
+      ) : (
+        <div className="w-full h-full">
+          <div className="flex items-center flex-col lg:items-start lg:flex-row lg:space-x-14 mb-8">
+            <Gallery media={product.media} />
+            <Details
+              product={product}
+              changeState={() => setOpenLightbox(!openLightbox)}
+            />
+          </div>
+          <ProductsSelection
+            title="GLAS ONLINE SELEKTION"
+            buttonText="Gå til webbutik"
+            relatedProducts={relatedProducts}
+          />
+        </div>
+      )}
     </div>
   );
 };

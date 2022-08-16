@@ -10,7 +10,7 @@ const Webshop = ({ data }) => {
   const butikData = data.prismicWebbutik.data;
   const products = data.allShopifyProduct.nodes;
   return (
-    <div className="max-w-[1440px] w-screen h-full flex flex-col items-center px-5 sm:px-[74px] mx-auto mt-40">
+    <div className="max-w-[1440px] w-screen h-full flex flex-col items-center px-5 sm:px-[74px] mx-auto mt-[105px] md:mt-40 md:mt-40">
       <h1 className="text-3xl uppercase font-thin text-center mt-[6px] mb-[29px]">
         {butikData.title.text}
       </h1>
