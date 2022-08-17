@@ -19,7 +19,7 @@ const Webshop = ({ data }) => {
         className="opacity-0 whitespace-pre-wrap text-[15px] leading-[25px] max-w-[522px] w-full text-center text-black"
         dangerouslySetInnerHTML={{ __html: butikData.description.html }}
       />
-      <div className="w-full mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-[10px] mt-14 mb-24">
+      <div className="w-full mx-auto grid grid-cols-2 md:grid-cols-3 gap-[10px] mt-14 mb-24">
         {products.map((product, index) => (
           <Link
             key={index}
@@ -32,7 +32,7 @@ const Webshop = ({ data }) => {
               alt={product.title}
             />
             <div
-              className="opacity-0 group-hover:opacity-100 flex items-center absolute bottom-0 left-0 px-5 py-3 bg-white space-x-5
+              className="sm:opacity-0 group-hover:opacity-100 flex items-center absolute bottom-0 left-0 px-5 py-3 bg-white space-x-5
                bg-transparent transform transition-opacity duration-200 ease-linear text-[10px]"
             >
               <h6 className="uppercase">{product.title}</h6>

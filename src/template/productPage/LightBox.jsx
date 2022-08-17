@@ -2,7 +2,7 @@ import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import { RichText, Elements } from "prismic-reactjs";
 
-const LightBox = ({ changeState }) => {
+const LightBox = ({ openLightbox, changeState }) => {
   const data = useStaticQuery(graphql`
     {
       prismicLightboxModal {
@@ -21,10 +21,17 @@ const LightBox = ({ changeState }) => {
   `);
   const lightBoxData = data.prismicLightboxModal.data;
   return (
-    <div className="w-full h-full mb-[400px] md:mb-[600px]">
+    <div
+      className={`w-full h-full fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 bg-white/80 
+    transition-opacity duration-200 ease-linear px-[13px] ${
+      openLightbox ? "block" : "hidden"
+    }`}
+      onClick={changeState}
+    >
       <div
-        className="max-w-[824px] w-full h-full min-h-[200px] border border-solid border-black mx-auto mt-16 md:mt-28 
+        className="relative max-w-[824px] w-full  border border-solid border-black mx-auto mt-20 md:mt-56 
     pt-12 md:pt-[72px] pb-[90px] md:pb-[155px] flex flex-col items-center text-center"
+        onClick={(e) => e.stopPropagation()}
       >
         <h1 className="text-3xl font-thin leading-9 uppercase tracking-[0px]">
           {lightBoxData.title.text}

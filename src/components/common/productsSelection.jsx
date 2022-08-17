@@ -13,19 +13,10 @@ const ProductsSelection = ({ title, buttonText, relatedProducts }) => {
     dots: false,
     infinite: true,
     autoplay: false,
-    slidesToShow: 3.6,
+    slidesToShow: 3.7,
     slidesToScroll: 1,
     pauseOnHover: false,
-
-    marginRight: "10px",
     responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-        },
-      },
       {
         breakpoint: 750,
         settings: {
@@ -36,7 +27,7 @@ const ProductsSelection = ({ title, buttonText, relatedProducts }) => {
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 1.09,
           slidesToScroll: 1,
         },
       },
@@ -93,24 +84,27 @@ const ProductsSelection = ({ title, buttonText, relatedProducts }) => {
       {/* Products Section */}
       <Slider ref={(c) => (slider = c)} {...settings}>
         {relatedProducts.map((product, index) => (
-          <Link
-            key={index}
-            className="max-w-[350px] w-full h-full relative group aspect-square"
-            to={`/product/${product.handle}`}
-          >
-            <GatsbyImage
-              image={product.featuredImage.gatsbyImageData}
-              className="w-full h-full object-cover"
-              alt={product.title}
-            />
-            <div
-              className="opacity-0 group-hover:opacity-100 flex items-center absolute bottom-0 left-0 px-5 py-3 bg-white space-x-5
-               bg-transparent transform transition-opacity duration-200 ease-linear text-[10px]"
+          <div className="w-full pr-4">
+            <Link
+              key={index}
+              className="w-full h-full relative group aspect-square"
+              to={`/product/${product.handle}`}
             >
-              <h6 className="uppercase">{product.title}</h6>
-              <span>{getPrice(product.priceRangeV2)}</span>
-            </div>
-          </Link>
+              <GatsbyImage
+                image={product.featuredImage.gatsbyImageData}
+                className="w-full h-72 sm:h-[356px] object-cover"
+                objectFit="cover"
+                alt={product.title}
+              />
+              <div
+                className="sm:opacity-0 group-hover:opacity-100 flex items-center absolute bottom-0 left-0 px-5 py-3 bg-white space-x-5
+               bg-transparent transform transition-opacity duration-200 ease-linear text-[10px]"
+              >
+                <h6 className="uppercase">{product.title}</h6>
+                <span>{getPrice(product.priceRangeV2)}</span>
+              </div>
+            </Link>
+          </div>
         ))}
       </Slider>
       <div className="w-full space-x-[60px] flex items-center justify-center text-[15px] mt-40 md:mt-60 lg:mt-[314px]">

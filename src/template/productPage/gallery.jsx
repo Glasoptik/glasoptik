@@ -38,7 +38,7 @@ const Gallery = ({ media }) => {
             </div>
           ))}
         </Slider>
-        <div className="absolute z-[99999999]  bottom-5 left-5 flex items-center space-x-5 ">
+        <div className="absolute z-20  bottom-5 left-5 flex items-center space-x-5 ">
           <button onClick={() => slider.slickPrev()}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
