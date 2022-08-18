@@ -17,7 +17,7 @@ const Hero = ({ sliders }) => {
     beforeChange: (current, next) => setActiveSlide(next),
   };
   return (
-    <div className="w-full sm:border-b border-solid border-b-[#57C65F] mt-[105px] md:mt-40">
+    <div className="w-full sm:border-b border-solid border-b-black mt-[105px] md:mt-40">
       <div className="max-w-[1440px] w-full mx-auto px-[13px] sm:px-[74px]">
         <Slider ref={(c) => (slider = c)} {...settings}>
           {sliders.map(({ image, mobile_image, image_title }, idx) => (

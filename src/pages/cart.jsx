@@ -27,7 +27,6 @@ const Cart = ({ data }) => {
     }
   }
 
-  console.log(cart);
   return (
     <div className="overflow-x-hidden max-w-[1440px] w-full mx-auto px-5 sm:px-[74px] mt-[105px] md:mt-40">
       <h1 className="text-[32px] md:text-[45px] font-bold uppercase">

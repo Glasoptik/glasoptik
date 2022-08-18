@@ -7,7 +7,6 @@ const Details = ({ product, changeState }) => {
   const { addToCart, disabled } = useContext(CartContext);
   const [quantity, setQuantity] = useState(1);
   const [productVariant, setProductVariant] = useState({});
-  console.log(product);
   const [variant, setVariant] = useState(product.variants[0]);
 
   useEffect(() => {
