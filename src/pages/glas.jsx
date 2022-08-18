@@ -9,6 +9,7 @@ import SectionG from "../components/home/SectionG";
 import SectionH from "../components/home/SectionH";
 import SectionI from "../components/home/SectionI";
 import useHome from "../queries/useHome";
+import Layout from "../components/layout";
 
 const Home = ({ data }) => {
   const products = data.allShopifyProduct.nodes;
@@ -16,18 +17,20 @@ const Home = ({ data }) => {
   const home = useHome();
 
   return (
-    <div className="w-full overflow-x-visible">
-      <Hero sliders={home.slider_images} />
-      <SectionB sectionb={home.section_b} />
-      <Brands />
-      <SectionD sectiond={home.section_d} />
-      <SectionE sectione={home.section_e} products={products} />
-      <SectionD sectiond={home.section_f} />
-      <SectionG sectiong={home.section_g} />
-      <Brands />
-      <SectionH sectionh={home.section_h} spacing={true} />
-      <SectionI data={home.section_i.document.data} />
-    </div>
+    <Layout noBorder>
+      <div className="w-full overflow-x-visible">
+        <Hero sliders={home.slider_images} />
+        <SectionB sectionb={home.section_b} />
+        <Brands />
+        <SectionD sectiond={home.section_d} />
+        <SectionE sectione={home.section_e} products={products} />
+        <SectionD sectiond={home.section_f} />
+        <SectionG sectiong={home.section_g} />
+        <Brands />
+        <SectionH sectionh={home.section_h} spacing={true} />
+        <SectionI data={home.section_i.document.data} />
+      </div>
+    </Layout>
   );
 };
 

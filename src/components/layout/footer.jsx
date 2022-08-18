@@ -2,9 +2,15 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import React from "react";
 import Link from "../common/link";
 
-const Footer = ({ footer }) => {
+const Footer = ({ footer, noBorder }) => {
   return (
-    <footer className="pt-24 border-t border-solid border-t-black mt-[215px]">
+    <footer
+      className={`pt-24 ${
+        noBorder
+          ? "border-none sm:border-t sm:border-solid border-t-black"
+          : "border-t border-solid border-t-black"
+      }  mt-[215px]`}
+    >
       <div className="max-w-[1440px] w-full mx-auto px-5 sm:px-[74px]">
         <div className="grid grid-cols-1 place-items-center md:place-items-start md:grid-cols-3 items-baseline lg:flex lg:items-baseline lg:justify-between h-fit mb-14 md:mb-[105px] space-y-9 md:space-y-5 pb-5">
           {footer.footer.map((item, index) => (
@@ -24,13 +30,7 @@ const Footer = ({ footer }) => {
             image={footer.payment_logo_desktop.gatsbyImageData}
             alt={footer.payment_logo_desktop.alt}
             objectFit="contain"
-            className="hidden md:block w-fit h-fit"
-          />
-          <GatsbyImage
-            image={footer.payment_logo_mobile.gatsbyImageData}
-            alt={footer.payment_logo_mobile.alt}
-            objectFit="contain"
-            className="md:hidden w-fit h-fit"
+            className="block w-fit h-fit"
           />
         </div>
         <div className="w-full flex flex-col md:flex-row items-center justify-center md:justify-between text-[10px] leading-3 text-[#646464] mb-6 uppercase">

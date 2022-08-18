@@ -48,7 +48,7 @@ const Header = ({ stickToTop, data }) => {
           <GatsbyImage
             image={data.logo.gatsbyImageData}
             alt="Logo"
-            className="max-w-[80px] max-h-[40px] sm:max-w-[100px]  w-full sm:max-h-full h-full object-contain"
+            className="max-w-[80px] max-h-[40px] sm:max-w-[100px] mx-auto w-full sm:max-h-full h-full object-contain"
             objectFit="contain"
             loading="lazy"
             aria-placeholder="Logo"

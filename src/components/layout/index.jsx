@@ -4,7 +4,7 @@ import useHeader from "../../queries/useHeader";
 import Footer from "./footer";
 import useFooter from "../../queries/useFooter";
 
-const Layout = ({ children }) => {
+const Layout = ({ children, noBorder }) => {
   const data = useHeader();
   const footer_data = useFooter();
 
@@ -13,7 +13,7 @@ const Layout = ({ children }) => {
       <div className="max-w-full w-full h-full overflow-x-visible">
         <Header stickToTop={true} data={data} />
         {children}
-        <Footer footer={footer_data} />
+        <Footer noBorder={noBorder} footer={footer_data} />
       </div>
     </div>
   );

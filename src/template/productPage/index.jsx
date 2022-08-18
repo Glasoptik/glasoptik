@@ -4,6 +4,7 @@ import ProductsSelection from "../../components/common/productsSelection";
 import Details from "./Details";
 import Gallery from "./gallery";
 import LightBox from "./LightBox";
+import Layout from "../../components/layout";
 
 const ProductPage = ({ data }) => {
   const product = data?.shopifyProduct;
@@ -12,26 +13,28 @@ const ProductPage = ({ data }) => {
 
   if (!product) return null;
   return (
-    <div className="relative max-w-[1440px] mx-auto w-full flex flex-col px-5 sm:px-[74px] mt-40">
-      <LightBox
-        openLightbox={openLightbox}
-        changeState={(prevStat) => setOpenLightbox(!prevStat)}
-      />
-      <div className="w-full h-full">
-        <div className="flex items-center flex-col lg:items-start lg:flex-row lg:space-x-14 mb-8">
-          <Gallery media={product.media} />
-          <Details
-            product={product}
-            changeState={(prevStat) => setOpenLightbox(!prevStat)}
+    <Layout>
+      <div className="relative max-w-[1440px] mx-auto w-full flex flex-col px-5 sm:px-[74px] mt-40">
+        <LightBox
+          openLightbox={openLightbox}
+          changeState={(prevStat) => setOpenLightbox(!prevStat)}
+        />
+        <div className="w-full h-full">
+          <div className="flex items-center flex-col lg:items-start lg:flex-row lg:space-x-14 mb-8">
+            <Gallery media={product.media} />
+            <Details
+              product={product}
+              changeState={(prevStat) => setOpenLightbox(!prevStat)}
+            />
+          </div>
+          <ProductsSelection
+            title="GLAS ONLINE SELEKTION"
+            buttonText="Gå til webbutik"
+            relatedProducts={relatedProducts}
           />
         </div>
-        <ProductsSelection
-          title="GLAS ONLINE SELEKTION"
-          buttonText="Gå til webbutik"
-          relatedProducts={relatedProducts}
-        />
       </div>
-    </div>
+    </Layout>
   );
 };
 

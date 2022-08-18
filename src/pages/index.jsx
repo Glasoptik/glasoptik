@@ -1,6 +1,7 @@
 import { graphql } from "gatsby";
 import React from "react";
 import Intro from "../components/home/Intro";
+import Layout from "../components/layout";
 
 const Home = ({ data }) => {
   const intro = data.prismicIntro.data;
