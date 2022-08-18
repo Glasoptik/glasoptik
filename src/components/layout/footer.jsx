@@ -1,3 +1,4 @@
+import { GatsbyImage } from "gatsby-plugin-image";
 import React from "react";
 import Link from "../common/link";
 
@@ -6,9 +7,49 @@ const Footer = ({ footer }) => {
     <footer className="pt-24 border-t border-solid border-t-[#57C65F] mt-[215px]">
       <div className="max-w-[1440px] w-full mx-auto px-5 sm:px-[74px]">
         <div className="grid grid-cols-1 place-items-center md:place-items-start md:grid-cols-3 items-baseline lg:flex lg:items-baseline lg:justify-between min-h-[325px] h-full space-y-9 md:space-y-5 pb-5">
-          {footer.map((item, index) => (
+          {footer.footer.map((item, index) => (
             <FooterItem key={index} Item={item.footer_section.document.data} />
           ))}
+        </div>
+        <div className="flex md:hidden flex-col items-center justify-center mt-9 text-[10px] leading-3 space-y-2 mb-11 uppercase">
+          <Link to={footer.handel_betingelser_link} className="text-center">
+            {footer.handel_betingelser_text}
+          </Link>
+          <Link to={footer.privapolitik_link} className="text-center">
+            {footer.privapolitik_text}
+          </Link>
+        </div>
+        <div className="w-full flex justify-center md:justify-start mb-9">
+          <GatsbyImage
+            image={footer.payment_logo_desktop.gatsbyImageData}
+            alt={footer.payment_logo_desktop.alt}
+            objectFit="contain"
+            className="hidden md:block w-fit h-fit"
+          />
+          <GatsbyImage
+            image={footer.payment_logo_mobile.gatsbyImageData}
+            alt={footer.payment_logo_mobile.alt}
+            objectFit="contain"
+            className="md:hidden w-fit h-fit"
+          />
+        </div>
+        <div className="w-full flex flex-col md:flex-row items-center justify-center md:justify-between text-[10px] leading-3 text-[#646464] mb-6 uppercase">
+          <Link to={footer.website_link.url}>{footer.website_text}</Link>
+          <div className="w-fit space-y-2 md:space-y-0 md:space-x-8 flex items-center">
+            <Link
+              to={footer.handel_betingelser_link}
+              className="hidden md:block text-black text-center"
+            >
+              {footer.handel_betingelser_text}
+            </Link>
+            <Link
+              to={footer.privapolitik_link}
+              className="hidden md:block text-black text-center"
+            >
+              {footer.privapolitik_text}
+            </Link>
+            <span className="text-center">{footer.copyright_text}</span>
+          </div>
         </div>
       </div>
     </footer>

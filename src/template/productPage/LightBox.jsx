@@ -30,7 +30,7 @@ const LightBox = ({ openLightbox, changeState }) => {
     >
       <div
         className="relative max-w-[824px] w-full  border border-solid border-black mx-auto mt-20 md:mt-56 
-    pt-12 md:pt-[72px] pb-[90px] md:pb-[155px] flex flex-col items-center text-center"
+    pt-12 md:pt-[72px] pb-[90px] md:pb-[155px] flex flex-col items-center text-center bg-white"
         onClick={(e) => e.stopPropagation()}
       >
         <h1 className="text-3xl font-thin leading-9 uppercase tracking-[0px]">

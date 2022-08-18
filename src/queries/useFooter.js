@@ -24,6 +24,23 @@ export default function useFooter() {
                 }
               }
             }
+            payment_logo_desktop {
+              gatsbyImageData
+              alt
+            }
+            payment_logo_mobile {
+              gatsbyImageData
+              alt
+            }
+            website_text
+            website_link {
+              url
+            }
+            handel_betingelser_text
+            handel_betingelser_link
+            privapolitik_text
+            privapolitik_link
+            copyright_text
           }
         }
       }

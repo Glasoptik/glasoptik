@@ -56,11 +56,7 @@ export const query = graphql`
             text
           }
           brand_image {
-            gatsbyImageData(
-              srcSetMaxWidth: 510
-              layout: FULL_WIDTH
-              placeholder: BLURRED
-            )
+            gatsbyImageData(srcSetMaxWidth: 510, layout: FULL_WIDTH)
             alt
           }
         }

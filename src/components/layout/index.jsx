@@ -13,7 +13,7 @@ const Layout = ({ children }) => {
       <div className="max-w-full w-full h-full overflow-x-visible">
         <Header stickToTop={true} data={data} />
         {children}
-        <Footer footer={footer_data.footer} />
+        <Footer footer={footer_data} />
       </div>
     </div>
   );
