@@ -3,12 +3,17 @@ import { graphql } from "gatsby";
 import Reveal from "../components/common/reveal";
 import Layout from "../components/layout";
 
-const Policies = ({ data }) => {
+const Policies = ({ data, location }) => {
   const policies = data.prismicPolicies.data;
-  const [selectedPolicy, setSelectedPolicy] = useState({
-    id: 0,
-    ...policies.policy[0],
-  });
+  const [selectedPolicy, setSelectedPolicy] = useState(
+    {
+      id: location.state?.index,
+      ...policies.policy[location.state?.index],
+    } || {
+      id: 0,
+      ...policies.policy[0],
+    }
+  );
   return (
     <Layout>
       <div
@@ -16,12 +21,12 @@ const Policies = ({ data }) => {
       sm:space-x-[66px] pt-4 mt-[105px] md:mt-40"
       >
         <div className="flex flex-col items-start max-w-max md:max-w-xs w-full space-y-2">
-          {policies.policy.map((policy, index) => (
+          {policies.policy.map((policy, ind) => (
             <button
-              onClick={() => setSelectedPolicy({ id: index, ...policy })}
-              key={index}
+              onClick={() => setSelectedPolicy({ id: ind, ...policy })}
+              key={ind}
               className={`text-xs sm:text-[15px] sm:leading-6 font-medium ${
-                selectedPolicy.id === index && "text-[#999999]"
+                selectedPolicy.id === ind && "text-[#999999]"
               }`}
             >
               {policy.title.text}
@@ -30,13 +35,13 @@ const Policies = ({ data }) => {
         </div>
         <div className="mt-10 sm:mt-0 sm:max-w-xl w-full">
           <h1 className="font-medium text-[25px] sm:text-[15px] leading-[22px] sm:leading-[18px] mb-5">
-            {selectedPolicy.title.text}
+            {selectedPolicy.title?.text}
           </h1>
           <Reveal
             effect="animate-fade-up"
             className="prose opacity-0 whitespace-pre-wrap text-[15px] leading-[25px]"
             dangerouslySetInnerHTML={{
-              __html: selectedPolicy.description.html,
+              __html: selectedPolicy.description?.html,
             }}
           />
         </div>

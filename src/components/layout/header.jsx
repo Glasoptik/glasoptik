@@ -51,7 +51,6 @@ const Header = ({ stickToTop, data }) => {
             className="max-w-[80px] max-h-[40px] sm:max-w-[100px] mx-auto w-full sm:max-h-full h-full object-contain"
             objectFit="contain"
             loading="lazy"
-            aria-placeholder="Logo"
           />
         </Link>
         <Link

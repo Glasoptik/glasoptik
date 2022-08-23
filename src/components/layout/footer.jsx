@@ -18,17 +18,32 @@ const Footer = ({ footer, noBorder }) => {
           ))}
         </div>
         <div className="flex md:hidden flex-col items-center justify-center mt-9 text-[10px] leading-3 space-y-2 mb-11 uppercase">
-          <Link to={footer.handel_betingelser_link} className="text-center">
+          <Link
+            state={{ index: 1 }}
+            to={footer.handel_betingelser_link}
+            className="text-center"
+          >
             {footer.handel_betingelser_text}
           </Link>
-          <Link to={footer.privapolitik_link} className="text-center">
+          <Link
+            state={{ index: 0 }}
+            to={footer.privapolitik_link}
+            className="text-center"
+          >
             {footer.privapolitik_text}
+          </Link>
+          <Link
+            state={{ index: 2 }}
+            to={footer.cookies_link}
+            className="text-center"
+          >
+            {footer.cookies_text}
           </Link>
         </div>
         <div className="w-full flex justify-center md:justify-start mb-9">
           <GatsbyImage
             image={footer.payment_logo_desktop.gatsbyImageData}
-            alt={footer.payment_logo_desktop.alt}
+            alt={footer.payment_logo_desktop.alt || ""}
             objectFit="contain"
             className="block w-fit h-fit"
           />
@@ -37,12 +52,21 @@ const Footer = ({ footer, noBorder }) => {
           <Link to={footer.website_link.url}>{footer.website_text}</Link>
           <div className="w-fit space-y-2 md:space-y-0 md:space-x-8 flex items-center">
             <Link
+              state={{ index: 1 }}
               to={footer.handel_betingelser_link}
               className="hidden md:block text-black text-center"
             >
               {footer.handel_betingelser_text}
             </Link>
             <Link
+              state={{ index: 2 }}
+              to={footer.cookies_link}
+              className="hidden md:block text-black text-center"
+            >
+              {footer.cookies_text}
+            </Link>
+            <Link
+              state={{ index: 0 }}
               to={footer.privapolitik_link}
               className="hidden md:block text-black text-center"
             >

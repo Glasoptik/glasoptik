@@ -55,10 +55,10 @@ const Cart = ({ data }) => {
                       Slate Gray Lenses
                     </h3>
                     <div className="flex items-center space-x-2">
-                      <div className=" flex items-center box-border rounded-sm">
+                      <div className="flex items-center box-border rounded-sm">
                         <button
                           disabled={disabled}
-                          className="border-none h-full px-3 py-2 hover:bg-gray-100 transform transition-colors duration-150"
+                          className="border-none h-full pr-3 py-2 hover:bg-gray-100 transform transition-colors duration-150"
                           onClick={() =>
                             handleUpdateCart({
                               ...item,
@@ -152,8 +152,8 @@ const Cart = ({ data }) => {
               <h6 className="text-[10px]">Sikker Betaling</h6>
               <div className="flex items-center">
                 <img
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVDgg_TIrhL30HFuvqHN-M0v7ZOfbI0BM7dn4UE7pv&s"
-                  alt="PayPal"
+                  src="https://seeklogo.com/images/M/mobile-pay-logo-D397C2E1AF-seeklogo.com.png"
+                  alt="Mobile pay"
                   className="w-14 h-14 object-contain"
                 />
 
@@ -162,7 +162,6 @@ const Cart = ({ data }) => {
                   alt="PayPal"
                   className="w-14 h-14 object-contain"
                 />
-
                 <img
                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVDgg_TIrhL30HFuvqHN-M0v7ZOfbI0BM7dn4UE7pv&s"
                   alt="PayPal"

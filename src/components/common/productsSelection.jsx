@@ -1,12 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
-import { recommendedProducts } from "../../lib/product";
-import useProductsSelection from "../../queries/useProductsSelection";
+import React, { useRef } from "react";
 import Slider from "react-slick";
 import Link from "./link";
 import { getPrice } from "../helper/getPrice";
 import { GatsbyImage } from "gatsby-plugin-image";
 
-const ProductsSelection = ({ title, buttonText, relatedProducts }) => {
+const ProductsSelection = ({ title, buttonText, relatedProducts, hide }) => {
   let slider = useRef(null);
 
   const settings = {
@@ -107,7 +105,11 @@ const ProductsSelection = ({ title, buttonText, relatedProducts }) => {
           </div>
         ))}
       </Slider>
-      <div className="w-full space-x-[60px] flex items-center justify-center text-[15px] mt-40 md:mt-60 lg:mt-[314px]">
+      <div
+        className={`w-full space-x-[60px] flex items-center justify-center text-[15px] mt-40 md:mt-60 lg:mt-[314px] ${
+          hide && "hidden"
+        }`}
+      >
         <Link to="/webbutik">
           <svg
             xmlns="http://www.w3.org/2000/svg"

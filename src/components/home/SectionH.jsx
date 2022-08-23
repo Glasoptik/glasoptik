@@ -29,7 +29,7 @@ const SectionH = ({ sectionh, spacing }) => {
           />
         </div>
         <div className="w-full">
-          <div className="mx-auto sm:max-w-xs text-left w-full sm:text-center">
+          <div className="mx-auto sm:max-w-xs w-full text-center">
             <h5 className="hidden sm:block text-3xl font-thin uppercase">
               {data.title.text}
             </h5>

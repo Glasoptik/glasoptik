@@ -7,7 +7,12 @@ export default function useHeader() {
         prismicHeader {
           data {
             logo {
-              gatsbyImageData(width: 100, height: 45, layout: FIXED)
+              gatsbyImageData(
+                width: 100
+                height: 45
+                layout: FIXED
+                placeholder: BLURRED
+              )
             }
             menu_items {
               title {

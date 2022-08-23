@@ -4,7 +4,10 @@ import slugify from "slugify";
 import isExternalLink from "../helper/isExternalLink";
 
 export default function Link({ to, children, ...props }) {
-  return isExternalLink(to) || !to ? (
+  return isExternalLink(to) ||
+    !to ||
+    to.includes("mailto:") ||
+    to.includes("tel:") ? (
     <a href={to} target="_blank" rel="noreferrer" {...props}>
       {children}
     </a>

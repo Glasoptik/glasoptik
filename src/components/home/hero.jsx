@@ -41,10 +41,10 @@ const Hero = ({ sliders }) => {
         </Slider>
 
         <div className="w-full flex flex-wrap flex-1 items-center justify-between text-[10px] leading-3 mt-1 sm:mb-[120px]">
-          <h6 className="flex-[0.5] sm:flex-[0.33] max-w-[100px] md:max-w-fit">
+          <h6 className="flex-[0.5] sm:flex-[0.33] max-w-[100px] md:max-w-full">
             {sliders[activeSlide].image_title.text}
           </h6>
-          <h6 className="flex-[0.5] sm:flex-[0.33] text-center sm:text-center max-w-[100px] md:max-w-fit">
+          <h6 className="flex-[0.5] sm:flex-[0.33] text-center sm:text-center max-w-[100px] md:max-w-full">
             {activeSlide + 1}/{sliders.length}
           </h6>
           <div className="flex sm:space-x-[60px] items-center sm:flex-[0.33] justify-end">

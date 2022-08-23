@@ -3,13 +3,31 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import { graphql } from "gatsby";
 import Link from "../components/common/link";
 import Layout from "../components/layout";
+import { useEffect } from "react";
 
 const Brands = ({ data }) => {
   const brands = data.prismicBrands.data;
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedBrand, setSelectedBrand] = useState({
-    id: 0,
-    ...brands.brand[0],
+    id: currentIndex,
+    ...brands.brand[currentIndex],
   });
+
+  setInterval(() => {
+    if (currentIndex < brands.brand.length - 1) {
+      setCurrentIndex(currentIndex + 1);
+    } else {
+      setCurrentIndex(0);
+    }
+  }, 4000);
+  useEffect(() => {
+    (async () => {
+      setSelectedBrand({
+        id: currentIndex,
+        ...brands.brand[currentIndex],
+      });
+    })();
+  }, [currentIndex]);
   return (
     <Layout>
       <div className="max-w-[1440px] w-full overflow-x-visible flex flex-col items-center justify-between box-border mx-auto px-5 sm:px-[74px] pt-4 mt-[105px] md:mt-40">
@@ -31,7 +49,7 @@ const Brands = ({ data }) => {
             <GatsbyImage
               image={selectedBrand.brand_image.gatsbyImageData}
               alt={selectedBrand.brand_name.text}
-              objectFit="cover"
+              objectFit="contain"
               className="w-full h-full"
             />
           </div>

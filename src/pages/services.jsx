@@ -19,7 +19,7 @@ const Services = ({ data }) => {
         <div className="max-w-[584px] w-full mt-5 sm:mt-0">
           {servicesData.services.map((service, index) => (
             <div className="w-full mb-28" key={index}>
-              <h2 className="text-[15px] font-medium leading-[18px] tracking-[0.4px] mb-8">
+              <h2 className="text-3xl font-thin leading-[18px] tracking-[0.4px] mb-8">
                 {service.title.text}
               </h2>
               <Reveal
