@@ -1,12 +1,14 @@
 import { graphql } from "gatsby";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Link from "../components/common/link";
 import { RichText, Elements } from "prismic-reactjs";
 import { CartContext } from "../context/ShopContext";
 import Layout from "../components/layout";
+import { GatsbyImage } from "gatsby-plugin-image";
 
 const Cart = ({ data }) => {
   const cartContent = data.prismicCart.data;
+  const [readPolicies, setReadPolicies] = useState(false);
   const {
     cart,
     estimatedCost,
@@ -143,35 +145,39 @@ const Cart = ({ data }) => {
               onClick={handleCheckout}
               className="w-full h-[53px] text-center border-[0.75px] border-solid border-black box-border transition-colors duration-200 ease-linear
         hover:bg-black hover:text-white mb-4"
+              disabled={!readPolicies}
             >
               <span className="text-[15px] font-bold leading-5">
                 Gå til betaling
               </span>
             </button>
             <div className="w-full flex-col items-center hidden md:flex">
+              <div className="w-full flex items-center justify-center space-x-2 uppercase text-[15px] leading-5 mb-3 mt-3">
+                <input
+                  type="checkbox"
+                  name="read policies"
+                  id="read_policies"
+                  checked={readPolicies}
+                  onChange={() => setReadPolicies(!readPolicies)}
+                />
+                <span>
+                  Godkend{" "}
+                  <Link
+                    to="/privatpolitikhandelsbetingelser"
+                    className="underline underline-offset-4"
+                  >
+                    handelsbetingelser
+                  </Link>
+                </span>
+              </div>
               <h6 className="text-[10px]">Sikker Betaling</h6>
-              <div className="flex items-center">
-                <img
-                  src="https://seeklogo.com/images/M/mobile-pay-logo-D397C2E1AF-seeklogo.com.png"
-                  alt="Mobile pay"
-                  className="w-14 h-14 object-contain"
-                />
-
-                <img
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVDgg_TIrhL30HFuvqHN-M0v7ZOfbI0BM7dn4UE7pv&s"
-                  alt="PayPal"
-                  className="w-14 h-14 object-contain"
-                />
-                <img
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVDgg_TIrhL30HFuvqHN-M0v7ZOfbI0BM7dn4UE7pv&s"
-                  alt="PayPal"
-                  className="w-14 h-14 object-contain"
-                />
-
-                <img
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVDgg_TIrhL30HFuvqHN-M0v7ZOfbI0BM7dn4UE7pv&s"
-                  alt="PayPal"
-                  className="w-14 h-14 object-contain"
+              <div className="flex items-center mt-[6px]">
+                <GatsbyImage
+                  image={cartContent.payment_logo.gatsbyImageData}
+                  alt={cartContent.payment_logo.alt || "Payment Options"}
+                  className="w-full h-8 object-cover"
+                  objectFit="contain"
+                  loading="eager"
                 />
               </div>
             </div>
@@ -227,6 +233,10 @@ export const query = graphql`
         }
         button_text
         button_link
+        payment_logo {
+          gatsbyImageData
+          alt
+        }
       }
     }
   }

@@ -40,6 +40,8 @@ export default function useFooter() {
             handel_betingelser_link
             cookies_text
             cookies_link
+            returnering_text
+            returnering_link
             privapolitik_text
             privapolitik_link
             copyright_text

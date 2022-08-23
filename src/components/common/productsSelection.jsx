@@ -107,7 +107,7 @@ const ProductsSelection = ({ title, buttonText, relatedProducts, hide }) => {
       </Slider>
       <div
         className={`w-full space-x-[60px] flex items-center justify-center text-[15px] mt-40 md:mt-60 lg:mt-[314px] ${
-          hide && "hidden"
+          hide && "hidden sm:flex"
         }`}
       >
         <Link to="/webbutik">

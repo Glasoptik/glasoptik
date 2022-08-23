@@ -2,18 +2,25 @@ import React, { useState } from "react";
 import { graphql } from "gatsby";
 import Reveal from "../components/common/reveal";
 import Layout from "../components/layout";
+import loadable from "@loadable/component";
 
 const Policies = ({ data, location }) => {
   const policies = data.prismicPolicies.data;
-  const [selectedPolicy, setSelectedPolicy] = useState(
-    {
-      id: location.state?.index,
-      ...policies.policy[location.state?.index],
-    } || {
-      id: 0,
-      ...policies.policy[0],
-    }
+  const { Document, Page } = loadable(() =>
+    import("react-pdf/dist/esm/entry.webpack")
   );
+  const [selectedPolicy, setSelectedPolicy] = useState({
+    id: location.state?.index || 0,
+    ...policies.policy[location.state?.index || 0],
+  });
+
+  const [numPages, setNumPages] = useState(null);
+  const [pageNumber, setPageNumber] = useState(1);
+
+  function onDocumentLoadSuccess({ numPages }) {
+    setNumPages(numPages);
+  }
+
   return (
     <Layout>
       <div
@@ -44,6 +51,38 @@ const Policies = ({ data, location }) => {
               __html: selectedPolicy.description?.html,
             }}
           />
+          {selectedPolicy.pdf_file.url && (
+            <div className="w-full">
+              <div className="flex items-center space-x-4 mb-[6px]">
+                <a
+                  className="uppercase text-[15px] leading-[25px]"
+                  href={selectedPolicy.pdf_file.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Print
+                </a>
+                <a
+                  className="uppercase text-[15px] leading-[25px]"
+                  href={selectedPolicy.pdf_file.url}
+                  download
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Download
+                </a>
+              </div>
+              <div>
+                <Document
+                  file="https://glass2022.cdn.prismic.io/glass2022/b81ead73-6cd9-4552-8eb4-379235e6832b_REALWORLD_NEXTJS.pdf"
+                  onLoadSuccess={onDocumentLoadSuccess}
+                  onLoadError={(error) => console.log(error)}
+                >
+                  <Page pageNumber={1} />
+                </Document>
+              </div>
+            </div>
+          )}
         </div>
         <div className="max-w-xs w-full hidden md:block invisible" />
       </div>
@@ -63,6 +102,9 @@ export const query = graphql`
           }
           description {
             html
+          }
+          pdf_file {
+            url
           }
         }
       }

@@ -11,7 +11,7 @@ export default function useHeader() {
                 width: 100
                 height: 45
                 layout: FIXED
-                placeholder: BLURRED
+                placeholder: NONE
               )
             }
             menu_items {

@@ -34,6 +34,13 @@ const Footer = ({ footer, noBorder }) => {
           </Link>
           <Link
             state={{ index: 2 }}
+            to={footer.returnering_link}
+            className="text-center"
+          >
+            {footer.returnering_text}
+          </Link>
+          <Link
+            state={{ index: 3 }}
             to={footer.cookies_link}
             className="text-center"
           >
@@ -60,10 +67,10 @@ const Footer = ({ footer, noBorder }) => {
             </Link>
             <Link
               state={{ index: 2 }}
-              to={footer.cookies_link}
+              to={footer.returnering_link}
               className="hidden md:block text-black text-center"
             >
-              {footer.cookies_text}
+              {footer.returnering_text}
             </Link>
             <Link
               state={{ index: 0 }}
@@ -71,6 +78,13 @@ const Footer = ({ footer, noBorder }) => {
               className="hidden md:block text-black text-center"
             >
               {footer.privapolitik_text}
+            </Link>
+            <Link
+              state={{ index: 3 }}
+              to={footer.cookies_link}
+              className="hidden md:block text-black text-center"
+            >
+              {footer.cookies_text}
             </Link>
             <span className="text-center">{footer.copyright_text}</span>
           </div>
