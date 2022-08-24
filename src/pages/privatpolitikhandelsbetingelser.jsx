@@ -73,8 +73,9 @@ const Policies = ({ data, location }) => {
                   Download
                 </a>
               </div>
-              <div>
+              <div className="max-w-xs sm:max-w-[540px] overflow-hidden max-h-[420px] sm:max-h-[650px] w-full h-full object-contain">
                 <Document
+                  className="object-contain aspect-square"
                   file="https://glass2022.cdn.prismic.io/glass2022/b81ead73-6cd9-4552-8eb4-379235e6832b_REALWORLD_NEXTJS.pdf"
                   onLoadSuccess={onDocumentLoadSuccess}
                   onLoadError={(error) => console.log(error)}
