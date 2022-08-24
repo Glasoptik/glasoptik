@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { getPrice } from "../../components/helper/getPrice";
 import parse from "html-react-parser";
 import { CartContext } from "../../context/ShopContext.jsx";
+import { navigate } from "gatsby";
 
 const Details = ({ product, changeState }) => {
   const { addToCart, disabled } = useContext(CartContext);
@@ -26,6 +27,7 @@ const Details = ({ product, changeState }) => {
     e.preventDefault();
     if (productVariant.availableForSale) {
       addToCart(productVariant);
+      navigate("/cart");
     } else {
       changeState();
     }
@@ -47,9 +49,7 @@ const Details = ({ product, changeState }) => {
           onClick={handleSubmit}
           disabled={disabled}
         >
-          <span className="text-[15px] font-bold leading-5 uppercase">
-            Tilføj til bag
-          </span>
+          <span className="text-[15px] font-bold leading-5 uppercase">KØB</span>
         </button>
         <div className="text-[15px] leading-5">
           {parse(product.descriptionHtml)}
