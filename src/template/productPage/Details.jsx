@@ -40,9 +40,9 @@ const Details = ({ product, changeState }) => {
         <h3 className="text-xl leading-5 font-bold mt-[17px] mb-[50px]">
           {getPrice(product.priceRangeV2)}
         </h3>
-        <h5 className="text-[15px] font-bold mb-[35px]">
+        {/* <h5 className="text-[15px] font-bold mb-[35px]">
           FARVE:<span className="font-normal"> Slate Gray Lenses</span>
-        </h5>
+        </h5> */}
         <button
           className="w-full h-[53px] text-center border-[0.75px] border-solid border-black box-border mb-[72px] transition-colors duration-200 ease-linear
         hover:bg-black hover:text-white"

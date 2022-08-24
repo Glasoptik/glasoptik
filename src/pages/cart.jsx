@@ -107,7 +107,10 @@ const Cart = ({ data }) => {
             )}
           </div>
           {/* Checkout Card */}
-          <div className="md:max-w-[362px] w-full md:p-6 flex flex-col border-none md:border-[0.75px] md:border-solid border-black">
+          <form
+            onSubmit={handleCheckout}
+            className="md:max-w-[362px] max-h-[340px] w-full md:p-6 flex flex-col border-none md:border-[0.75px] md:border-solid border-black"
+          >
             <div className="flex items-center justify-between mb-[2px]">
               <h3 className="text-[15px] ">Subtotal ({cart.length})</h3>
               <h3 className="text-[15px] ">
@@ -142,22 +145,22 @@ const Cart = ({ data }) => {
               </h3>
             </div>
             <button
-              onClick={handleCheckout}
+              type="submit"
               className="w-full h-[53px] text-center border-[0.75px] border-solid border-black box-border transition-colors duration-200 ease-linear
         hover:bg-black hover:text-white mb-4"
-              disabled={!readPolicies}
             >
               <span className="text-[15px] font-bold leading-5">
                 Gå til betaling
               </span>
             </button>
             <div className="w-full flex-col items-center hidden md:flex">
-              <div className="w-full flex items-center justify-center space-x-2 uppercase text-[15px] leading-5 mb-3 mt-3">
+              <div className="w-full flex items-center justify-center space-x-2 uppercase text-xs leading-5 mb-3 mt-3">
                 <input
                   type="checkbox"
                   name="read policies"
                   id="read_policies"
                   checked={readPolicies}
+                  required
                   onChange={() => setReadPolicies(!readPolicies)}
                 />
                 <span>
@@ -181,7 +184,7 @@ const Cart = ({ data }) => {
                 />
               </div>
             </div>
-          </div>
+          </form>
         </div>
         <div className="max-w-[800px] mt-10 mb-5 prose">
           <RichText render={cartContent.description.richText} />

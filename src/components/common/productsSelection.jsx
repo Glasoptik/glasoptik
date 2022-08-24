@@ -4,7 +4,13 @@ import Link from "./link";
 import { getPrice } from "../helper/getPrice";
 import { GatsbyImage } from "gatsby-plugin-image";
 
-const ProductsSelection = ({ title, buttonText, relatedProducts, hide }) => {
+const ProductsSelection = ({
+  title,
+  buttonText,
+  relatedProducts,
+  hide,
+  hideArrow,
+}) => {
   let slider = useRef(null);
 
   const settings = {
@@ -106,11 +112,13 @@ const ProductsSelection = ({ title, buttonText, relatedProducts, hide }) => {
         ))}
       </Slider>
       <div
-        className={`w-full space-x-[60px] flex items-center justify-center text-[15px] mt-40 md:mt-60 lg:mt-[314px] ${
+        className={`w-full ${
+          hideArrow ? "space-x-0 sm:space-x-[60px]" : "space-x-[60px]"
+        } flex items-center justify-center text-[15px] mt-40 md:mt-60 lg:mt-[314px] ${
           hide && "hidden sm:flex"
         }`}
       >
-        <Link to="/webbutik">
+        <Link to="/webbutik" className={`${hideArrow && "hidden sm:block"}`}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="76"
@@ -130,7 +138,12 @@ const ProductsSelection = ({ title, buttonText, relatedProducts, hide }) => {
             </g>
           </svg>
         </Link>
-        <Link to="/webbutik" className="text-xl md:text-3xl uppercase">
+        <Link
+          to="/webbutik"
+          className={`text-xl md:text-3xl uppercase ${
+            hideArrow && "text-center sm:text-right"
+          }`}
+        >
           {buttonText}
         </Link>
         <div className="invisible hidden sm:block w-20" />

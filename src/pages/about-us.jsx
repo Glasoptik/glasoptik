@@ -35,12 +35,14 @@ const About = ({ data }) => {
           </div>
         </div>
         <SectionI data={sectionI} />
-        <ProductsSelection
-          title={about.products_section_title}
-          buttonText={about.go_to_online_store}
-          relatedProducts={relatedProducts}
-          hide
-        />
+        <div className="w-full px-[13px]">
+          <ProductsSelection
+            title={about.products_section_title}
+            buttonText={about.go_to_online_store}
+            relatedProducts={relatedProducts}
+            hide
+          />
+        </div>
       </div>
     </Layout>
   );

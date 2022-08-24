@@ -16,7 +16,7 @@ const Services = ({ data }) => {
             alt={servicesData.hero_image.alt || "Services Hero Image"}
           />
         </div>
-        <div className="max-w-[584px] w-full mt-5 sm:mt-0">
+        <div className="max-w-[584px] w-full mt-10 sm:mt-0">
           {servicesData.services.map((service, index) => (
             <div className="w-full mb-28" key={index}>
               <h2 className="text-3xl font-thin leading-[18px] tracking-[0.4px] mb-8">

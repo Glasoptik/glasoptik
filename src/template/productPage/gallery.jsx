@@ -38,48 +38,50 @@ const Gallery = ({ media }) => {
             </div>
           ))}
         </Slider>
-        <div className="absolute z-20  bottom-5 left-5 flex items-center space-x-5 ">
-          <button onClick={() => slider.slickPrev()}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="76"
-              height="7"
-              viewBox="0 0 76 7"
-            >
-              <g fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
-                <g
-                  fill="#000"
-                  fillRule="nonzero"
-                  transform="translate(-1156 -730)"
-                >
-                  <g transform="translate(1156.5 732.5)">
-                    <path d="M6.611-2.25v3H75.25v.5H6.611v3l-7-3.25 7-3.25z"></path>
+        {media.length > 1 && (
+          <div className="absolute z-20  bottom-5 left-5 flex items-center space-x-5 ">
+            <button onClick={() => slider.slickPrev()}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="76"
+                height="7"
+                viewBox="0 0 76 7"
+              >
+                <g fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
+                  <g
+                    fill="#000"
+                    fillRule="nonzero"
+                    transform="translate(-1156 -730)"
+                  >
+                    <g transform="translate(1156.5 732.5)">
+                      <path d="M6.611-2.25v3H75.25v.5H6.611v3l-7-3.25 7-3.25z"></path>
+                    </g>
                   </g>
                 </g>
-              </g>
-            </svg>
-          </button>
-          <button onClick={() => slider.slickNext()}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="76"
-              height="7"
-              viewBox="0 0 76 7"
-            >
-              <g fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
-                <g
-                  fill="#000"
-                  fillRule="nonzero"
-                  transform="translate(-1291 -730)"
-                >
-                  <g transform="translate(1156.5 732.5)">
-                    <path d="M203.389-2.25l7 3.25-7 3.25-.001-3H134.75v-.5h68.638v-3z"></path>
+              </svg>
+            </button>
+            <button onClick={() => slider.slickNext()}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="76"
+                height="7"
+                viewBox="0 0 76 7"
+              >
+                <g fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
+                  <g
+                    fill="#000"
+                    fillRule="nonzero"
+                    transform="translate(-1291 -730)"
+                  >
+                    <g transform="translate(1156.5 732.5)">
+                      <path d="M203.389-2.25l7 3.25-7 3.25-.001-3H134.75v-.5h68.638v-3z"></path>
+                    </g>
                   </g>
                 </g>
-              </g>
-            </svg>
-          </button>
-        </div>
+              </svg>
+            </button>
+          </div>
+        )}
       </div>
       <div className="hidden lg:grid w-full grid-cols-2 gap-2">
         {galleryImages.map((image, index) => (

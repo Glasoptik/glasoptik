@@ -32,6 +32,7 @@ const Butikken = ({ data }) => {
           title="GLAS ONLINE SELEKTION"
           buttonText="Gå til webbutik"
           relatedProducts={relatedProducts}
+          hideArrow
         />
       </div>
     </Layout>

@@ -4,8 +4,8 @@ import React from "react";
 import Link from "../components/common/link";
 import Reveal from "../components/common/reveal";
 import { getPrice } from "../components/helper/getPrice";
-import SectionH from "../components/home/SectionH";
 import Layout from "../components/layout";
+import Nyheder from "../components/webbutik/nyheder";
 
 const Webshop = ({ data }) => {
   const butikData = data.prismicWebbutik.data;
@@ -44,7 +44,7 @@ const Webshop = ({ data }) => {
           ))}
         </div>
         <div className="mb-4 w-full">
-          <SectionH sectionh={butikData.nyheder_section} />
+          <Nyheder sectionh={butikData.nyheder_section} />
         </div>
       </div>
     </Layout>
