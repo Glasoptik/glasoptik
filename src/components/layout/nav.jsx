@@ -31,7 +31,7 @@ export function Nav({ show, children }) {
         >
           <div className="max-w-[1440px] w-full h-full mx-auto pt-16 px-5 sm:px-[74px]">
             <div className="flex flex-col justify-center h-ful">
-              <ul className="container flex flex-col flex-grow mx-auto mt-[153px] space-y-[22px]">
+              <ul className="container flex flex-col flex-grow mx-auto mt-12 sm:mt-[153px] space-y-[22px]">
                 {children}
               </ul>
             </div>
