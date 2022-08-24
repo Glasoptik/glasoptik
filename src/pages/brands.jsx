@@ -50,7 +50,13 @@ const Brands = ({ data }) => {
               image={selectedBrand.brand_image.gatsbyImageData}
               alt={selectedBrand.brand_name.text}
               objectFit="contain"
-              className="w-full h-full"
+              className="hidden sm:block w-full h-full"
+            />
+            <GatsbyImage
+              image={selectedBrand.brand_image.gatsbyImageData}
+              alt={selectedBrand.brand_name.text}
+              objectFit="cover"
+              className="block sm:hidden w-full h-full"
             />
           </div>
           <div className="max-w-xs w-full hidden md:block invisible" />
