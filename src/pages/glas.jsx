@@ -12,7 +12,7 @@ import useHome from "../queries/useHome";
 import Layout from "../components/layout";
 
 const Home = ({ data }) => {
-  const products = data.allShopifyProduct.nodes;
+  const products = data.shopifyCollection.products;
 
   const home = useHome();
 
@@ -38,8 +38,8 @@ export default Home;
 
 export const query = graphql`
   {
-    allShopifyProduct(limit: 9) {
-      nodes {
+    shopifyCollection(handle: { eq: "9-product-for-home-page" }) {
+      products {
         title
         handle
         priceRangeV2 {

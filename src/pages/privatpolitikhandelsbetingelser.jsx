@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import { graphql } from "gatsby";
 import Reveal from "../components/common/reveal";
 import Layout from "../components/layout";
-import loadable from "@loadable/component";
+import { Document, Page, pdfjs } from "react-pdf";
 
 const Policies = ({ data, location }) => {
+  const isBrowser = typeof window !== "undefined";
+  if (isBrowser) {
+    pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+  }
   const policies = data.prismicPolicies.data;
-  const { Document, Page } = loadable(() =>
-    import("react-pdf/dist/esm/entry.webpack")
-  );
   const [selectedPolicy, setSelectedPolicy] = useState({
     id: location.state?.index || 0,
     ...policies.policy[location.state?.index || 0],

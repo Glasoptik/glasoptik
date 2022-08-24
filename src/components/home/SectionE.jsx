@@ -32,7 +32,7 @@ const SectionE = ({ sectione, products }) => {
               to={`/product/${product.handle}`}
             >
               <GatsbyImage
-                image={product.featuredImage.gatsbyImageData}
+                image={product.featuredImage?.gatsbyImageData}
                 className="w-full h-full object-cover aspect-square"
                 objectFit="cover"
                 alt={product.title}

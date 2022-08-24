@@ -9,7 +9,7 @@ import Layout from "../components/layout";
 
 const Webshop = ({ data }) => {
   const butikData = data.prismicWebbutik.data;
-  const products = data.allShopifyProduct.nodes;
+  const products = data.shopifyCollection.products;
   return (
     <Layout>
       <div className="max-w-[1440px] w-screen h-full flex flex-col items-center px-5 sm:px-[74px] mx-auto mt-[105px] md:mt-40 md:mt-40">
@@ -29,7 +29,7 @@ const Webshop = ({ data }) => {
               to={`/product/${product.handle}`}
             >
               <GatsbyImage
-                image={product.featuredImage.gatsbyImageData}
+                image={product.featuredImage?.gatsbyImageData}
                 className="w-full h-full object-cover"
                 alt={product.title}
               />
@@ -83,8 +83,8 @@ export const query = graphql`
         }
       }
     }
-    allShopifyProduct {
-      nodes {
+    shopifyCollection(handle: { eq: "frontpage" }) {
+      products {
         title
         handle
         priceRangeV2 {

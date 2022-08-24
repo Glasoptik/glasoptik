@@ -11,55 +11,35 @@ const Brands = () => {
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="1440"
-          height="20"
-          viewBox="0 0 1440 20"
+          width="1781"
+          height="21"
+          viewBox="0 0 1781 21"
         >
-          <g
-            fill="none"
-            fillRule="evenodd"
-            stroke="none"
-            strokeWidth="1"
+          <text
             fontFamily="HelveticaNeue, Helvetica Neue"
             fontSize="25"
-            fontWeight="normal"
+            textAnchor="center"
+            transform="translate(-1.5 -11) translate(.988 24)"
           >
-            <g fill="#000" transform="translate(0 -1749)">
-              <text>
-                <tspan x="-539.638" y="1768">
-                  EQUE M DITA THOM BROWNE MASUNAGA MASUNAGA BY KENZO BALMAIN
-                  AKONI MOSCOT EYEVAN LINDBERG PRADA BOTTEGA VENETA SAINT
-                  LAURENT CELINE LGR{" "}
-                </tspan>
-              </text>
-            </g>
-          </g>
+            EQUE M VALENTINO DITA THOM BROWNE MASUNAGA BOTTEGA VENETA CELINE
+            PRADA TVR BALMAIN AKONI SAINT LAURENT MOSCOT EYEVAN LGR
+          </text>
         </svg>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="1440"
-          height="20"
-          viewBox="0 0 1440 20"
+          width="1781"
+          height="21"
+          viewBox="0 0 1781 21"
         >
-          <g
-            fill="none"
-            fillRule="evenodd"
-            stroke="none"
-            strokeWidth="1"
+          <text
             fontFamily="HelveticaNeue, Helvetica Neue"
             fontSize="25"
-            fontWeight="normal"
+            textAnchor="center"
+            transform="translate(-1.5 -11) translate(.988 24)"
           >
-            <g fill="#000" transform="translate(0 -1749)">
-              <text>
-                <tspan x="-539.638" y="1768">
-                  EQUE M DITA THOM BROWNE MASUNAGA MASUNAGA BY KENZO BALMAIN
-                  AKONI MOSCOT EYEVAN LINDBERG PRADA BOTTEGA VENETA SAINT
-                  LAURENT CELINE LGR{" "}
-                </tspan>
-              </text>
-            </g>
-          </g>
+            EQUE M VALENTINO DITA THOM BROWNE MASUNAGA BOTTEGA VENETA CELINE
+            PRADA TVR BALMAIN AKONI SAINT LAURENT MOSCOT EYEVAN LGR
+          </text>
         </svg>
       </Marquee>
     </div>

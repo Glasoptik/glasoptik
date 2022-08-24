@@ -89,7 +89,7 @@ const ProductsSelection = ({ title, buttonText, relatedProducts, hide }) => {
               to={`/product/${product.handle}`}
             >
               <GatsbyImage
-                image={product.featuredImage.gatsbyImageData}
+                image={product.featuredImage?.gatsbyImageData}
                 className="w-full h-72 sm:h-[356px] object-cover"
                 objectFit="cover"
                 alt={product.title}
