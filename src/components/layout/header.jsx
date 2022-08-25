@@ -45,13 +45,15 @@ const Header = ({ stickToTop, data }) => {
           className="max-w-[120px] w-full relative z-50 inline-flex my-auto text-center"
           to="/glas"
         >
-          <GatsbyImage
-            image={data.logo.gatsbyImageData}
-            alt="Logo"
-            className="max-w-[80px] max-h-[40px] sm:max-w-[100px] mx-auto w-full sm:max-h-full h-full object-contain"
-            objectFit="contain"
-            loading="lazy"
-          />
+          {data.logo.gatsbyImageData && (
+            <GatsbyImage
+              image={data.logo.gatsbyImageData}
+              alt="Logo"
+              className="max-w-[80px] max-h-[40px] sm:max-w-[100px] mx-auto w-full sm:max-h-full h-full object-contain"
+              objectFit="contain"
+              loading="lazy"
+            />
+          )}
         </Link>
         <Link
           to="/cart"

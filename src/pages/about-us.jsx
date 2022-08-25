@@ -74,6 +74,7 @@ export const query = graphql`
           title {
             text
           }
+          slug
           image {
             gatsbyImageData(srcSetMaxWidth: 350, layout: FULL_WIDTH)
           }
