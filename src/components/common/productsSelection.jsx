@@ -19,7 +19,10 @@ const ProductsSelection = ({
     autoplay: false,
     slidesToShow: 3.7,
     slidesToScroll: 1,
+    centerMode: false,
     pauseOnHover: false,
+    initialSlide: 1,
+    className: "related_slider",
     responsive: [
       {
         breakpoint: 750,

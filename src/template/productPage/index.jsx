@@ -27,12 +27,14 @@ const ProductPage = ({ data }) => {
               changeState={(prevStat) => setOpenLightbox(!prevStat)}
             />
           </div>
-          <ProductsSelection
-            title="GLAS ONLINE SELEKTION"
-            buttonText="Gå til webbutik"
-            relatedProducts={relatedProducts}
-          />
         </div>
+      </div>
+      <div className="relative max-w-[1440px] mx-auto w-full flex flex-col pl-5 sm:px-[74px]">
+        <ProductsSelection
+          title="GLAS ONLINE SELEKTION"
+          buttonText="Gå til webbutik"
+          relatedProducts={relatedProducts}
+        />
       </div>
     </Layout>
   );

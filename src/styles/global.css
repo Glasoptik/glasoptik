@@ -23,7 +23,9 @@
 .slick-arrow {
     display: none !important;
 }
-
+.related_slider .slick-slide {
+    float: right !important;
+}
 
 @keyframes fade-up {
     from {
