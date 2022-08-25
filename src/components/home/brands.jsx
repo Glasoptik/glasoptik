@@ -11,35 +11,49 @@ const Brands = () => {
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="1781"
-          height="21"
-          viewBox="0 0 1781 21"
+          width="1785"
+          height="41"
+          viewBox="0 0 1785 41"
         >
-          <text
-            fontFamily="HelveticaNeue, Helvetica Neue"
-            fontSize="25"
-            textAnchor="center"
-            transform="translate(-1.5 -11) translate(.988 24)"
-          >
-            EQUE M VALENTINO DITA THOM BROWNE MASUNAGA BOTTEGA VENETA CELINE
-            PRADA TVR BALMAIN AKONI SAINT LAURENT MOSCOT EYEVAN LGR
-          </text>
+          <defs>
+            <clipPath id="i0">
+              <path d="M1785 0v41H0V0h1785z"></path>
+            </clipPath>
+          </defs>
+          <g clipPath="url(#i0)">
+            <text
+              fontFamily="HelveticaNeue, Helvetica Neue"
+              fontSize="25"
+              textAnchor="center"
+              transform="translate(-.5) translate(.988 24)"
+            >
+              EQUE M VALENTINO DITA THOM BROWNE MASUNAGA BOTTEGA VENETA CELINE
+              PRADA TVR BALMAIN AKONI SAINT LAURENT MOSCOT EYEVAN LGR
+            </text>
+          </g>
         </svg>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="1781"
-          height="21"
-          viewBox="0 0 1781 21"
+          width="1785"
+          height="41"
+          viewBox="0 0 1785 41"
         >
-          <text
-            fontFamily="HelveticaNeue, Helvetica Neue"
-            fontSize="25"
-            textAnchor="center"
-            transform="translate(-1.5 -11) translate(.988 24)"
-          >
-            EQUE M VALENTINO DITA THOM BROWNE MASUNAGA BOTTEGA VENETA CELINE
-            PRADA TVR BALMAIN AKONI SAINT LAURENT MOSCOT EYEVAN LGR
-          </text>
+          <defs>
+            <clipPath id="i0">
+              <path d="M1785 0v41H0V0h1785z"></path>
+            </clipPath>
+          </defs>
+          <g clipPath="url(#i0)">
+            <text
+              fontFamily="HelveticaNeue, Helvetica Neue"
+              fontSize="25"
+              textAnchor="center"
+              transform="translate(-.5) translate(.988 24)"
+            >
+              EQUE M VALENTINO DITA THOM BROWNE MASUNAGA BOTTEGA VENETA CELINE
+              PRADA TVR BALMAIN AKONI SAINT LAURENT MOSCOT EYEVAN LGR
+            </text>
+          </g>
         </svg>
       </Marquee>
     </div>
