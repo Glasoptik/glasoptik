@@ -104,7 +104,7 @@ const ProductsSelection = ({
                 className="sm:opacity-0 group-hover:opacity-100 flex items-center absolute bottom-0 left-0 px-5 py-3 bg-white space-x-5
                bg-transparent transform transition-opacity duration-200 ease-linear text-[10px]"
               >
-                <h6 className="uppercase">{product.title}</h6>
+                <h6 className="uppercase whitespace-nowrap">{product.title}</h6>
                 <span>{getPrice(product.priceRangeV2)}</span>
               </div>
             </Link>

@@ -46,12 +46,12 @@ export const query = graphql`
     prismicButikken {
       data {
         featured_image {
-          gatsbyImageData(layout: FULL_WIDTH, placeholder: DOMINANT_COLOR)
+          gatsbyImageData(layout: FULL_WIDTH, placeholder: NONE)
           alt
         }
         gallery {
           image {
-            gatsbyImageData(layout: FULL_WIDTH, placeholder: DOMINANT_COLOR)
+            gatsbyImageData(layout: FULL_WIDTH, placeholder: NONE)
             alt
           }
         }

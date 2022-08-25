@@ -3,6 +3,7 @@ import { graphql } from "gatsby";
 import Reveal from "../components/common/reveal";
 import Layout from "../components/layout";
 import { Document, Page, pdfjs } from "react-pdf";
+import { GatsbyImage } from "gatsby-plugin-image";
 
 const Policies = ({ data, location }) => {
   const isBrowser = typeof window !== "undefined";
@@ -74,14 +75,11 @@ const Policies = ({ data, location }) => {
                 </a>
               </div>
               <div className="max-w-xs sm:max-w-[540px] overflow-hidden max-h-[420px] sm:max-h-[650px] w-full h-full object-contain">
-                <Document
-                  className="object-contain aspect-square"
-                  file="https://glass2022.cdn.prismic.io/glass2022/b81ead73-6cd9-4552-8eb4-379235e6832b_REALWORLD_NEXTJS.pdf"
-                  onLoadSuccess={onDocumentLoadSuccess}
-                  onLoadError={(error) => console.log(error)}
-                >
-                  <Page pageNumber={1} />
-                </Document>
+                <GatsbyImage
+                  image={selectedPolicy.image.gatsbyImageData}
+                  alt={selectedPolicy.image.alt || "PDF IMG"}
+                  objectFit="cover"
+                />
               </div>
             </div>
           )}
@@ -107,6 +105,11 @@ export const query = graphql`
           }
           pdf_file {
             url
+          }
+          image {
+            url
+            gatsbyImageData
+            alt
           }
         }
       }
