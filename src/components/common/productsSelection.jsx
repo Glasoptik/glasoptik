@@ -105,7 +105,9 @@ const ProductsSelection = ({
                bg-transparent transform transition-opacity duration-200 ease-linear text-[10px]"
               >
                 <h6 className="uppercase whitespace-nowrap">{product.title}</h6>
-                <span>{getPrice(product.priceRangeV2)}</span>
+                <span className="whitespace-nowrap">
+                  {getPrice(product.priceRangeV2)}
+                </span>
               </div>
             </Link>
           </div>
