@@ -22,7 +22,6 @@ const Brands = () => {
           </defs>
           <g clipPath="url(#i0)">
             <text
-              fontFamily="HelveticaNeue, Helvetica Neue"
               fontSize="25"
               textAnchor="center"
               transform="translate(-.5) translate(.988 24)"
@@ -45,7 +44,6 @@ const Brands = () => {
           </defs>
           <g clipPath="url(#i0)">
             <text
-              fontFamily="HelveticaNeue, Helvetica Neue"
               fontSize="25"
               textAnchor="center"
               transform="translate(-.5) translate(.988 24)"
