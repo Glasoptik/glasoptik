@@ -43,7 +43,7 @@ const Policies = ({ data, location }) => {
           ))}
         </div>
         <div className="mt-10 sm:mt-0 sm:max-w-xl w-full">
-          <h1 className="font-medium text-[25px] sm:text-[15px] leading-[22px] sm:leading-[18px] mb-5">
+          <h1 className="text-3xl font-thin mb-5">
             {selectedPolicy.title?.text}
           </h1>
           <Reveal
