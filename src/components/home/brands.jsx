@@ -11,9 +11,8 @@ const Brands = () => {
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="1785"
-          height="41"
-          viewBox="0 0 1785 41"
+          className="w-full h-[41px]"
+          viewBox="0 0 1695 41"
         >
           <defs>
             <clipPath id="i0">
@@ -33,9 +32,8 @@ const Brands = () => {
         </svg>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="1785"
-          height="41"
-          viewBox="0 0 1785 41"
+          className="w-full h-[41px]"
+          viewBox="0 0 1695 41"
         >
           <defs>
             <clipPath id="i0">

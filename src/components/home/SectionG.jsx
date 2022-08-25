@@ -60,7 +60,7 @@ const SectionG = ({ sectiong }) => {
                   image={image.image.gatsbyImageData}
                   alt={image.image.alt}
                   objectFit="contain"
-                  className="hidden sm:block max-w-md max-h-[450px] md:max-w-xl md:max-h-[580px] xl:max-w-[811px] xl:max-h-[740px] w-full h-full"
+                  className="hidden sm:block max-w-md max-h-[450px] md:max-w-xl md:min-h-[580px] xl:max-w-[811px] xl:min-h-[740px] w-full h-full"
                 />
                 <div className="sm:hidden max-w-[246px] max-h-[308px] w-full h-full">
                   <GatsbyImage

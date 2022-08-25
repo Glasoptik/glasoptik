@@ -153,8 +153,8 @@ const Cart = ({ data }) => {
                 Gå til betaling
               </span>
             </button>
-            <div className="w-full flex-col items-center hidden md:flex">
-              <div className="w-full flex items-center justify-center space-x-2 uppercase text-xs leading-5 mb-3 mt-3">
+            <div className="w-full flex-col items-center flex">
+              <div className="w-full flex items-center justify-center space-x-2 uppercase text-xs leading-5 mb-5 md:mb-3 md:mt-3">
                 <input
                   type="checkbox"
                   name="read policies"
@@ -173,8 +173,8 @@ const Cart = ({ data }) => {
                   </Link>
                 </span>
               </div>
-              <h6 className="text-[10px]">Sikker Betaling</h6>
-              <div className="flex items-center mt-[6px]">
+              <h6 className="hidden md:block text-[10px]">Sikker Betaling</h6>
+              <div className="hidden md:flex items-center mt-[6px]">
                 <GatsbyImage
                   image={cartContent.payment_logo.gatsbyImageData}
                   alt={cartContent.payment_logo.alt || "Payment Options"}
