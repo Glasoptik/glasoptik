@@ -10,74 +10,94 @@ const Brands = () => {
         className="w-min overflow-x-visible text-2xl"
       >
         <svg
+          className="block sm:hidden"
           xmlns="http://www.w3.org/2000/svg"
-          width="2678"
+          width="1785"
           height="41"
-          viewBox="0 0 2678 41"
+          viewBox="0 0 1785 41"
         >
           <defs>
             <clipPath id="i0">
-              <path d="M2678 0v41H0V0h2678z"></path>
+              <path d="M1785 0v41H0V0h1785z"></path>
             </clipPath>
           </defs>
           <g clipPath="url(#i0)">
             <text
               fontSize="25"
               textAnchor="center"
-              transform="translate(-894.5) translate(.5 24)"
+              transform="translate(-.5) translate(.988 24)"
             >
               EQUE M VALENTINO DITA THOM BROWNE MASUNAGA BOTTEGA VENETA CELINE
-              PRADA TVR BALMAIN AKONI SAINT LAURENT MOSCOT EYEVAN LGR EQUE M
-              VALENTINO DITA THOM BROWNE MASUNAGA BOTTEGA VENETA CELINE PRADA
-              TVR BALMAIN AKONI SAINT LAURENT MOSCOT EYEVAN LGR
+              PRADA TVR BALMAIN AKONI SAINT LAURENT MOSCOT EYEVAN LGR
             </text>
           </g>
         </svg>
         <svg
+          className="hidden sm:block"
           xmlns="http://www.w3.org/2000/svg"
-          width="2678"
+          width="1685"
           height="41"
-          viewBox="0 0 2678 41"
+          viewBox="0 0 1685 41"
         >
           <defs>
             <clipPath id="i0">
-              <path d="M2678 0v41H0V0h2678z"></path>
+              <path d="M1785 0v41H0V0h1785z"></path>
             </clipPath>
           </defs>
           <g clipPath="url(#i0)">
             <text
               fontSize="25"
               textAnchor="center"
-              transform="translate(-894.5) translate(.5 24)"
+              transform="translate(-.5) translate(.988 24)"
             >
               EQUE M VALENTINO DITA THOM BROWNE MASUNAGA BOTTEGA VENETA CELINE
-              PRADA TVR BALMAIN AKONI SAINT LAURENT MOSCOT EYEVAN LGR EQUE M
-              VALENTINO DITA THOM BROWNE MASUNAGA BOTTEGA VENETA CELINE PRADA
-              TVR BALMAIN AKONI SAINT LAURENT MOSCOT EYEVAN LGR
+              PRADA TVR BALMAIN AKONI SAINT LAURENT MOSCOT EYEVAN LGR
             </text>
           </g>
         </svg>
         <svg
+          className="hidden sm:block"
           xmlns="http://www.w3.org/2000/svg"
-          width="2678"
+          width="1685"
           height="41"
-          viewBox="0 0 2678 41"
+          viewBox="0 0 1685 41"
         >
           <defs>
             <clipPath id="i0">
-              <path d="M2678 0v41H0V0h2678z"></path>
+              <path d="M1785 0v41H0V0h1785z"></path>
             </clipPath>
           </defs>
           <g clipPath="url(#i0)">
             <text
               fontSize="25"
               textAnchor="center"
-              transform="translate(-894.5) translate(.5 24)"
+              transform="translate(-.5) translate(.988 24)"
             >
               EQUE M VALENTINO DITA THOM BROWNE MASUNAGA BOTTEGA VENETA CELINE
-              PRADA TVR BALMAIN AKONI SAINT LAURENT MOSCOT EYEVAN LGR EQUE M
-              VALENTINO DITA THOM BROWNE MASUNAGA BOTTEGA VENETA CELINE PRADA
-              TVR BALMAIN AKONI SAINT LAURENT MOSCOT EYEVAN LGR
+              PRADA TVR BALMAIN AKONI SAINT LAURENT MOSCOT EYEVAN LGR
+            </text>
+          </g>
+        </svg>
+        <svg
+          className="block sm:hidden"
+          xmlns="http://www.w3.org/2000/svg"
+          width="1785"
+          height="41"
+          viewBox="0 0 1785 41"
+        >
+          <defs>
+            <clipPath id="i0">
+              <path d="M1785 0v41H0V0h1785z"></path>
+            </clipPath>
+          </defs>
+          <g clipPath="url(#i0)">
+            <text
+              fontSize="25"
+              textAnchor="center"
+              transform="translate(-.5) translate(.988 24)"
+            >
+              EQUE M VALENTINO DITA THOM BROWNE MASUNAGA BOTTEGA VENETA CELINE
+              PRADA TVR BALMAIN AKONI SAINT LAURENT MOSCOT EYEVAN LGR
             </text>
           </g>
         </svg>
