@@ -13,20 +13,21 @@ const Brands = ({ data }) => {
     ...brands.brand[currentIndex],
   });
 
-  setInterval(() => {
-    if (currentIndex < brands.brand.length - 1) {
-      setCurrentIndex(currentIndex + 1);
-    } else {
-      setCurrentIndex(0);
-    }
-  }, 4000);
   useEffect(() => {
+    const interval = setInterval(() => {
+      if (currentIndex < brands.brand.length - 1) {
+        setCurrentIndex(currentIndex + 1);
+      } else {
+        setCurrentIndex(0);
+      }
+    }, 4000);
     (async () => {
       setSelectedBrand({
         id: currentIndex,
         ...brands.brand[currentIndex],
       });
     })();
+    return () => clearInterval(interval);
   }, [currentIndex]);
   return (
     <Layout>
@@ -35,7 +36,7 @@ const Brands = ({ data }) => {
           <div className="flex flex-col items-start max-w-max md:max-w-xs w-full">
             {brands.brand.map((brand, index) => (
               <button
-                onClick={() => setSelectedBrand({ id: index, ...brand })}
+                onClick={() => setCurrentIndex(index)}
                 key={index}
                 className={`text-xs md:text-[15px] leading-6 font-medium ${
                   selectedBrand.id === index && "text-[#999999]"
