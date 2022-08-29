@@ -191,12 +191,12 @@ const Cart = ({ data }) => {
         </div>
         <div className="w-full mt-10 sm:mt-[90px] space-x-10 sm:space-x-24 flex items-center justify-start text-[15px] uppercase">
           <Link
-            to={`/${cartContent.button_link}`}
+            to={`${cartContent.button_link}`}
             className="leading-8 sm:leading-[50px]"
           >
             {cartContent.button_text}
           </Link>
-          <Link to={`/${cartContent.button_link}`}>
+          <Link to={`${cartContent.button_link}`}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="76"

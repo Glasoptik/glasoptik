@@ -4,15 +4,18 @@ import React from "react";
 import Link from "../components/common/link";
 import Reveal from "../components/common/reveal";
 import { getPrice } from "../components/helper/getPrice";
+import SectionH from "../components/home/SectionH";
 import Layout from "../components/layout";
 import Nyheder from "../components/webbutik/nyheder";
+import useWindowDimensions from "../hooks/useWindowDimension";
 
 const Webshop = ({ data }) => {
   const butikData = data.prismicWebbutik.data;
   const products = data.shopifyCollection.products;
+  const { width } = useWindowDimensions();
   return (
     <Layout>
-      <div className="max-w-[1440px] w-screen h-full flex flex-col items-center px-5 sm:px-[74px] mx-auto mt-[105px] md:mt-40 md:mt-40">
+      <div className="max-w-[1440px] w-screen h-full flex flex-col items-center px-5 sm:px-[74px] mx-auto mt-[105px] md:mt-40">
         <h1 className="text-3xl uppercase font-thin text-center mt-[6px] mb-[29px]">
           {butikData.title.text}
         </h1>
@@ -43,9 +46,13 @@ const Webshop = ({ data }) => {
             </Link>
           ))}
         </div>
-        <div className="mb-4 w-full">
+      </div>
+      <div className="mb-4 w-full">
+        {width > 660 ? (
           <Nyheder sectionh={butikData.nyheder_section} />
-        </div>
+        ) : (
+          <SectionH sectionh={butikData.nyheder_section} />
+        )}
       </div>
     </Layout>
   );

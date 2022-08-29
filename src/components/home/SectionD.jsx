@@ -26,10 +26,10 @@ const SectionD = ({ sectiond }) => {
           {data.button_text && (
             <div className="hidden w-full mt-10 sm:mt-[90px] space-x-14 sm:space-x-[124px] sm:flex items-center justify-center text-[15px] uppercase">
               <div className="invisible hidden md:block w-20" />
-              <Link to="/webbutik" className="leading-8 sm:leading-[50px]">
+              <Link to="/butikken" className="leading-8 sm:leading-[50px]">
                 {data.button_text}
               </Link>
-              <Link to="/webbutik">
+              <Link to="/butikken">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="76"
