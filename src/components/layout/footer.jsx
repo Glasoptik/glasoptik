@@ -52,7 +52,7 @@ const Footer = ({ footer, noBorder }) => {
             image={footer.payment_logo_desktop.gatsbyImageData}
             alt={footer.payment_logo_desktop.alt || ""}
             objectFit="contain"
-            className="block w-fit h-fit"
+            className="w-[245px] h-[35px]"
           />
         </div>
         <div className="w-full flex flex-col md:flex-row items-center justify-center md:justify-between text-[10px] leading-3 text-[#646464] mb-6 uppercase">

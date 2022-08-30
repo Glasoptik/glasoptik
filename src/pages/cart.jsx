@@ -147,7 +147,7 @@ const Cart = ({ data }) => {
             <button
               type="submit"
               className="w-full h-[53px] text-center border-[0.75px] border-solid border-black box-border transition-colors duration-200 ease-linear
-        hover:bg-black hover:text-white mb-4"
+        hover:bg-black hover:text-white mb-4 uppercase"
             >
               <span className="text-[15px] font-bold leading-5">
                 Gå til betaling
@@ -178,7 +178,7 @@ const Cart = ({ data }) => {
                 <GatsbyImage
                   image={cartContent.payment_logo.gatsbyImageData}
                   alt={cartContent.payment_logo.alt || "Payment Options"}
-                  className="w-full h-8 object-cover"
+                  className="w-[245px] h-[35px]"
                   objectFit="contain"
                   loading="eager"
                 />

@@ -74,7 +74,7 @@ const Policies = ({ data, location }) => {
                   Download
                 </a>
               </div>
-              <div className="max-w-xs sm:max-w-[540px] overflow-hidden max-h-[420px] sm:max-h-[650px] w-full h-full object-contain">
+              <div className="max-w-xs sm:max-w-[540px] overflow-hidden w-full h-full object-contain">
                 <GatsbyImage
                   image={selectedPolicy.image.gatsbyImageData}
                   alt={selectedPolicy.image.alt || "PDF IMG"}

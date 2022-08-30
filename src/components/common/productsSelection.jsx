@@ -17,7 +17,7 @@ const ProductsSelection = ({
     dots: false,
     infinite: true,
     autoplay: false,
-    slidesToShow: 3.7,
+    slidesToShow: 3.5,
     slidesToScroll: 1,
     centerMode: false,
     pauseOnHover: false,
