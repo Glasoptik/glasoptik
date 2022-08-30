@@ -7,6 +7,8 @@ const Home = ({ data }) => {
 
   return (
     <div className="w-full overflow-x-visible">
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="mobile-web-app-capable" content="yes" />
       <Intro intro={intro} />
     </div>
   );

@@ -26,9 +26,8 @@ const Intro = ({ intro, open }) => {
       <div className="max-w-full w-screen h-screen relative">
         <Slider {...settings}>
           {intro.images.map(({ image, mobile_image }, idx) => (
-            <Fragment>
+            <Fragment key={idx}>
               <GatsbyImage
-                key={idx}
                 image={image.gatsbyImageData}
                 alt={image.alt}
                 objectFit="cover"
@@ -36,7 +35,6 @@ const Intro = ({ intro, open }) => {
                 className="hidden sm:block w-full h-screen"
               />
               <GatsbyImage
-                key={idx}
                 image={mobile_image.gatsbyImageData}
                 alt={mobile_image.alt}
                 objectFit="cover"
