@@ -123,7 +123,7 @@ const Cart = ({ data }) => {
               </h3>
             </div>
             <div className="hidden md:flex items-center justify-between mb-8">
-              <h3 className="text-[15px] ">Forsendels</h3>
+              <h3 className="text-[15px] ">Forsendelse</h3>
               <h3 className="text-[15px] ">
                 {" "}
                 {estimatedCost?.totalTaxAmount
