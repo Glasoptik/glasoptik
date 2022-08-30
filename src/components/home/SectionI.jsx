@@ -16,6 +16,10 @@ const SectionI = ({ data }) => {
     adaptiveHeight: true,
     centerMode: true,
     centerPadding: "60px",
+    cssEase: "linear",
+    easing: "linear",
+    swipeToSlide: true,
+    swipe: true,
   };
   return (
     <div className="max-w-[1440px] space-y-2 sm:space-y-0 w-full sm:mx-auto -mb-[215px] sm:mb-0">

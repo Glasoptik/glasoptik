@@ -10,10 +10,13 @@ const Hero = ({ sliders }) => {
     infinite: true,
     autoplay: true,
     autoplaySpeed: 4000,
-    cssEase: "linear",
     slidesToShow: 1,
     slidesToScroll: 1,
     pauseOnHover: false,
+    cssEase: "linear",
+    easing: "linear",
+    swipeToSlide: true,
+    swipe: true,
     beforeChange: (current, next) => setActiveSlide(next),
   };
   return (

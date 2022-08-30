@@ -22,6 +22,10 @@ const ProductsSelection = ({
     centerMode: false,
     pauseOnHover: false,
     initialSlide: 1,
+    cssEase: "linear",
+    easing: "linear",
+    swipeToSlide: true,
+    swipe: true,
     className: "related_slider",
     responsive: [
       {

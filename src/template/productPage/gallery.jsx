@@ -13,9 +13,12 @@ const Gallery = ({ media }) => {
     infinite: true,
     autoplay: true,
     autoplaySpeed: 4000,
-    cssEase: "linear",
     slidesToShow: 1,
     slidesToScroll: 1,
+    cssEase: "linear",
+    easing: "linear",
+    swipeToSlide: true,
+    swipe: true,
     beforeChange: (current, next) => setActiveImage(next),
   };
 
