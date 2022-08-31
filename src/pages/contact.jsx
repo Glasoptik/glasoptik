@@ -16,13 +16,13 @@ const Contact = ({ data }) => {
             className="text-[15px] leading-[17px] mb-[11px]"
             to={`tel:${contactData.telefon}`}
           >
-            <span className="uppercase">Telefon:</span> {contactData.telefon}
+            <span className="uppercase">T:</span> {contactData.telefon}
           </Link>
           <Link
             className="text-[15px] leading-[17px] mb-[11px]"
             to={`mailto:${contactData.mail}`}
           >
-            <span className="uppercase">Mail:</span> {contactData.mail}
+            <span className="uppercase">M:</span> {contactData.mail}
           </Link>
         </div>
         <div className="text-center flex flex-col mb-14">

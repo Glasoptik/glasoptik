@@ -77,7 +77,7 @@ export const query = graphql`
           gatsbyImageData(
             srcSetMaxWidth: 500
             layout: FULL_WIDTH
-            placeholder: DOMINANT_COLOR
+            placeholder: NONE
           )
         }
         services {

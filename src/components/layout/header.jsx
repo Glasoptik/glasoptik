@@ -70,6 +70,19 @@ const Header = ({ stickToTop, data }) => {
               onClick={() => setMobileNav(!mobileNav)}
             />
           ))}
+          <li
+            className="relative"
+            onClick={() => setMobileNav(!mobileNav)}
+            onKeyDown={() => setMobileNav(!mobileNav)}
+            role="presentation"
+          >
+            <Link
+              to="https://appointments.optikit.dk/da/NThlYmFlZGMtNmQ4OS00YTJmLTlhYWQtYzFiZjc0MGI3OGY2?store=2560"
+              className="flex items-center w-full text-xs uppercase font-bold  mt-5"
+            >
+              BOOK SYNSPRØVE
+            </Link>
+          </li>
         </Nav>
       </div>
     </header>
