@@ -1,11 +1,16 @@
 import { graphql } from "gatsby";
-import React from "react";
+import React, { useEffect } from "react";
 import Intro from "../components/home/Intro";
 import { Helmet } from "react-helmet";
 
 const Home = ({ data }) => {
   const intro = data.prismicIntro.data;
 
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.scrollTo(0, 1);
+    }
+  }, [typeof window]);
   return (
     <div className="w-full overflow-x-visible">
       <Helmet>
