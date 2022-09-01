@@ -13,14 +13,14 @@ const Intro = ({ intro, open }) => {
     speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
-    cssEase: "linear",   
+    cssEase: "linear",
     pauseOnHover: false,
   };
   return (
     <div
-      className={`fixed w-screen h-screen top-0 left-0 z-50 overflow-hidden transform transition-all duration-200 bg-white`}
+      className={`absolute w-screen h-[105vh] sm:h-screen top-0 left-0 z-50 overflow-hidden transform transition-all duration-200 bg-white`}
     >
-      <div className="max-w-full w-screen h-screen relative">
+      <div className="max-w-full w-screen h-[105vh] sm:h-screen relative">
         <Slider {...settings}>
           {intro.images.map(({ image, mobile_image }, idx) => (
             <Fragment key={idx}>
@@ -36,7 +36,7 @@ const Intro = ({ intro, open }) => {
                 alt={mobile_image.alt}
                 objectFit="cover"
                 loading="eager"
-                className="block sm:hidden w-full h-screen"
+                className="block sm:hidden w-full h-[105vh]"
               />
             </Fragment>
           ))}

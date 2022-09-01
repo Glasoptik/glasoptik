@@ -7,6 +7,12 @@ module.exports = {
     "gatsby-plugin-postcss",
     "gatsby-plugin-image",
     {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        icon: "src/assets/favicon.jpg",
+      },
+    },
+    {
       resolve: `gatsby-source-prismic`,
       options: {
         repositoryName: process.env.GATSBY_PRISMIC_REPO_NAME,
