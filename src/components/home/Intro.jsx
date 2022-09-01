@@ -13,10 +13,7 @@ const Intro = ({ intro, open }) => {
     speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
-    cssEase: "linear",
-    easing: "linear",
-    swipeToSlide: true,
-    swipe: true,
+    cssEase: "linear",   
     pauseOnHover: false,
   };
   return (

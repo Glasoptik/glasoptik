@@ -78,7 +78,7 @@ const Header = ({ stickToTop, data }) => {
           >
             <Link
               to="https://appointments.optikit.dk/da/NThlYmFlZGMtNmQ4OS00YTJmLTlhYWQtYzFiZjc0MGI3OGY2?store=2560"
-              className="flex items-center w-full text-xs uppercase font-bold  mt-5"
+              className="flex items-center w-full text-xs uppercase font-normal  mt-5"
             >
               BOOK SYNSPRØVE
             </Link>

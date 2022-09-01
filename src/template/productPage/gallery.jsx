@@ -16,9 +16,6 @@ const Gallery = ({ media }) => {
     slidesToShow: 1,
     slidesToScroll: 1,
     cssEase: "linear",
-    easing: "linear",
-    swipeToSlide: true,
-    swipe: true,
     beforeChange: (current, next) => setActiveImage(next),
   };
 
