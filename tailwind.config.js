@@ -7,9 +7,6 @@ module.exports = {
       fontFamily: {
         sans: ["HelveticaNeue", "Inter", ...defaultThemes.fontFamily.sans],
       },
-      aspectRatio: {
-        "9/18": "9 / 18",
-      },
     },
   },
   plugins: [],
