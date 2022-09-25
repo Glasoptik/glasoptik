@@ -65,7 +65,7 @@ const SectionG = ({ sectiong }) => {
                 <div className="sm:hidden max-w-[246px] max-h-[308px] w-full h-full">
                   <GatsbyImage
                     image={image.image.gatsbyImageData}
-                    alt={image.image.alt}
+                    alt={image.image.alt || ""}
                     objectFit="cover"
                     className="block sm:hidden w-[246px] h-[308px]  object-cover"
                   />

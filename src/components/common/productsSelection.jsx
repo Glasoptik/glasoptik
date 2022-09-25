@@ -92,9 +92,8 @@ const ProductsSelection = ({
       {/* Products Section */}
       <Slider ref={(c) => (slider = c)} {...settings}>
         {relatedProducts.map((product, index) => (
-          <div className="w-full pr-4">
+          <div className="w-full pr-4" key={index}>
             <Link
-              key={index}
               className="w-full h-full relative group aspect-square"
               to={`/product/${product.handle}`}
             >

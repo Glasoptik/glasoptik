@@ -5,6 +5,7 @@ import Details from "./Details";
 import Gallery from "./gallery";
 import LightBox from "./LightBox";
 import Layout from "../../components/layout";
+import { SEO } from "../../components/seo";
 
 const ProductPage = ({ data }) => {
   const product = data?.shopifyProduct;
@@ -14,6 +15,11 @@ const ProductPage = ({ data }) => {
   if (!product) return null;
   return (
     <Layout>
+      <SEO
+        title={product.title}
+        description={product.description}
+        pathname={`product/${product.handle}`}
+      />
       <div className="relative max-w-[1440px] mx-auto w-full flex flex-col px-5 sm:px-[74px] mt-40">
         <LightBox
           openLightbox={openLightbox}
@@ -50,6 +56,7 @@ export const query = graphql`
       title
       handle
       descriptionHtml
+      description
       featuredImage {
         src
         gatsbyImageData(layout: FULL_WIDTH)

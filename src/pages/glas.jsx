@@ -10,6 +10,7 @@ import SectionH from "../components/home/SectionH";
 import SectionI from "../components/home/SectionI";
 import useHome from "../queries/useHome";
 import Layout from "../components/layout";
+import { SEO } from "../components/seo";
 
 const Home = ({ data }) => {
   const products = data.shopifyCollection.products;
@@ -18,6 +19,8 @@ const Home = ({ data }) => {
 
   return (
     <Layout noBorder>
+      <SEO title="Glas - GLASOPTIK" pathname="glas" />
+
       <div className="w-full overflow-x-visible">
         <Hero sliders={home.slider_images} />
         <SectionB sectionb={home.section_b} />

@@ -4,6 +4,7 @@ import Reveal from "../components/common/reveal";
 import Layout from "../components/layout";
 import { Document, Page, pdfjs } from "react-pdf";
 import { GatsbyImage } from "gatsby-plugin-image";
+import { SEO } from "../components/seo";
 
 const Policies = ({ data, location }) => {
   const isBrowser = typeof window !== "undefined";
@@ -25,6 +26,11 @@ const Policies = ({ data, location }) => {
 
   return (
     <Layout>
+      <SEO
+        title="Privatlivspolitik & handelsbetingelser - GLASOPTIK"
+        pathname="privatpolitikhandelsbetingelser"
+      />
+
       <div
         className="max-w-[1440px] w-full overflow-x-visible flex flex-col sm:flex-row sm:justify-between box-border mx-auto px-5 sm:px-[74px] 
       sm:space-x-[66px] pt-4 mt-[105px] md:mt-40"

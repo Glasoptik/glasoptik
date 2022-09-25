@@ -5,6 +5,7 @@ import Reveal from "../components/common/reveal";
 import SectionI from "../components/home/SectionI";
 import ProductsSelection from "../components/common/productsSelection";
 import Layout from "../components/layout";
+import { SEO } from "../components/seo";
 
 const About = ({ data }) => {
   const about = data.prismicAboutUs.data;
@@ -13,6 +14,7 @@ const About = ({ data }) => {
 
   return (
     <Layout>
+      <SEO title="About Us - GLASOPTIK" pathname="about-us" />
       <div className="max-w-[1440px] w-full h-full mx-auto sm:px-[74px] mt-[105px] md:mt-40">
         <div className="w-full flex flex-col items-center text-center  px-5 sm:px-0">
           <div className="w-full py-5 sm:py-10 lg:py-[58px] px-5 sm:px-10 md:px-24 lg:px-[190px] bg-[#F5F1EE]">

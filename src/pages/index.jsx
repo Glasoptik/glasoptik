@@ -1,12 +1,14 @@
 import { graphql } from "gatsby";
 import React from "react";
 import Intro from "../components/home/Intro";
+import { SEO } from "../components/seo";
 
 const Home = ({ data }) => {
   const intro = data.prismicIntro.data;
 
   return (
     <div className="w-full h-[105vh] sm:h-screen overflow-hidden">
+      <SEO title="Home - GLASOPTIK" />
       <Intro intro={intro} />
     </div>
   );

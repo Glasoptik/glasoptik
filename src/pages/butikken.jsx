@@ -3,12 +3,15 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import React from "react";
 import ProductsSelection from "../components/common/productsSelection";
 import Layout from "../components/layout";
+import { SEO } from "../components/seo";
 
 const Butikken = ({ data }) => {
   const butikkenData = data.prismicButikken.data;
   const relatedProducts = data.allShopifyProduct.nodes;
   return (
     <Layout>
+      <SEO title="Butikken - GLASOPTIK" pathname="butikken" />
+
       <div className="max-w-[1440px] w-full mx-auto px-[13px] sm:px-[74px] mt-[105px] md:mt-40">
         <GatsbyImage
           image={butikkenData.featured_image.gatsbyImageData}

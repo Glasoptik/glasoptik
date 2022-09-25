@@ -5,6 +5,7 @@ import { RichText, Elements } from "prismic-reactjs";
 import { CartContext } from "../context/ShopContext";
 import Layout from "../components/layout";
 import { GatsbyImage } from "gatsby-plugin-image";
+import { SEO } from "../components/seo";
 
 const Cart = ({ data }) => {
   const cartContent = data.prismicCart.data;
@@ -31,6 +32,8 @@ const Cart = ({ data }) => {
 
   return (
     <Layout>
+      <SEO title="Cart - GLASOPTIK" pathname="cart" />
+
       <div className="overflow-x-hidden max-w-[1440px] w-full mx-auto px-5 sm:px-[74px] mt-[105px] md:mt-40">
         <h1 className="text-[32px] md:text-[45px] font-bold uppercase">
           {cartContent.title.text}

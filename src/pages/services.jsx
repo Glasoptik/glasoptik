@@ -4,11 +4,13 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import Link from "../components/common/link";
 import Reveal from "../components/common/reveal";
 import Layout from "../components/layout";
+import { SEO } from "../components/seo";
 
 const Services = ({ data }) => {
   const servicesData = data.prismicServices.data;
   return (
     <Layout>
+      <SEO title="Services - GLASOPTIK" pathname="services" />
       <div className="max-w-[1440px] w-full overflow-x-visible flex flex-col sm:flex-row box-border mx-auto px-5 sm:px-[74px] sm:space-x-10 md:space-x-[66px] pt-[10px] mt-[105px] md:mt-40">
         <div className="max-w-[452px] w-full">
           <GatsbyImage

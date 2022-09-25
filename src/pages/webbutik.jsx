@@ -6,6 +6,7 @@ import Reveal from "../components/common/reveal";
 import { getPrice } from "../components/helper/getPrice";
 import SectionH from "../components/home/SectionH";
 import Layout from "../components/layout";
+import { SEO } from "../components/seo";
 import Nyheder from "../components/webbutik/nyheder";
 import useWindowDimensions from "../hooks/useWindowDimension";
 
@@ -15,6 +16,8 @@ const Webshop = ({ data }) => {
   const { width } = useWindowDimensions();
   return (
     <Layout>
+      <SEO title="Webbutik - GLASOPTIK" pathname="webbutik" />
+
       <div className="max-w-[1440px] w-screen h-full flex flex-col items-center px-5 sm:px-[74px] mx-auto mt-[105px] md:mt-40">
         <h1 className="text-3xl uppercase font-thin text-center mt-[6px] mb-[29px]">
           {butikData.title.text}
