@@ -1,5 +1,0 @@
-[[redirects]]
-  from = "https://www.glasoptik.dk/*"
-  to = "https://glas2022.netlify.app/:splat"
-  status = 200
-  force = true
