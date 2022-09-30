@@ -150,7 +150,7 @@ const Cart = ({ data }) => {
             <button
               type="submit"
               className="w-full h-[53px] text-center border-[0.75px] border-solid border-black box-border transition-colors duration-200 ease-linear
-        hover:bg-black hover:text-white mb-4 uppercase"
+              bg-black sm:bg-transparent hover:bg-black text-white sm:text-black hover:text-white mb-4 uppercase"
             >
               <span className="text-[15px] font-bold leading-5">
                 Gå til betaling

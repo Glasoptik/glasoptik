@@ -45,7 +45,7 @@ const Details = ({ product, changeState }) => {
         </h5> */}
         <button
           className="w-full h-[53px] text-center border-[0.75px] border-solid border-black box-border mb-[72px] transition-colors duration-200 ease-linear
-        hover:bg-black hover:text-white"
+          bg-black text-white sm:text-black sm:bg-transparent hover:bg-black hover:text-white"
           onClick={handleSubmit}
           disabled={disabled}
         >
