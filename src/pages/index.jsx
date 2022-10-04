@@ -22,11 +22,11 @@ export const query = graphql`
       data {
         images {
           image {
-            gatsbyImageData(layout: FULL_WIDTH, placeholder: NONE)
+            gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
             alt
           }
           mobile_image {
-            gatsbyImageData(layout: FULL_WIDTH, placeholder: NONE)
+            gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
             alt
           }
         }
