@@ -37,14 +37,14 @@ const About = ({ data }) => {
           </div>
         </div>
         <SectionI data={sectionI} />
-        <div className="w-full px-[13px]">
+        {/* <div className="w-full px-[13px]">
           <ProductsSelection
             title={about.products_section_title}
             buttonText={about.go_to_online_store}
             relatedProducts={relatedProducts}
             hide
           />
-        </div>
+        </div> */}
       </div>
     </Layout>
   );

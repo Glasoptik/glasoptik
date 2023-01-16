@@ -44,7 +44,7 @@ const ProductsSelection = ({
 
   return (
     <div className="w-full mt-[303px]">
-      <div className="w-full flex items-center justify-between mb-[54px]">
+      {/* <div className="w-full flex items-center justify-between mb-[54px]">
         <h1 className="text-2xl sm:text-3xl leading-5">{title}</h1>
         <div className="hidden md:block space-x-[50px]">
           <button onClick={() => slider.slickPrev()}>
@@ -88,9 +88,9 @@ const ProductsSelection = ({
             </svg>
           </button>
         </div>
-      </div>
+      </div> */}
       {/* Products Section */}
-      <Slider ref={(c) => (slider = c)} {...settings}>
+      {/* <Slider ref={(c) => (slider = c)} {...settings}>
         {relatedProducts.map((product, index) => (
           <div className="w-full pr-4" key={index}>
             <Link
@@ -115,7 +115,7 @@ const ProductsSelection = ({
             </Link>
           </div>
         ))}
-      </Slider>
+      </Slider> */}
       <div
         className={`w-full ${
           hideArrow ? "space-x-0 sm:space-x-[60px]" : "space-x-[60px]"
