@@ -1,4 +1,4 @@
-import { GatsbyImage } from "gatsby-plugin-image";
+// import { GatsbyImage } from "gatsby-plugin-image";
 import React from "react";
 import Link from "../common/link";
 
@@ -47,18 +47,18 @@ const Footer = ({ footer, noBorder }) => {
             {footer.cookies_text}
           </Link>
         </div>
-        <div className="w-full flex justify-center md:justify-start mb-9">
+        {/* <div className="w-full flex justify-center md:justify-start mb-9">
           <GatsbyImage
             image={footer.payment_logo_desktop.gatsbyImageData}
             alt={footer.payment_logo_desktop.alt || ""}
             objectFit="contain"
             className="w-[245px] h-[35px]"
           />
-        </div>
+        </div> */}
         <div className="w-full flex flex-col md:flex-row items-center justify-center md:justify-between text-[10px] leading-3 text-[#646464] mb-6 uppercase">
           <Link to={footer.website_link.url}>{footer.website_text}</Link>
           <div className="w-fit space-y-2 md:space-y-0 md:space-x-8 flex items-center">
-            <Link
+            {/* <Link
               state={{ index: 1 }}
               to={footer.handel_betingelser_link}
               className="hidden md:block text-black text-center"
@@ -85,7 +85,7 @@ const Footer = ({ footer, noBorder }) => {
               className="hidden md:block text-black text-center"
             >
               {footer.cookies_text}
-            </Link>
+            </Link> */}
             <span className="text-center">{footer.copyright_text}</span>
           </div>
         </div>

@@ -55,12 +55,13 @@ const Header = ({ stickToTop, data }) => {
             />
           )}
         </Link>
-        <Link
+        <span className="relative z-50 max-w-[120px] w-full text-right"></span>
+        {/* <Link
           to="/cart"
           className="relative z-50 max-w-[120px] w-full text-right"
         >
           BAG ({cart.length})
-        </Link>
+        </Link> */}
         <Nav show={mobileNav}>
           {data.menu_items.map(({ title, link }, idx) => (
             <NavItem

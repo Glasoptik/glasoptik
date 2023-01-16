@@ -13,7 +13,7 @@ import Layout from "../components/layout";
 import { SEO } from "../components/seo";
 
 const Home = ({ data }) => {
-  const products = data.shopifyCollection.products;
+  // const products = data.shopifyCollection.products;
 
   const home = useHome();
 
@@ -24,9 +24,9 @@ const Home = ({ data }) => {
       <div className="w-full overflow-x-visible">
         <Hero sliders={home.slider_images} />
         <SectionB sectionb={home.section_b} />
-        <Brands />
+        <Brands title={home.brands.text} />
         <SectionD sectiond={home.section_d} />
-        <SectionE sectione={home.section_e} products={products} />
+        {/* <SectionE sectione={home.section_e} products={products} /> */}
         <SectionD sectiond={home.section_f} />
         <SectionG sectiong={home.section_g} />
         <Brands />
@@ -39,26 +39,26 @@ const Home = ({ data }) => {
 
 export default Home;
 
-export const query = graphql`
-  {
-    shopifyCollection(handle: { eq: "9-product-for-home-page" }) {
-      products {
-        title
-        handle
-        priceRangeV2 {
-          minVariantPrice {
-            amount
-            currencyCode
-          }
-          maxVariantPrice {
-            amount
-            currencyCode
-          }
-        }
-        featuredImage {
-          gatsbyImageData(layout: FULL_WIDTH, formats: WEBP)
-        }
-      }
-    }
-  }
-`;
+// export const query = graphql`
+//   {
+//     shopifyCollection(handle: { eq: "9-product-for-home-page" }) {
+//       products {
+//         title
+//         handle
+//         priceRangeV2 {
+//           minVariantPrice {
+//             amount
+//             currencyCode
+//           }
+//           maxVariantPrice {
+//             amount
+//             currencyCode
+//           }
+//         }
+//         featuredImage {
+//           gatsbyImageData(layout: FULL_WIDTH, formats: WEBP)
+//         }
+//       }
+//     }
+//   }
+// `;

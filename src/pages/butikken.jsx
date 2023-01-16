@@ -33,7 +33,7 @@ const Butikken = ({ data }) => {
         </div>
         <ProductsSelection
           title="GLAS ONLINE SELEKTION"
-          buttonText="Gå til webbutik"
+          buttonText="Gå TIL SERVICES"
           relatedProducts={relatedProducts}
           hideArrow
         />

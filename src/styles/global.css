@@ -2,81 +2,132 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer utilities {
-
-    .prose p,
-    .prose li {
-        @apply my-4;
-    }
+  .prose p,
+  .prose li {
+    @apply my-4;
+  }
 }
 
 .animate-fade-up {
-    opacity: 0;
-    animation: fade-up 750ms 100ms forwards;
+  opacity: 0;
+  animation: fade-up 750ms 100ms forwards;
 }
 
 .marquee-container {
-    overflow-x: visible !important;
+  overflow-x: hidden !important;
+  display: flex !important;
+  flex-direction: row !important;
+  position: relative;
+  width: 100%;
+  --pause-on-hover: running;
+  --pause-on-click: running;
+}
+
+.marquee {
+  flex: 0 0 auto;
+  min-width: 100%;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  animation: scrollline var(--duration) linear var(--delay)
+    var(--iteration-count);
+  animation-play-state: var(--play);
+  animation-delay: var(--delay);
+  animation-direction: var(--direction);
+  --play: running;
+  --direction: normal;
+  --duration: 50s;
+  --delay: 0s;
+  --iteration-count: infinite;
+}
+.marquee h2 {
+  font-size: 24px;
+  padding: 0 5px;
 }
 
 .slick-arrow {
-    display: none !important;
+  display: none !important;
 }
 .related_slider .slick-slide {
-    float: right !important;
+  float: right !important;
+}
+
+@media (max-width: 767px) {
+  .marquee {
+    --duration: 60.7s;
+  }
+
+  .marquee h2 {
+    font-size: 20px;
+    padding: 0 5px;
+  }
+  /* .slick-arrow {
+      display: none !important;
+    } */
+}
+
+@keyframes scrollline {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 @keyframes fade-up {
-    from {
-        opacity: 0;
-        transform: translateY(2rem);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @font-face {
-    font-family: 'HelveticaNeue';
-    src: url('/fonts/HelveticaNeueExtra.ttf') format('ttf');
-    font-weight: 100;
-    font-display: swap;
+  font-family: "HelveticaNeue";
+  src: url("/fonts/HelveticaNeueExtra.ttf") format("ttf");
+  font-weight: 100;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'HelveticaNeue';
-    src: url('/fonts/HelveticaNeueThin.ttf') format('ttf');
-    font-weight: 200;
-    font-display: swap;
+  font-family: "HelveticaNeue";
+  src: url("/fonts/HelveticaNeueThin.ttf") format("ttf");
+  font-weight: 200;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'HelveticaNeue';
-    src: url('/fonts/HelveticaNeueLt.ttf') format('ttf');
-    font-weight: 300;
-    font-display: swap;
+  font-family: "HelveticaNeue";
+  src: url("/fonts/HelveticaNeueLt.ttf") format("ttf");
+  font-weight: 300;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'HelveticaNeue';
-    src: url('/fonts/HelveticaNeue.ttf') format('ttf');
-    font-weight: 400;
-    font-display: swap;
+  font-family: "HelveticaNeue";
+  src: url("/fonts/HelveticaNeue.ttf") format("ttf");
+  font-weight: 400;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'HelveticaNeue';
-    src: url('/fonts/HelveticaNeueMed.ttf') format('ttf');
-    font-weight: 500;
-    font-display: swap;
+  font-family: "HelveticaNeue";
+  src: url("/fonts/HelveticaNeueMed.ttf") format("ttf");
+  font-weight: 500;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'HelveticaNeue';
-    src: url('/fonts/HelveticaNeueBd.ttf') format('ttf');
-    font-weight: 700;
-    font-display: swap;
+  font-family: "HelveticaNeue";
+  src: url("/fonts/HelveticaNeueBd.ttf") format("ttf");
+  font-weight: 700;
+  font-display: swap;
 }

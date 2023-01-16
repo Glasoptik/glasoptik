@@ -17,6 +17,9 @@ export default function useHome() {
                 gatsbyImageData(srcSetMaxWidth: 600, layout: FULL_WIDTH)
               }
             }
+            brands {
+              text
+            }
             section_b {
               document {
                 ... on PrismicSectionb {
