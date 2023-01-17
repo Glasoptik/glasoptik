@@ -17,7 +17,7 @@ const Footer = ({ footer, noBorder }) => {
             <FooterItem key={index} Item={item.footer_section.document.data} />
           ))}
         </div>
-        <div className="flex md:hidden flex-col items-center justify-center mt-9 text-[10px] leading-3 space-y-2 mb-11 uppercase">
+        {/* <div className="flex md:hidden flex-col items-center justify-center mt-9 text-[10px] leading-3 space-y-2 mb-11 uppercase">
           <Link
             state={{ index: 1 }}
             to={footer.handel_betingelser_link}
@@ -46,7 +46,7 @@ const Footer = ({ footer, noBorder }) => {
           >
             {footer.cookies_text}
           </Link>
-        </div>
+        </div> */}
         {/* <div className="w-full flex justify-center md:justify-start mb-9">
           <GatsbyImage
             image={footer.payment_logo_desktop.gatsbyImageData}
