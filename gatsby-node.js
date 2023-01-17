@@ -49,33 +49,33 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions, plugins }) => {
   });
 };
 
-exports.createPages = async function ({ actions, graphql }) {
-  const { createPage } = actions;
+// exports.createPages = async function ({ actions, graphql }) {
+//   const { createPage } = actions;
 
-  const result = await graphql(`
-    query AllProductsQuery {
-      allShopifyProduct {
-        nodes {
-          handle
-        }
-      }
-    }
-  `);
+//   const result = await graphql(`
+//     query AllProductsQuery {
+//       allShopifyProduct {
+//         nodes {
+//           handle
+//         }
+//       }
+//     }
+//   `);
 
-  if (result.errors) {
-    console.error(result.errors);
-    throw new Error(result.errors);
-  }
+//   if (result.errors) {
+//     console.error(result.errors);
+//     throw new Error(result.errors);
+//   }
 
-  const products = result.data.allShopifyProduct.nodes;
+//   const products = result.data.allShopifyProduct.nodes;
 
-  products.forEach((product) => {
-    createPage({
-      path: `/product/${product.handle}`,
-      component: require.resolve("./src/template/productPage/index.jsx"),
-      context: {
-        handle: product.handle,
-      },
-    });
-  });
-};
+//   products.forEach((product) => {
+//     createPage({
+//       path: `/product/${product.handle}`,
+//       component: require.resolve("./src/template/productPage/index.jsx"),
+//       context: {
+//         handle: product.handle,
+//       },
+//     });
+//   });
+// };

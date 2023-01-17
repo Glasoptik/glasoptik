@@ -123,7 +123,7 @@ const ProductsSelection = ({
           hide && "hidden sm:flex"
         }`}
       >
-        <Link to="/webbutik" className={`${hideArrow && "hidden sm:block"}`}>
+        <Link to="/services" className={`${hideArrow && "hidden sm:block"}`}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="76"

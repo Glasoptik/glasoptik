@@ -66,10 +66,10 @@ const Brands = ({ data }) => {
           <div className="max-w-xs w-full hidden md:block invisible" />
         </div>
         <Link
-          to="/webbutik"
+          to="/butikken"
           className="mt-36 md:mt-20 uppercase text-center text-black"
         >
-          Besøg WEBBUTIK
+          BESØG BUTIKKEN
         </Link>
       </div>
     </Layout>
