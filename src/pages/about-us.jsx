@@ -10,7 +10,7 @@ import { SEO } from "../components/seo";
 const About = ({ data }) => {
   const about = data.prismicAboutUs.data;
   const sectionI = data.prismicSectioni.data;
-  const relatedProducts = data.allShopifyProduct.nodes;
+  // const relatedProducts = data.allShopifyProduct.nodes;
 
   return (
     <Layout>
@@ -80,26 +80,6 @@ export const query = graphql`
           image {
             gatsbyImageData(srcSetMaxWidth: 350, layout: FULL_WIDTH)
           }
-        }
-      }
-    }
-    allShopifyProduct(limit: 5) {
-      nodes {
-        title
-        handle
-        priceRangeV2 {
-          minVariantPrice {
-            amount
-            currencyCode
-          }
-          maxVariantPrice {
-            amount
-            currencyCode
-          }
-        }
-        featuredImage {
-          altText
-          gatsbyImageData(layout: FULL_WIDTH)
         }
       }
     }

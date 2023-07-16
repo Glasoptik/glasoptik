@@ -7,7 +7,7 @@ import { SEO } from "../components/seo";
 
 const Butikken = ({ data }) => {
   const butikkenData = data.prismicButikken.data;
-  const relatedProducts = data.allShopifyProduct.nodes;
+  // const relatedProducts = data.allShopifyProduct.nodes;
   return (
     <Layout>
       <SEO title="Butikken - GLASOPTIK" pathname="butikken" />
@@ -34,7 +34,7 @@ const Butikken = ({ data }) => {
         <ProductsSelection
           title="GLAS ONLINE SELEKTION"
           buttonText="Gå TIL SERVICES"
-          relatedProducts={relatedProducts}
+          // relatedProducts={relatedProducts}
           hideArrow
         />
       </div>
@@ -57,26 +57,6 @@ export const query = graphql`
             gatsbyImageData(layout: FULL_WIDTH, placeholder: NONE)
             alt
           }
-        }
-      }
-    }
-    allShopifyProduct(limit: 5) {
-      nodes {
-        title
-        handle
-        priceRangeV2 {
-          minVariantPrice {
-            amount
-            currencyCode
-          }
-          maxVariantPrice {
-            amount
-            currencyCode
-          }
-        }
-        featuredImage {
-          altText
-          gatsbyImageData(layout: FULL_WIDTH)
         }
       }
     }
