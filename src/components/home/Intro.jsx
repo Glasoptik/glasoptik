@@ -43,7 +43,7 @@ const Intro = ({ intro, open }) => {
         </Slider>
         <div className="absolute w-full text-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
           <Link
-            to="/glas"
+            to="/"
             className="text-[17px] uppercase border-[0.75px] border-solid border-white/50 bg-white/50 sm:border-black sm:bg-transparent hover:sm:bg-white 
           hover:border-white py-[18px] px-[21px] transition-colors duration-200 ease-linear cursor-pointer"
           >

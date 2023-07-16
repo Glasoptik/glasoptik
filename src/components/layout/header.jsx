@@ -43,7 +43,7 @@ const Header = ({ stickToTop, data }) => {
         />
         <Link
           className="max-w-[120px] w-full relative z-50 inline-flex my-auto text-center"
-          to="/glas"
+          to="/"
         >
           {data.logo.gatsbyImageData && (
             <GatsbyImage
