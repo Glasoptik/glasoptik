@@ -24,7 +24,18 @@ const SectionG = ({ sectiong }) => {
           {data.title.text}
         </h2>
       </div>
-      <div className="mt-2 sm:-mt-10 md:-mt-14 w-screen bg-[#57C65F] h-[403px] sm:h-[1052px] flex flex-col justify-center px-5">
+      <div
+        className="mt-2 sm:-mt-10 md:-mt-14 w-screen h-[403px] sm:h-[1052px] flex flex-col justify-center px-5"
+        style={{
+          background: `linear-gradient(
+          to right,
+          #E1218A 0%,
+          #E1218A 50%,
+          #E3380F 50%,
+          #E3380F 100%
+        )`,
+        }}
+      >
         <div className="max-w-5xl w-full flex items-center justify-center sm:justify-between mx-auto">
           <button
             onClick={() => gallery.slickPrev()}

@@ -25,7 +25,7 @@ const SectionI = ({ data }) => {
           <Link
             key={index}
             to={item.slug}
-            className=" w-full bg-[#57C65F] px-[13px] sm:bg-white sm:hover:bg-[#57C65F] text-center cursor-pointer sm:px-5 
+            className=" w-full bg-[#E1218A] px-[13px] sm:bg-white sm:hover:bg-[#E1218A] text-center cursor-pointer sm:px-5 
           lg:px-10 xl:px-[54px] flex-[0.5] md:flex-[0.33]"
           >
             <h5 className="text-3xl sm:pt-10 pb-[14px] sm:pb-8 lg:pt-[60px] lg:pb-9 font-thin uppercase">
@@ -40,13 +40,13 @@ const SectionI = ({ data }) => {
           </Link>
         ))}
       </div>
-      <div className="block sm:hidden bg-[#57C65F] pt-[72px] pb-[60px]">
+      <div className="block sm:hidden bg-[#E1218A] pt-[72px] pb-[60px]">
         <Slider {...settings}>
           {data.images.map((item, index) => (
             <Link
               key={index}
               to={item.slug}
-              className="max-w-[280px] w-full bg-[#57C65F] px-[13px] sm:bg-white sm:hover:bg-[#57C65F] text-center cursor-pointer sm:px-5 
+              className="max-w-[280px] w-full bg-[#E1218A] px-[13px] sm:bg-white sm:hover:bg-[#E1218A] text-center cursor-pointer sm:px-5 
           lg:px-10 xl:px-[54px] flex-[0.5] md:flex-[0.33]"
             >
               <h5 className="text-3xl leading-9 mb-9 uppercase">
