@@ -5,7 +5,9 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: `GLASOPTIK`,
-    description: `GLAS CHRISTIANSHAVN OPTIK is family business with exclusive eyewear - we carry only the finest brands | CELINE - PRADA - EQUE M - VALENTINO - DITA - THOM BROWNE - MASUNAGA - BOTTEGA VENETA - TVR -BALMAIN -AKONI -SAINT LAURENT -MOSCOT -EYEVAN -LGR`,
+    description: `GLAS er dine lokale brilleforretning. Vi har en helt særlig tilgang til briller, hvad angår alt lige fra service, design, glastyper, materialer og håndværk. Kontakt os og vi sætter en ære i at vejlede dig.
+ 
+    GLAS`,
     image: `/src/assets/favicon.png`,
     siteUrl: `https://www.glasoptik.dk`,
   },
