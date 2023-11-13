@@ -32,8 +32,6 @@ const Brands = ({ data }) => {
   }, [currentIndex]);
   return (
     <Layout>
-      <SEO title="Brands - GLASOPTIK" pathname="brands" />
-
       <div className="max-w-[1440px] w-full overflow-x-visible flex flex-col items-center justify-between box-border mx-auto px-5 sm:px-[74px] pt-4 mt-[105px] md:mt-40">
         <div className="w-full flex justify-between box-border space-x-5 md:space-x-[66px]">
           <div className="flex flex-col items-start max-w-max md:max-w-xs w-full">
@@ -75,6 +73,10 @@ const Brands = ({ data }) => {
     </Layout>
   );
 };
+
+export function Head({ location, data }) {
+  return <SEO title="Brands - GLASOPTIK" pathname="brands" />;
+}
 
 export default Brands;
 

@@ -8,8 +8,6 @@ const Contact = ({ data }) => {
   const contactData = data.prismicContactUs.data;
   return (
     <Layout>
-      <SEO title="contact - GLASOPTIK" pathname="contact" />
-
       <div className="w-full overflow-x-visible flex flex-col items-center pt-5 box-border text-black mt-[105px] md:mt-40">
         <div className="text-center flex flex-col mb-14">
           <h2 className="text-[15px] leading-[18px] tracking-[0.4px] font-medium uppercase mb-[18px]">
@@ -54,6 +52,10 @@ const Contact = ({ data }) => {
     </Layout>
   );
 };
+
+export function Head({ location, data }) {
+  return <SEO title="contact - GLASOPTIK" pathname="contact" />;
+}
 
 export default Contact;
 

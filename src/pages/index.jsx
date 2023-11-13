@@ -19,8 +19,6 @@ const Home = ({ data }) => {
 
   return (
     <Layout noBorder>
-      <SEO title="Glas - GLASOPTIK" pathname="glas" />
-
       <div className="w-full overflow-x-visible">
         <Hero sliders={home.slider_images} />
         <SectionB sectionb={home.section_b} />
@@ -36,6 +34,10 @@ const Home = ({ data }) => {
     </Layout>
   );
 };
+
+export function Head({ location, data }) {
+  return <SEO title="Glas - GLASOPTIK" />;
+}
 
 export default Home;
 

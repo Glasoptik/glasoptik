@@ -10,8 +10,6 @@ const Butikken = ({ data }) => {
   // const relatedProducts = data.allShopifyProduct.nodes;
   return (
     <Layout>
-      <SEO title="Butikken - GLASOPTIK" pathname="butikken" />
-
       <div className="max-w-[1440px] w-full mx-auto px-[13px] sm:px-[74px] mt-[105px] md:mt-40">
         <GatsbyImage
           image={butikkenData.featured_image.gatsbyImageData}
@@ -41,6 +39,10 @@ const Butikken = ({ data }) => {
     </Layout>
   );
 };
+
+export function Head({ location, data }) {
+  return <SEO title="Butikken - GLASOPTIK" pathname="butikken" />;
+}
 
 export default Butikken;
 
