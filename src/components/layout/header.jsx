@@ -1,8 +1,8 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
 import { GatsbyImage } from "gatsby-plugin-image";
+import React, { useContext, useEffect, useRef, useState } from "react";
+import { CartContext } from "../../context/ShopContext";
 import Link from "../common/link";
 import { Nav, NavItem } from "./nav";
-import { CartContext } from "../../context/ShopContext";
 
 const Header = ({ stickToTop, data }) => {
   const { cart } = useContext(CartContext);
@@ -71,7 +71,7 @@ const Header = ({ stickToTop, data }) => {
               onClick={() => setMobileNav(!mobileNav)}
             />
           ))}
-          <li
+          {/* <li
             className="relative"
             onClick={() => setMobileNav(!mobileNav)}
             onKeyDown={() => setMobileNav(!mobileNav)}
@@ -83,7 +83,7 @@ const Header = ({ stickToTop, data }) => {
             >
               BOOK SYNSPRØVE
             </Link>
-          </li>
+          </li> */}
         </Nav>
       </div>
     </header>

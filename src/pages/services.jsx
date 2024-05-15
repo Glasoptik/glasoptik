@@ -1,6 +1,6 @@
 import { graphql } from "gatsby";
-import React from "react";
 import { GatsbyImage } from "gatsby-plugin-image";
+import React from "react";
 import Link from "../components/common/link";
 import Reveal from "../components/common/reveal";
 import Layout from "../components/layout";
@@ -19,7 +19,7 @@ const Services = ({ data }) => {
         </div>
         <div className="max-w-[584px] w-full mt-10 sm:mt-0">
           {servicesData.services.map((service, index) => (
-            <div className="w-full mb-28" key={index}>
+            <div className="w-full mb-16" key={index}>
               <h2 className="text-3xl font-thin leading-[18px] tracking-[0.4px] mb-8">
                 {service.title.text}
               </h2>
@@ -28,36 +28,38 @@ const Services = ({ data }) => {
                 className="prose opacity-0 whitespace-pre-wrap text-[15px] leading-[25px]"
                 dangerouslySetInnerHTML={{ __html: service.description.html }}
               />
-              <div className="w-full mt-[52px] space-x-[45px] flex items-center text-[15px] uppercase">
-                <Link to={service.button_link} className="leading-[17px]">
-                  {service.button_text}
-                </Link>
-                <Link to={service.button_link}>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="76"
-                    height="7"
-                    viewBox="0 0 76 7"
-                  >
-                    <g
-                      fill="none"
-                      fillRule="evenodd"
-                      stroke="none"
-                      strokeWidth="1"
+              {service.button_link && (
+                <div className="w-full mt-[52px] space-x-[45px] flex items-center text-[15px] uppercase">
+                  <Link to={service.button_link} className="leading-[17px]">
+                    {service.button_text}
+                  </Link>
+                  <Link to={service.button_link}>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="76"
+                      height="7"
+                      viewBox="0 0 76 7"
                     >
                       <g
-                        fill="#000"
-                        fillRule="nonzero"
-                        transform="translate(-1291 -730)"
+                        fill="none"
+                        fillRule="evenodd"
+                        stroke="none"
+                        strokeWidth="1"
                       >
-                        <g transform="translate(1156.5 732.5)">
-                          <path d="M203.389-2.25l7 3.25-7 3.25-.001-3H134.75v-.5h68.638v-3z"></path>
+                        <g
+                          fill="#000"
+                          fillRule="nonzero"
+                          transform="translate(-1291 -730)"
+                        >
+                          <g transform="translate(1156.5 732.5)">
+                            <path d="M203.389-2.25l7 3.25-7 3.25-.001-3H134.75v-.5h68.638v-3z"></path>
+                          </g>
                         </g>
                       </g>
-                    </g>
-                  </svg>
-                </Link>
-              </div>
+                    </svg>
+                  </Link>
+                </div>
+              )}
             </div>
           ))}
           <h2></h2>

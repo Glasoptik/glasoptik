@@ -86,7 +86,9 @@ const Footer = ({ footer, noBorder }) => {
             >
               {footer.cookies_text}
             </Link> */}
-            <span className="text-center">{footer.copyright_text}</span>
+            <span className="text-center">
+              © {new Date().getFullYear()} GLAS
+            </span>
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { useStaticQuery, graphql } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
 
 export default function useFooter() {
   const result = useStaticQuery(
@@ -44,7 +44,6 @@ export default function useFooter() {
             returnering_link
             privapolitik_text
             privapolitik_link
-            copyright_text
           }
         }
       }
